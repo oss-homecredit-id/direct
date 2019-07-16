@@ -1,0 +1,42 @@
+{
+  "name": "fe-homecredit-id_direct",
+  "private": true,
+  "description": "Direct | Pattern Library for Home Credit Indonesia",
+  "version": "0.1.0",
+  "author": "Untung So Andryanto <untung.andryanto@homecredit.co.id>",
+  "dependencies": {
+    "gatsby": "^2.13.23",
+    "gatsby-plugin-manifest": "^2.2.3",
+    "gatsby-plugin-offline": "^2.2.4",
+    "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-source-filesystem": "^2.1.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "gatsby",
+    "direct",
+    "home credit"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "yarn develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fe-homecredit-id/direct"
+  },
+  "bugs": {
+    "url": "https://github.com/fe-homecredit-id/direct/issues"
+  }
+}
