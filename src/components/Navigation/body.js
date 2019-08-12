@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navigation.css";
 import GettingStarted from "../../pages/GettingStarted";
+import Introduction from "../../pages/Introduction";
 import Component from "../../pages/Component/Component";
 
 const Body = () => {
@@ -18,7 +19,7 @@ const Body = () => {
   const handleDropDown = title => {
     switch (title) {
       case "Getting Started":
-        setAccordion();
+        setAccordion(<GettingStarted></GettingStarted>);
         break;
       case "Components":
         setAccordion(<Component></Component>);
