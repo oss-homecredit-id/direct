@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Untung So Andryanto <untung.andryanto@homecredit.co.id>",
   "dependencies": {
+    "@emotion/core": "^10.0.15",
+    "@emotion/styled": "^10.0.15",
     "gatsby": "^2.13.23",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.1.2",

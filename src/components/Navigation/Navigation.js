@@ -10,9 +10,10 @@ const Body = () => {
   const navigationContent = [
     {
       title: "Getting Started",
-      content: ["Introduction", "Installation"],
+      content: ["Introduction", "How to Install", "Style Guide"],
     },
-    { title: "Components", content: ["Button"] },
+    { title: "Components", content: ["Atom", "Molecule"] },
+    { title: "Tokens", content: ["Color", "Fonts"] },
   ];
 
   const handleDropDown = title => {
@@ -22,6 +23,9 @@ const Body = () => {
         break;
       case "Components":
         setAccordion(<Component></Component>);
+        break;
+      case "Tokens":
+        setAccordion();
         break;
       default:
         console.log();
