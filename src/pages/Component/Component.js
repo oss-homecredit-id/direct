@@ -3,6 +3,8 @@ import { Button } from "../../lib/Button/Button";
 import { Input } from "../../lib/Input/Input";
 import close from "../../assets/icon-close.png";
 import gumball from "../../assets/gumball.png";
+import { Card } from "../../lib/Card/Card";
+import cardImg from "../../assets/img_placeholder.jpg";
 
 const Component = () => {
   const styles = {
@@ -24,6 +26,12 @@ const Component = () => {
       <Input icon src={gumball}>
         USERNAME
       </Input>
+      <Card
+        button="Button"
+        title="Title goes here"
+        subtitle="Subtitle goes here"
+        img={cardImg}
+      ></Card>
     </div>
   );
 };
