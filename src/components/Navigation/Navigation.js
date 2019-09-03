@@ -12,7 +12,7 @@ const Body = () => {
       title: "Getting Started",
       content: ["Introduction", "How to Install", "Style Guide"],
     },
-    { title: "Components", content: ["Atom", "Molecule"] },
+    { title: "Components", content: ["Atoms", "Molecule"] },
     { title: "Tokens", content: ["Color", "Fonts"] },
   ];
 
