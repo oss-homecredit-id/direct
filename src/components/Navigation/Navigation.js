@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Navigation.css";
 import GettingStarted from "../../pages/GettingStarted";
 import Component from "../../pages/Component/Component";
+import Header from "../header";
 
 const Body = () => {
   const [accordion, setAccordion] = useState("");
@@ -12,7 +13,7 @@ const Body = () => {
       title: "Getting Started",
       content: ["Introduction", "How to Install", "Style Guide"],
     },
-    { title: "Components", content: ["Atom", "Molecule"] },
+    { title: "Components", content: ["Atoms", "Molecule"] },
     { title: "Tokens", content: ["Color", "Fonts"] },
   ];
 
@@ -72,9 +73,12 @@ const Body = () => {
   return (
     <div className="body-wrapper">
       <div className="body-container">
-        {navigationContent.map((data, index) => (
-          <Navigation title={data.title} key={index} items={data.content} />
-        ))}
+        <Header siteTitle="Direct" />
+        <div className="navigation-body-wrapper">
+          {navigationContent.map((data, index) => (
+            <Navigation title={data.title} key={index} items={data.content} />
+          ))}
+        </div>
       </div>
       {accordion}
     </div>

@@ -19,7 +19,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle="Direct" />
       <Navigation></Navigation>
       <div
         style={{

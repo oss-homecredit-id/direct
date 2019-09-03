@@ -1,0 +1,27 @@
+.comp-container {
+  height: 100%;
+  width: 100%;
+  padding: 30px 60px;
+  background-color: #f7f7f7;
+}
+
+.comp-title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.comp-desc {
+  text-align: justify;
+  width: 700px;
+}
+
+.comp-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  width: 300px;
+  height: 300px;
+  background-color: #dddddd;
+}

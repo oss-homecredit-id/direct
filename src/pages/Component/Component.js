@@ -1,37 +1,16 @@
 import React from "react";
 import { Button } from "../../lib/Button/Button";
-import { Input } from "../../lib/Input/Input";
-import close from "../../assets/icon-close.png";
-import gumball from "../../assets/gumball.png";
-import { Card } from "../../lib/Card/Card";
-import cardImg from "../../assets/img_placeholder.jpg";
+import CompLayout from "../../components/CompLayout/CompLayout";
 
 const Component = () => {
-  const styles = {
-    container: {
-      background: "white",
-      padding: "30px",
-    },
-  };
-
   return (
-    <div style={styles.container}>
-      <div className="componentHeader">ini headernya</div>
-      <div>ini isi contoh componentnya</div>
-      <Button filled>helloooo</Button>
-      <Input icon src={close}>
-        NAME
-      </Input>
-      <Input>PHONE NUMBER</Input>
-      <Input icon src={gumball}>
-        USERNAME
-      </Input>
-      <Card
-        button="Button"
-        title="Title goes here"
-        subtitle="Subtitle goes here"
-        img={cardImg}
-      ></Card>
+    <div style={{ width: "100%" }}>
+      <CompLayout
+        compName="Button"
+        compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+      >
+        <Button filled>This is Button</Button>
+      </CompLayout>
     </div>
   );
 };
