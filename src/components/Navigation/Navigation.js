@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Navigation.css";
 import GettingStarted from "../../pages/GettingStarted";
-import Component from "../../pages/Component/Component";
 import Header from "../header";
+import InputPage from "../../pages/InputPage";
+import CardPage from "../../pages/CardPage";
 
 const Body = () => {
   const [accordion, setAccordion] = useState("");
@@ -23,7 +24,7 @@ const Body = () => {
         setAccordion();
         break;
       case "Components":
-        setAccordion(<Component></Component>);
+        setAccordion(<CardPage></CardPage>);
         break;
       case "Tokens":
         setAccordion();

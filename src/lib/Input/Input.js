@@ -10,6 +10,7 @@ const Input = props => {
       borderRadius: props.icon ? "8px" : "3px",
       border: props.icon ? "unset" : "solid 1px #bfbfbf",
       margin: "30px 5px",
+      width: "100%",
     },
     label: {
       display: props.icon ? "none" : "unset",
@@ -28,6 +29,7 @@ const Input = props => {
       padding: "3px",
       fontFamily: "century gothic",
       outline: "none",
+      width: props.icon ? "100%" : "unset",
     },
     icon: {
       width: "30px",

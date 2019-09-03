@@ -19,6 +19,7 @@ const CompLayout = props => {
           </div>
         </div>
       </div>
+      <div className="comp-code">this is code</div>
     </div>
   );
 };

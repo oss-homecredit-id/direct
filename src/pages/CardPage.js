@@ -1,19 +1,19 @@
 import React from "react";
-import { Button } from "../../lib/Button/Button";
-import CompLayout from "../../components/CompLayout/CompLayout";
+import CompLayout from "../components/CompLayout/CompLayout";
+import { Card } from "../lib";
 
-const Component = () => {
+const CardPage = () => {
   return (
     <div style={{ width: "100%" }}>
       <CompLayout
-        compName="Button"
+        compName="Card"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        compVariation={["Filled", "Rounded"]}
+        compVariation={["one", "two"]}
       >
-        <Button filled>This is Button</Button>
+        <Card></Card>
       </CompLayout>
     </div>
   );
 };
 
-export default Component;
+export default CardPage;
