@@ -12,6 +12,12 @@ import { NavigationContent } from "./DataNavigation";
 const Body = () => {
   const [accordion, setAccordion] = useState("");
   const [accordionId, setAccordionId] = useState("");
+  const [navOpen, setNavOpen] = useState(false);
+
+  const handleNavClick = () => {
+    setNavOpen(!navOpen);
+    console.log(navOpen);
+  };
 
   const navigationContent = [
     {
@@ -74,7 +80,7 @@ const Body = () => {
             <div className="item-type">{type}</div>
             {items.map(item => (
               <li>
-                <Link to={"/" + item.page}>{item.title}</Link>;
+                <Link to={"/" + item.page}>{item.title}</Link>
               </li>
             ))}
           </div>
@@ -83,20 +89,55 @@ const Body = () => {
     );
   };
   return (
-    <div className="navigation-body-wrapper">
-      {NavigationContent.map((data, index) => (
-        <Navigation
-          title={data.title}
-          key={index}
-          items={data.content}
-          type={data.type}
-        />
-      ))}
-      {accordion}
-      <div className="navigation-wrapper-mobile">
-        <div className="navbar-mobile" />
+    <>
+      <div className="navigation-body-wrapper">
+        {NavigationContent.map((data, index) => (
+          <Navigation
+            title={data.title}
+            key={index}
+            items={data.content}
+            type={data.type}
+          />
+        ))}
+        {accordion}
       </div>
-    </div>
+      <div
+        className={
+          navOpen ? "nav-wrapper-mobile-open" : "nav-wrapper-mobile-close"
+        }
+      >
+        <div
+          className={navOpen ? "burger-open" : "burger-close"}
+          onClick={() => handleNavClick()}
+        >
+          <div
+            className={navOpen ? "navbar-mobile-open" : "navbar-mobile-close"}
+          ></div>
+          <div
+            className={navOpen ? "navbar-mobile-open" : "navbar-mobile-close"}
+          ></div>
+          <div
+            className={navOpen ? "navbar-mobile-open" : "navbar-mobile-close"}
+          ></div>
+        </div>
+        <div className="navbarbar">
+          {NavigationContent.map((data, index) => (
+            <Navigation
+              title={data.title}
+              key={index}
+              items={data.content}
+              type={data.type}
+            />
+          ))}
+          {accordion}
+        </div>
+      </div>
+      <style jsx>{`
+        .navbarbar {
+          display: ${navOpen ? "block" : "none"};
+        }
+      `}</style>
+    </>
   );
 };
 
