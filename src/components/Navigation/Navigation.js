@@ -4,6 +4,9 @@ import GettingStarted from "../../pages/GettingStarted";
 import Header from "../header";
 import InputPage from "../../pages/InputPage";
 import CardPage from "../../pages/CardPage";
+import ButtonPage from "../../pages/ButtonPage";
+import { Button } from "../../lib";
+import { Link } from "@reach/router";
 
 const Body = () => {
   const [accordion, setAccordion] = useState("");
@@ -24,7 +27,6 @@ const Body = () => {
         setAccordion();
         break;
       case "Components":
-        setAccordion(<CardPage></CardPage>);
         break;
       case "Tokens":
         setAccordion();
@@ -64,7 +66,9 @@ const Body = () => {
             }
           >
             {items.map(item => (
-              <li>{item}</li>
+              <li>
+                <Link to="/CardPage">{item}</Link>;
+              </li>
             ))}
           </div>
         </div>
