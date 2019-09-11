@@ -7,6 +7,7 @@ import CardPage from "../../pages/CardPage";
 import ButtonPage from "../../pages/ButtonPage";
 import { Button } from "../../lib";
 import { Link } from "@reach/router";
+import { NavigationContent } from "./DataNavigation";
 
 const Body = () => {
   const [accordion, setAccordion] = useState("");
@@ -17,8 +18,13 @@ const Body = () => {
       title: "Getting Started",
       content: ["Introduction", "How to Install", "Style Guide"],
     },
-    { title: "Components", content: ["Atoms", "Molecule"] },
+    { title: "Components", content: ["Button", "Input"], type: "Atoms" },
     { title: "Tokens", content: ["Color", "Fonts"] },
+  ];
+
+  const componentList = [
+    { type: "Atoms", content: ["Button"] },
+    { type: "Molecules", content: ["Input", "Card"] },
   ];
 
   const handleDropDown = title => {
@@ -38,7 +44,7 @@ const Body = () => {
   };
 
   const Navigation = props => {
-    const { title, items } = props;
+    const { title, items, type } = props;
 
     return (
       <div
@@ -65,9 +71,10 @@ const Body = () => {
                 : "navigation-items-inactive"
             }
           >
+            <div className="item-type">{type}</div>
             {items.map(item => (
               <li>
-                <Link to="/CardPage">{item}</Link>;
+                <Link to={"/" + item.page}>{item.title}</Link>;
               </li>
             ))}
           </div>
@@ -80,8 +87,13 @@ const Body = () => {
       <div className="body-container">
         <Header siteTitle="Direct" />
         <div className="navigation-body-wrapper">
-          {navigationContent.map((data, index) => (
-            <Navigation title={data.title} key={index} items={data.content} />
+          {NavigationContent.map((data, index) => (
+            <Navigation
+              title={data.title}
+              key={index}
+              items={data.content}
+              type={data.type}
+            />
           ))}
         </div>
       </div>
