@@ -83,21 +83,19 @@ const Body = () => {
     );
   };
   return (
-    <div className="body-wrapper">
-      <div className="body-container">
-        <Header siteTitle="Direct" />
-        <div className="navigation-body-wrapper">
-          {NavigationContent.map((data, index) => (
-            <Navigation
-              title={data.title}
-              key={index}
-              items={data.content}
-              type={data.type}
-            />
-          ))}
-        </div>
-      </div>
+    <div className="navigation-body-wrapper">
+      {NavigationContent.map((data, index) => (
+        <Navigation
+          title={data.title}
+          key={index}
+          items={data.content}
+          type={data.type}
+        />
+      ))}
       {accordion}
+      <div className="navigation-wrapper-mobile">
+        <div className="navbar-mobile" />
+      </div>
     </div>
   );
 };

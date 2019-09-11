@@ -12,7 +12,7 @@
 
 .comp-desc {
   text-align: justify;
-  width: 700px;
+  width: 75%;
   font-size: 16px;
 }
 
@@ -59,4 +59,46 @@
   background-color: black;
   color: #ff79c6;
   font: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  .comp-container {
+    padding: 30px 5px 0 20px;
+  }
+
+  .comp-title {
+    font-size: 28px;
+  }
+
+  .comp-desc {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .comp-display {
+    flex-direction: column;
+    margin: 25px 0;
+  }
+
+  .comp-example {
+    width: 150px;
+    height: 150px;
+  }
+
+  .comp-variation {
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .comp-variation-btn {
+    width: 80px;
+    font-size: 13px;
+  }
+
+  .comp-code {
+    width: 100%;
+  }
 }
