@@ -78,8 +78,8 @@ const Body = () => {
             }
           >
             <div className="item-type">{type}</div>
-            {items.map(item => (
-              <li>
+            {items.map((item, index) => (
+              <li key={index}>
                 <Link to={"/" + item.page}>{item.title}</Link>
               </li>
             ))}
