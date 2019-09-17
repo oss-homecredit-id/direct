@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import "./CompLayout.css";
+import Table from "../../lib/Table/Table";
 
-const CompLayout = ({
-  variationBtn,
-  compName,
-  compDesc,
-  compItem,
-  compVariation,
-}) => {
+const CompLayout = ({ compName, compDesc, compVariation, compData }) => {
   const [item, setItem] = useState();
 
   return (
@@ -36,6 +31,10 @@ const CompLayout = ({
         </div>
       </div>
       <div className="comp-code">this is code</div>
+      <Table
+        tableHead={["Name", "Params", "Description"]}
+        tableData={{ compData }}
+      ></Table>
     </div>
   );
 };
