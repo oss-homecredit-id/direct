@@ -4,30 +4,31 @@ import { Link } from "@reach/router";
 import { NavigationContent } from "./DataNavigation";
 
 const Body = () => {
-  // console.log(window.location);
+  // console.log(window.location.pathname);
   const [accordion, setAccordion] = useState("");
   const [accordionId, setAccordionId] = useState("");
   const [navOpen, setNavOpen] = useState(false);
+  const [pathname, setPathName] = useState(window.location.pathname);
 
   const handleNavClick = () => {
     setNavOpen(!navOpen);
   };
 
-  const handleDropDown = title => {
-    switch (title) {
-      case "Getting Started":
-        setAccordion();
-        break;
-      case "Components":
-        break;
-      case "Tokens":
-        setAccordion();
-        break;
-      default:
-        console.log();
-    }
-    console.log(accordionId);
-  };
+  // const handleDropDown = title => {
+  //   switch (title) {
+  //     case "Getting Started":
+  //       setAccordion();
+  //       break;
+  //     case "Components":
+  //       break;
+  //     case "Tokens":
+  //       setAccordion();
+  //       break;
+  //     default:
+  //       console.log();
+  //   }
+  //   console.log(accordionId);
+  // };
 
   const Navigation = props => {
     const { title, items, type } = props;
@@ -36,7 +37,6 @@ const Body = () => {
       <div
         className="navigation-wrapper"
         onClick={() => {
-          handleDropDown(title);
           setAccordionId(title);
         }}
       >
@@ -71,7 +71,13 @@ const Body = () => {
                     {item.list.map(child => (
                       <li className="component-child">
                         <Link to={"/" + child.page}>
-                          <li>{child.title}</li>
+                          <li
+                            onClick={() =>
+                              setPathName(window.location.pathname)
+                            }
+                          >
+                            {child.title}
+                          </li>
                         </Link>
                       </li>
                     ))}
