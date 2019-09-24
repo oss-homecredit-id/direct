@@ -27,7 +27,7 @@ export const NavigationContent = [
         type: "Atoms",
         list: [
           { title: "Button", page: "components/button" },
-          { title: "Input", page: "InputPage" },
+          { title: "Input", page: "components/input" },
         ],
       },
       {
