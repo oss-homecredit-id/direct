@@ -11,15 +11,28 @@ export const NavigationContent = [
   {
     title: "Components",
     page: "ComponentsPage",
-    content: [
-      { title: "Button", page: "ButtonPage" },
+    // content: [
+    //   { title: "Button", page: "ButtonPage" },
+    //   {
+    //     title: "Card",
+    //     page: "CardPage",
+    //   },
+    //   {
+    //     title: "Input",
+    //     page: "InputPage",
+    //   },
+    // ],
+    anotherContent: [
       {
-        title: "Card",
-        page: "CardPage",
+        type: "Atoms",
+        list: [
+          { title: "Button", page: "ButtonPage" },
+          { title: "Input", page: "InputPage" },
+        ],
       },
       {
-        title: "Input",
-        page: "InputPage",
+        type: "Molecules",
+        list: [{ title: "Card", page: "CardPage" }],
       },
     ],
   },
