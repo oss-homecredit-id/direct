@@ -24,7 +24,7 @@ const CompLayout = ({ compName, compDesc, compVariation, compData }) => {
                   console.log(item);
                 }}
               >
-                {variationBtn.id}
+                {variationBtn.name}
               </button>
             ))}
           </div>
@@ -33,7 +33,7 @@ const CompLayout = ({ compName, compDesc, compVariation, compData }) => {
       <div className="comp-code">this is code</div>
       <Table
         tableHead={["Name", "Params", "Description"]}
-        tableData={{ compData }}
+        tableData={["name", "params", "desc"]}
       ></Table>
     </div>
   );
