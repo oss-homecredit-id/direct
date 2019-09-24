@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "../lib/Button/Button";
-import CompLayout from "../components/CompLayout/CompLayout";
-import Layout from "../components/layout";
+import { Button } from "../../lib/Button/Button";
+import CompLayout from "../../components/CompLayout/CompLayout";
+import Layout from "../../components/layout";
 
 const ButtonPage = () => {
   const button = [

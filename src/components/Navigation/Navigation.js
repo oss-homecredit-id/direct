@@ -1,11 +1,5 @@
 import React, { useState } from "react";
 import "./Navigation.css";
-import GettingStarted from "../../pages/GettingStarted";
-import Header from "../header";
-import InputPage from "../../pages/InputPage";
-import CardPage from "../../pages/CardPage";
-import ButtonPage from "../../pages/ButtonPage";
-import { Button } from "../../lib";
 import { Link, Location } from "@reach/router";
 import { NavigationContent } from "./DataNavigation";
 
