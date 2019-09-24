@@ -3,7 +3,7 @@ import "./CompLayout.css";
 import Table from "../../lib/Table/Table";
 
 const CompLayout = ({ compName, compDesc, compVariation, compData }) => {
-  const [item, setItem] = useState();
+  const [item, setItem] = useState(compVariation[0].var);
 
   return (
     <div className="comp-container">
@@ -16,7 +16,11 @@ const CompLayout = ({ compName, compDesc, compVariation, compData }) => {
           <div>
             {compVariation.map(variationBtn => (
               <button
-                className="comp-variation-btn"
+                className={
+                  item === variationBtn.var
+                    ? "comp-variation-btn-active"
+                    : "comp-variation-btn"
+                }
                 key={variationBtn}
                 onClick={() => {
                   console.log(variationBtn);

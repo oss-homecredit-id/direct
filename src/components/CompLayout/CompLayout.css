@@ -53,6 +53,18 @@
   cursor: pointer;
 }
 
+.comp-variation-btn-active {
+  margin: 20px 20px 10px 0;
+  background-color: #e11931;
+  width: 120px;
+  border-radius: 21px;
+  font-size: 16px;
+  font-weight: inherit;
+  color: white;
+  border: 1px solid #e11931;
+  cursor: pointer;
+}
+
 .comp-code {
   width: 80%;
   height: 150px;

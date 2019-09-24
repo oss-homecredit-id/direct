@@ -27,12 +27,12 @@ export const NavigationContent = [
         type: "Atoms",
         list: [
           { title: "Button", page: "components/button" },
-          { title: "Input", page: "InputPage" },
+          { title: "Input", page: "components/input" },
         ],
       },
       {
         type: "Molecules",
-        list: [{ title: "Card", page: "CardPage" }],
+        list: [{ title: "Card", page: "components/card" }],
       },
     ],
   },
@@ -40,8 +40,8 @@ export const NavigationContent = [
     title: "Tokens",
     page: "TokensPage",
     content: [
-      { title: "Color", page: "ColorPage" },
-      { title: "Fonts", page: "FontPage" },
+      { title: "Color", page: "color" },
+      { title: "Fonts", page: "fonts" },
     ],
   },
 ];
