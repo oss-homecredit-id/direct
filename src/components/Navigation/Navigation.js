@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navigation.css";
-import { Link, Location } from "@reach/router";
+import { Link } from "@reach/router";
 import { NavigationContent } from "./DataNavigation";
 
 const Body = () => {
@@ -11,7 +11,6 @@ const Body = () => {
 
   const handleNavClick = () => {
     setNavOpen(!navOpen);
-    console.log(navOpen);
   };
 
   const handleDropDown = title => {
