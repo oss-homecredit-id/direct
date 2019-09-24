@@ -31,28 +31,21 @@ const Body = () => {
   // };
 
   const Navigation = props => {
-    const { title, items, type } = props;
-
+    const { title, items, type, path } = props;
+    const isActive = window.location.pathname;
+    console.log(isActive);
     return (
       <div
         className="navigation-wrapper"
         onClick={() => {
-          setAccordionId(title);
+          setAccordionId(path);
         }}
       >
-        <div
-          className={
-            title === accordionId
-              ? "navigation-menu-inactive"
-              : "navigation-menu"
-          }
-        >
-          {title}
-        </div>
+        <div className="navigation-menu">{title}</div>
         <div className="navigation-items-container">
           <div
             className={
-              title === accordionId
+              path === accordionId
                 ? "navigation-items"
                 : "navigation-items-inactive"
             }
@@ -71,11 +64,7 @@ const Body = () => {
                     {item.list.map(child => (
                       <li className="component-child">
                         <Link to={"/" + child.page}>
-                          <li
-                            onClick={() =>
-                              setPathName(window.location.pathname)
-                            }
-                          >
+                          <li onClick={() => setPathName("/" + child.page)}>
                             {child.title}
                           </li>
                         </Link>
@@ -94,6 +83,7 @@ const Body = () => {
         {NavigationContent.map((data, index) => (
           <Navigation
             title={data.title}
+            path={data.path}
             key={index}
             items={data}
             type={data.type}

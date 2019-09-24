@@ -32,13 +32,6 @@
   color: #a6a6a6;
 }
 
-.navigation-menu-inactive {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding: 10px 35px;
-}
-
 .navigation-items-inactive {
   display: none;
 }

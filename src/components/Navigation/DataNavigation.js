@@ -1,6 +1,7 @@
 export const NavigationContent = [
   {
     title: "Getting Started",
+    path: "/getting-started",
     page: "GettingStartedPage",
     content: [
       { title: "Introduction", page: "IntroductionPage" },
@@ -10,6 +11,8 @@ export const NavigationContent = [
   },
   {
     title: "Components",
+    path: "/components",
+
     page: "ComponentsPage",
     // content: [
     //   { title: "Button", page: "ButtonPage" },
@@ -26,13 +29,13 @@ export const NavigationContent = [
       {
         type: "Atoms",
         list: [
-          { title: "Button", page: "components/button" },
-          { title: "Input", page: "components/input" },
+          { title: "Button", page: "components/button", last: "/components" },
+          { title: "Input", page: "components/input", last: "/components" },
         ],
       },
       {
         type: "Molecules",
-        list: [{ title: "Card", page: "components/card" }],
+        list: [{ title: "Card", page: "components/card", last: "/components" }],
       },
     ],
   },
