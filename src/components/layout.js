@@ -20,8 +20,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle="Direct" />
-      <Navigation></Navigation>
-      <main className="main-body">{children}</main>
+      <div style={{ display: "flex" }}>
+        <Navigation></Navigation>
+        <main className="main-body">{children}</main>
+      </div>
     </>
   );
 };

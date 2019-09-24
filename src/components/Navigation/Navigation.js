@@ -1,11 +1,5 @@
 import React, { useState } from "react";
 import "./Navigation.css";
-import GettingStarted from "../../pages/GettingStarted";
-import Header from "../header";
-import InputPage from "../../pages/InputPage";
-import CardPage from "../../pages/CardPage";
-import ButtonPage from "../../pages/ButtonPage";
-import { Button } from "../../lib";
 import { Link } from "@reach/router";
 import { NavigationContent } from "./DataNavigation";
 
@@ -16,22 +10,7 @@ const Body = () => {
 
   const handleNavClick = () => {
     setNavOpen(!navOpen);
-    console.log(navOpen);
   };
-
-  const navigationContent = [
-    {
-      title: "Getting Started",
-      content: ["Introduction", "How to Install", "Style Guide"],
-    },
-    { title: "Components", content: ["Button", "Input"], type: "Atoms" },
-    { title: "Tokens", content: ["Color", "Fonts"] },
-  ];
-
-  const componentList = [
-    { type: "Atoms", content: ["Button"] },
-    { type: "Molecules", content: ["Input", "Card"] },
-  ];
 
   const handleDropDown = title => {
     switch (title) {
