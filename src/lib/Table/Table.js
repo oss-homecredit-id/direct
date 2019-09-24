@@ -11,9 +11,9 @@ const Table = ({ tableHead, tableData }) => {
             ))}
           </tr>
           <tr>
-            {/* {tableData.map((tableData, index) => (
+            {tableData.map((tableData, index) => (
               <td key={index}>{tableData} </td>
-            ))} */}
+            ))}
           </tr>
         </tbody>
       </table>
