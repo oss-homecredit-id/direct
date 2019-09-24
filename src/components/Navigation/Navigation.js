@@ -6,10 +6,11 @@ import InputPage from "../../pages/InputPage";
 import CardPage from "../../pages/CardPage";
 import ButtonPage from "../../pages/ButtonPage";
 import { Button } from "../../lib";
-import { Link } from "@reach/router";
+import { Link, Location } from "@reach/router";
 import { NavigationContent } from "./DataNavigation";
 
 const Body = () => {
+  // console.log(window.location);
   const [accordion, setAccordion] = useState("");
   const [accordionId, setAccordionId] = useState("");
   const [navOpen, setNavOpen] = useState(false);
@@ -18,20 +19,6 @@ const Body = () => {
     setNavOpen(!navOpen);
     console.log(navOpen);
   };
-
-  const navigationContent = [
-    {
-      title: "Getting Started",
-      content: ["Introduction", "How to Install", "Style Guide"],
-    },
-    { title: "Components", content: ["Button", "Input"], type: "Atoms" },
-    { title: "Tokens", content: ["Color", "Fonts"] },
-  ];
-
-  const componentList = [
-    { type: "Atoms", content: ["Button"] },
-    { type: "Molecules", content: ["Input", "Card"] },
-  ];
 
   const handleDropDown = title => {
     switch (title) {
@@ -78,11 +65,25 @@ const Body = () => {
             }
           >
             <div className="item-type">{type}</div>
-            {items.map((item, index) => (
-              <li key={index}>
+            {/* {items.map(item => (
+              <li>
                 <Link to={"/" + item.page}>{item.title}</Link>
               </li>
-            ))}
+            ))} */}
+            {items.content
+              ? items.content.map(item => <li>{item.title}</li>)
+              : items.anotherContent.map(item => (
+                  <div className="component-type">
+                    {item.type}
+                    {item.list.map(child => (
+                      <li className="component-child">
+                        <Link to={"/" + child.page}>
+                          <li>{child.title}</li>
+                        </Link>
+                      </li>
+                    ))}
+                  </div>
+                ))}
           </div>
         </div>
       </div>
@@ -95,7 +96,7 @@ const Body = () => {
           <Navigation
             title={data.title}
             key={index}
-            items={data.content}
+            items={data}
             type={data.type}
           />
         ))}
@@ -125,7 +126,7 @@ const Body = () => {
             <Navigation
               title={data.title}
               key={index}
-              items={data.content}
+              items={data}
               type={data.type}
             />
           ))}
@@ -135,6 +136,16 @@ const Body = () => {
       <style jsx>{`
         .navbarbar {
           display: ${navOpen ? "block" : "none"};
+        }
+        .component-type {
+          margin-left: 50px;
+        }
+        .component-child {
+          display: flex;
+          flex-direction: column;
+        }
+        .component-child li {
+          margin-left: 0px;
         }
       `}</style>
     </>
