@@ -33,6 +33,7 @@ const Body = () => {
   const Navigation = props => {
     const { title, items, type, path } = props;
     const isActive = window.location.pathname;
+
     console.log(isActive);
     return (
       <div
@@ -64,7 +65,7 @@ const Body = () => {
                     {item.list.map(child => (
                       <li className="component-child">
                         <Link to={"/" + child.page}>
-                          <li onClick={() => setPathName("/" + child.page)}>
+                          <li onClick={() => setAccordionId("/components")}>
                             {child.title}
                           </li>
                         </Link>
