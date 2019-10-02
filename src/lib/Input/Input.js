@@ -1,36 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
+import styled from "@emotion/styled";
 
-const Input = props => {
+const Input = ({ withIcon, ...props }) => {
+  const [disable, setDisable] = useState(false);
+
+  const Container = styled.div(props => ({
+    display: "flex",
+    alignItems: "center",
+    padding: props.withIcon ? "5px" : "8px",
+    background: "white",
+    borderRadius: props.withIcon ? "8px" : "3px",
+    border: props.withIcon ? "solid 1px #ffffff" : "solid 1px #bfbfbf",
+    margin: "30px 5px",
+    width: "100%",
+    "&:focus-within": {
+      border: "solid 1px #e11931",
+      div: {
+        color: "#e11931",
+      },
+    },
+  }));
+
+  const Label = styled.div(props => ({
+    display: props.withIcon ? "none" : "unset",
+    position: "relative",
+    padding: "0 3px",
+    background: "white",
+    top: "-22px",
+    color: "#bfbfbf",
+    fontSize: "13px",
+    fontFamily: "century gothic",
+  }));
+
+  const Input = styled.input(props => ({
+    position: props.withIcon ? "unset" : "absolute",
+    border: props.withIcon ? "none" : "1px",
+    marginLeft: props.withIcon ? "8px" : "unset",
+    padding: "3px",
+    fontFamily: "century gothic",
+    outline: "none",
+    width: props.withIcon ? "100%" : "unset",
+  }));
+
+  const iconInput = styled.div({
+    width: "30px",
+    height: "auto",
+    marginLeft: "8px",
+    marginBottom: "0",
+    paddingRight: "8px",
+    borderRight: "1px solid grey",
+  });
+
   const styles = {
-    container: {
-      display: "flex",
-      alignItems: "center",
-      padding: props.icon ? "5px" : "8px",
-      background: "white",
-      borderRadius: props.icon ? "8px" : "3px",
-      border: props.icon ? "unset" : "solid 1px #bfbfbf",
-      margin: "30px 5px",
-      width: "100%",
-    },
-    label: {
-      display: props.icon ? "none" : "unset",
-      position: "relative",
-      padding: "0 3px",
-      background: "white",
-      top: "-22px",
-      color: "#bfbfbf",
-      fontSize: "13px",
-      fontFamily: "century gothic",
-    },
-    input: {
-      position: props.icon ? "unset" : "absolute",
-      border: props.icon ? "none" : "1px",
-      marginLeft: props.icon ? "8px" : "unset",
-      padding: "3px",
-      fontFamily: "century gothic",
-      outline: "none",
-      width: props.icon ? "100%" : "unset",
-    },
     icon: {
       width: "30px",
       height: "auto",
@@ -43,19 +64,23 @@ const Input = props => {
 
   let icon = null;
 
-  if (props.icon) {
+  if (withIcon) {
     icon = <img style={styles.icon} src={props.src}></img>;
   }
 
   return (
-    <div style={styles.container}>
-      <div style={styles.label}>{props.children} </div>
+    <Container withIcon={withIcon} tabIndex="0">
+      <Label withIcon={withIcon}>{props.children}</Label>
       {icon}
-      <input
-        style={styles.input}
-        placeholder={props.icon ? props.children : null}
-      ></input>
-    </div>
+      <Input
+        withIcon={withIcon}
+        placeholder={withIcon ? props.children : null}
+        type={props.type}
+        value={props.value}
+        onChange={props.onChange}
+        onClick={props.onClick}
+      ></Input>
+    </Container>
   );
 };
 
