@@ -9,7 +9,7 @@ const InputPage = () => {
     {
       name: "With Icon",
       var: (
-        <Input withIcon src={icon}>
+        <Input withIcon src={icon} isError>
           This is Input
         </Input>
       ),
@@ -17,6 +17,7 @@ const InputPage = () => {
       desc: "jadi ini input dengan icon",
     },
     { name: "Without Icon", var: <Input>This is Input</Input> },
+    { name: "is Disabled", var: <Input isDisabled>This is Input</Input> },
   ];
 
   return (

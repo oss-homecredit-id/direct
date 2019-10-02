@@ -6,7 +6,10 @@ import Layout from "../../components/layout";
 const ButtonPage = () => {
   const button = [
     { name: "Filled", var: <Button filled>This is Button</Button> },
-    { name: "Rounded", var: <Button rounded>This is Button</Button> },
+    {
+      name: "Rounded",
+      var: <Button rounded>This is Button</Button>,
+    },
   ];
 
   return (

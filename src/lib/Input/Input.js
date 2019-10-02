@@ -1,31 +1,34 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
+import { nominalTypeHack } from "prop-types";
 
-const Input = ({ withIcon, ...props }) => {
-  const [disable, setDisable] = useState(false);
-
+const Input = ({ withIcon, isDisabled, isError, ...props }) => {
   const Container = styled.div(props => ({
     display: "flex",
     alignItems: "center",
     padding: props.withIcon ? "5px" : "8px",
-    background: "white",
+    background: props.isDisabled ? "#f3f1f1" : "white",
     borderRadius: props.withIcon ? "8px" : "3px",
     border: props.withIcon ? "solid 1px #ffffff" : "solid 1px #bfbfbf",
     margin: "30px 5px",
     width: "100%",
-    "&:focus-within": {
-      border: "solid 1px #e11931",
-      div: {
-        color: "#e11931",
-      },
-    },
+    outline: "none",
+    cursor: props.isDisabled ? "not-allowed" : "null",
+    "&:focus-within": props.isDisabled
+      ? null
+      : {
+          border: props.isError ? "solid 1px #fc974d" : "solid 1px #e11931",
+          div: {
+            color: "#e11931",
+          },
+        },
   }));
 
   const Label = styled.div(props => ({
     display: props.withIcon ? "none" : "unset",
     position: "relative",
     padding: "0 3px",
-    background: "white",
+    background: isDisabled ? "#f3f1f1" : "white",
     top: "-22px",
     color: "#bfbfbf",
     fontSize: "13px",
@@ -39,6 +42,7 @@ const Input = ({ withIcon, ...props }) => {
     padding: "3px",
     fontFamily: "century gothic",
     outline: "none",
+    backgroundColor: isDisabled ? "#f3f1f1" : "white",
     width: props.withIcon ? "100%" : "unset",
   }));
 
@@ -69,7 +73,12 @@ const Input = ({ withIcon, ...props }) => {
   }
 
   return (
-    <Container withIcon={withIcon} tabIndex="0">
+    <Container
+      withIcon={withIcon}
+      isDisabled={isDisabled}
+      isError={isError}
+      tabIndex="0"
+    >
       <Label withIcon={withIcon}>{props.children}</Label>
       {icon}
       <Input
@@ -79,6 +88,7 @@ const Input = ({ withIcon, ...props }) => {
         value={props.value}
         onChange={props.onChange}
         onClick={props.onClick}
+        disabled={isDisabled}
       ></Input>
     </Container>
   );
