@@ -44,6 +44,7 @@ const Input = ({ withIcon, isDisabled, isError, ...props }) => {
     outline: "none",
     backgroundColor: isDisabled ? "#f3f1f1" : "white",
     width: props.withIcon ? "100%" : "unset",
+    cursor: isDisabled ? "not-allowed" : "null",
   }));
 
   const iconInput = styled.div({

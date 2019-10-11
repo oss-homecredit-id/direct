@@ -4,9 +4,14 @@ export const Card = props => {
   const { img, date, button, title, subtitle, category } = props;
   return (
     <div className="card-container">
-      <div className="card-image">
-        <img src={img} />
-      </div>
+      {img ? (
+        <div className="card-image">
+          <img src={img} />
+        </div>
+      ) : (
+        <React.Fragment></React.Fragment>
+      )}
+
       <div className="card-description">
         <p className="card-title">{title}</p>
         <p className="card-subtitle">{subtitle}</p>
@@ -65,6 +70,7 @@ export const Card = props => {
         }
         .card-subtitle {
           font-size: 16px;
+          font-weight: normal;
         }
         .card-container {
           height: auto;

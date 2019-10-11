@@ -35,7 +35,17 @@ export const NavigationContent = [
       },
       {
         type: "Molecules",
-        list: [{ title: "Card", page: "components/card", last: "/components" }],
+        list: [
+          {
+            title: "Breadcrumb",
+            page: "components/breadcrumb",
+            last: "/components",
+          },
+
+          { title: "Card", page: "components/card", last: "/components" },
+          { title: "List", page: "components/list", last: "/components" },
+          { title: "Block", page: "components/block", last: "/components" },
+        ],
       },
     ],
   },

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navigation.css";
 import { Link } from "@reach/router";
 import { NavigationContent } from "./DataNavigation";
@@ -14,32 +14,23 @@ const Body = () => {
     setNavOpen(!navOpen);
   };
 
-  // const handleDropDown = title => {
-  //   switch (title) {
-  //     case "Getting Started":
-  //       setAccordion();
-  //       break;
-  //     case "Components":
-  //       break;
-  //     case "Tokens":
-  //       setAccordion();
-  //       break;
-  //     default:
-  //       console.log();
-  //   }
-  //   console.log(accordionId);
-  // };
-
   const Navigation = props => {
     const { title, items, type, path } = props;
     const isActive = window.location.pathname;
 
-    console.log(isActive);
+    // console.log(isActive);
+
+    useEffect(() => {
+      console.log("a");
+    }, []);
+
     return (
       <div
         className="navigation-wrapper"
         onClick={() => {
           setAccordionId(path);
+          console.log(pathname);
+          console.log(accordionId);
         }}
       >
         <div className="navigation-menu">{title}</div>
@@ -52,22 +43,18 @@ const Body = () => {
             }
           >
             <div className="item-type">{type}</div>
-            {/* {items.map(item => (
-              <li>
-                <Link to={"/" + item.page}>{item.title}</Link>
-              </li>
-            ))} */}
+
             {items.content
-              ? items.content.map(item => <li>{item.title}</li>)
-              : items.anotherContent.map(item => (
-                  <div className="component-type">
+              ? items.content.map((item, key) => (
+                  <li key={key}>{item.title}</li>
+                ))
+              : items.anotherContent.map((item, key) => (
+                  <div key={key} className="component-type">
                     {item.type}
-                    {item.list.map(child => (
-                      <li className="component-child">
+                    {item.list.map((child, key) => (
+                      <li key={key} className="component-child">
                         <Link to={"/" + child.page}>
-                          <li onClick={() => setAccordionId("/components")}>
-                            {child.title}
-                          </li>
+                          <li>{child.title}</li>
                         </Link>
                       </li>
                     ))}

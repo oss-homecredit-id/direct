@@ -1,38 +1,35 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import { Card } from "../../lib";
 import Layout from "../../components/layout";
-import image from "../../assets/image-icon.png";
+import { List } from "../../lib/List/List";
 
-const CardPage = () => {
-  const card = [
+const DataList = [
+  { title: "Title 1", subtitle: "Subtitle 1" },
+  { title: "Title 2", subtitle: "Subtitle 2" },
+  { title: "Title 3", subtitle: "Subtitle 3" },
+];
+
+const ListPage = () => {
+  const list = [
     {
-      name: "Without Image",
-      var: (
-        <Card button="Button" title="Title" subtitle="Subtitle">
-          This is Button
-        </Card>
-      ),
+      name: "Numbered",
+      var: <List data={DataList}></List>,
     },
     {
-      name: "With Image",
-      var: (
-        <Card button="Button" title="Title" subtitle="Subtitle" img={image}>
-          This is Button
-        </Card>
-      ),
+      name: "Without Number",
+      var: <List withoutNumber data={DataList}></List>,
     },
   ];
   return (
     <Layout>
       <CompLayout
-        compName="Card"
+        compName="List"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        compVariation={card}
+        compVariation={list}
         compData={["test", "baaa", "hmmm"]}
       ></CompLayout>
     </Layout>
   );
 };
 
-export default CardPage;
+export default ListPage;

@@ -10,20 +10,21 @@ const CompLayout = ({ compName, compDesc, compVariation, compData }) => {
       <div className="comp-title">{compName} </div>
       <div className="comp-desc">{compDesc} </div>
       <div className="comp-display">
-        <p>Preview</p>
+        <p className="comp-text">Preview</p>
         <div className="preview">
           <div className="comp-example">{item}</div>
           <div className="comp-variation">
-            <p>Types</p>
+            <p className="comp-text">Types</p>
             <div>
-              {compVariation.map(variationBtn => (
+              {compVariation.map((variationBtn, key) => (
                 <button
+                  key={key}
                   className={
                     item === variationBtn.var
                       ? "comp-variation-btn-active"
                       : "comp-variation-btn"
                   }
-                  key={variationBtn}
+                  key={key}
                   onClick={() => {
                     console.log(variationBtn);
                     setItem(variationBtn.var);
