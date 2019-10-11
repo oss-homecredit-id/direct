@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { nominalTypeHack } from "prop-types";
 
-const Input = ({ withIcon, isDisabled, isError, ...props }) => {
+const Input = ({ withIcon, isDisabled, isError, isSuccess, ...props }) => {
   const Container = styled.div(props => ({
     display: "flex",
     alignItems: "center",
@@ -19,7 +18,7 @@ const Input = ({ withIcon, isDisabled, isError, ...props }) => {
       : {
           border: props.isError ? "solid 1px #fc974d" : "solid 1px #e11931",
           div: {
-            color: "#e11931",
+            color: props.isError ? "#fc974d" : "#e11931",
           },
         },
   }));
@@ -29,7 +28,7 @@ const Input = ({ withIcon, isDisabled, isError, ...props }) => {
     position: "relative",
     padding: "0 3px",
     background: isDisabled ? "#f3f1f1" : "white",
-    top: "-22px",
+    top: "-24px",
     color: "#bfbfbf",
     fontSize: "13px",
     fontFamily: "century gothic",
@@ -78,6 +77,7 @@ const Input = ({ withIcon, isDisabled, isError, ...props }) => {
       withIcon={withIcon}
       isDisabled={isDisabled}
       isError={isError}
+      isSuccess={isSuccess}
       tabIndex="0"
     >
       <Label withIcon={withIcon}>{props.children}</Label>

@@ -9,7 +9,7 @@ const InputPage = () => {
     {
       name: "With Icon",
       var: (
-        <Input withIcon src={icon} isError>
+        <Input withIcon src={icon}>
           This is Input
         </Input>
       ),
@@ -18,6 +18,10 @@ const InputPage = () => {
     },
     { name: "Without Icon", var: <Input>This is Input</Input> },
     { name: "is Disabled", var: <Input isDisabled>This is Input</Input> },
+    {
+      name: "is Error",
+      var: <Input isError>This is Input</Input>,
+    },
   ];
 
   return (
@@ -28,7 +32,6 @@ const InputPage = () => {
         compVariation={input}
         compData={[input.name, input.param, input.desc]}
       ></CompLayout>
-      <Input type="text">Test</Input>
     </Layout>
   );
 };
