@@ -21,6 +21,7 @@ const Number = props => {
       <p
         style={{
           color: props.color ? props.color : "white",
+          margin: "0",
         }}
       >
         {props.number}

@@ -1,6 +1,7 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import icon from "../../assets/icon-close.png";
+import icon1 from "../../assets/icon-logo.png";
 import { Input } from "../../lib/Input/Input";
 import Layout from "../../components/layout";
 
@@ -9,7 +10,7 @@ const InputPage = () => {
     {
       name: "With Icon",
       var: (
-        <Input withIcon src={icon}>
+        <Input withIcon src={icon1}>
           This is Input
         </Input>
       ),
@@ -30,7 +31,6 @@ const InputPage = () => {
         compName="Input"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         compVariation={input}
-        compData={[input.name, input.param, input.desc]}
       ></CompLayout>
     </Layout>
   );

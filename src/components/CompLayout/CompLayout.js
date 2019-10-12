@@ -42,7 +42,7 @@ const CompLayout = ({ compName, compDesc, compVariation, compData }) => {
       <div className="comp-code">this is code</div>
       <Table
         tableHead={["Name", "Params", "Description"]}
-        tableData={compData}
+        tableData={["Name", "Params", "Description"]}
       ></Table>
     </div>
   );
