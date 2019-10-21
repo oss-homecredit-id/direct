@@ -20,6 +20,7 @@ const Number = props => {
     <div style={style}>
       <p
         style={{
+          marginBottom: "0",
           color: props.color ? props.color : "white",
         }}
       >
