@@ -22,6 +22,7 @@ const Number = props => {
         style={{
           marginBottom: "0",
           color: props.color ? props.color : "white",
+          margin: "0",
         }}
       >
         {props.number}
