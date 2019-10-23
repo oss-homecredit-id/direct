@@ -1,4 +1,5 @@
 import React from "react";
+import { colors } from "../../assets/mixins/mixins";
 
 export const Card = props => {
   const { img, date, button, title, subtitle, category } = props;
@@ -50,12 +51,12 @@ export const Card = props => {
           font-size: 14px;
         }
         .card-description div .card-datetime .card-separator {
-          color: #e11931;
+          color: ${colors.mainWhite};
           font-weight: bold;
         }
         .card-description div .card-button {
-          background-color: #e11931;
-          color: white;
+          background-color: ${colors.mainRed};
+          color: ${colors.mainWhite};
           width: 87px;
           height: 33px;
           display: flex;
@@ -77,7 +78,7 @@ export const Card = props => {
           max-width: 432px;
           width: 100%;
           border-radius: 8.33px;
-          background-color: #ffffff;
+          background-color: ${colors.mainWhite};
           box-shadow: 0 3px 10px 0 #d4d4d4;
         }
         .card-container .card-image {

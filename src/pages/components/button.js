@@ -5,10 +5,21 @@ import Layout from "../../components/layout";
 
 const ButtonPage = () => {
   const button = [
-    { name: "Filled", var: <Button filled>This is Button</Button> },
+    {
+      name: "Filled",
+      var: (
+        <Button variant="filled" type="default" size="lg">
+          This is Button
+        </Button>
+      ),
+    },
     {
       name: "Rounded",
-      var: <Button rounded>This is Button</Button>,
+      var: (
+        <Button variant="nude" type="rounded" size="tiny">
+          This is Button
+        </Button>
+      ),
     },
   ];
 
