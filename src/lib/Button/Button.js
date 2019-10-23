@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 import { colors } from "../../assets/mixins/mixins";
 
 const ButtonStyle = styled.button`
@@ -8,6 +9,8 @@ const ButtonStyle = styled.button`
       ? colors.mainRed
       : props.variant === "nude"
       ? colors.mainWhite
+      : props.disabled
+      ? colors.disabledGrey
       : colors.mainRed};
   padding: ${props =>
     props.size === "tiny"
@@ -37,14 +40,39 @@ const ButtonStyle = styled.button`
   &:active,
   &:focus {
     background: ${props =>
-      props.variant === "nude" ? colors.mainWhite : colors.clickedRed};
-    cursor: pointer;
+      props.variant === "nude"
+        ? colors.mainWhite
+        : props.disabled
+        ? colors.disabledGrey
+        : colors.clickedRed};
+    cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
     outline: 0;
   }
 `;
 
-const Button = ({ variant, type, size, ...props }) => {
-  return <ButtonStyle variant={variant} type={type} size={size} {...props} />;
+const Button = ({ variant, type, size, disabled, ...props }) => {
+  console.log(!disabled);
+  return (
+    <ButtonStyle
+      variant={variant}
+      type={type}
+      size={size}
+      disabled={disabled}
+      {...props}
+    />
+  );
 };
 
 export { Button };
+
+Button.propTypes = {
+  variant: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
+};
+
+Button.defaultProps = {
+  variant: "filled",
+  type: "default",
+  size: "md",
+};

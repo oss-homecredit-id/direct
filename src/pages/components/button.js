@@ -21,6 +21,14 @@ const ButtonPage = () => {
         </Button>
       ),
     },
+    {
+      name: "Disabled",
+      var: (
+        <Button variant="fileld" disabled>
+          This is Button
+        </Button>
+      ),
+    },
   ];
 
   return (
