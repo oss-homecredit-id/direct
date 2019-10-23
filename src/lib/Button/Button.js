@@ -51,7 +51,6 @@ const ButtonStyle = styled.button`
 `;
 
 const Button = ({ variant, type, size, disabled, ...props }) => {
-  console.log(!disabled);
   return (
     <ButtonStyle
       variant={variant}
