@@ -21,7 +21,7 @@ const loginForm = () => {
 
   return (
     <Layout>
-      <TemplateLayout>
+      <TemplateLayout tempName="Login Form">
         <div style={styles.container}>
           <H2 margin="10px 0 15px">Selamat Datang</H2>
           <H3>Log in</H3>

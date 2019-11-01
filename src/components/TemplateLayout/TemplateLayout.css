@@ -3,3 +3,9 @@
   padding: 30px 60px;
   background-color: #f7f7f7;
 }
+
+.temp-title {
+  font-size: 34px;
+  font-weight: 500;
+  margin-bottom: 35px;
+}
