@@ -32,6 +32,11 @@ export const NavigationContent = [
           { title: "Button", page: "components/button", last: "/components" },
           { title: "Input", page: "components/input", last: "/components" },
           { title: "Number", page: "components/number", last: "/components" },
+          {
+            title: "Headings",
+            page: "components/headings",
+            last: "/components",
+          },
         ],
       },
       {
