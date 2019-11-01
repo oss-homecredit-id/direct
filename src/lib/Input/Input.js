@@ -31,7 +31,6 @@ const Input = ({ withIcon, isDisabled, isError, isSuccess, ...props }) => {
     top: "-24px",
     color: "#bfbfbf",
     fontSize: "13px",
-    fontFamily: "century gothic",
   }));
 
   const Input = styled.input(props => ({
@@ -39,7 +38,6 @@ const Input = ({ withIcon, isDisabled, isError, isSuccess, ...props }) => {
     border: props.withIcon ? "none" : "1px",
     marginLeft: props.withIcon ? "8px" : "unset",
     padding: "3px",
-    fontFamily: "century gothic",
     outline: "none",
     backgroundColor: isDisabled ? "#f3f1f1" : "white",
     width: props.withIcon ? "100%" : "unset",

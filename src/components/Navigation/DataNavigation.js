@@ -58,4 +58,12 @@ export const NavigationContent = [
       { title: "Fonts", page: "fonts" },
     ],
   },
+  {
+    title: "Templates",
+    path: "/template",
+    page: "Templates",
+    content: [
+      { title: "Login Form", page: "template/login-form", last: "/template" },
+    ],
+  },
 ];
