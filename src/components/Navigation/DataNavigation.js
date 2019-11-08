@@ -33,8 +33,8 @@ export const NavigationContent = [
           { title: "Input", page: "components/input", last: "/components" },
           { title: "Number", page: "components/number", last: "/components" },
           {
-            title: "Headings",
-            page: "components/headings",
+            title: "Text",
+            page: "components/text",
             last: "/components",
           },
         ],

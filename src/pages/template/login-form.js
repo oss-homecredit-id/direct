@@ -3,7 +3,6 @@ import { Input } from "../../lib/Input/Input";
 import { Button } from "../../lib/Button/Button";
 import Layout from "../../components/layout";
 import TemplateLayout from "../../components/TemplateLayout/TemplateLayout";
-import { Headings, H3, H2 } from "../../lib/Headings/Headings";
 
 const loginForm = () => {
   const styles = {
@@ -23,8 +22,6 @@ const loginForm = () => {
     <Layout>
       <TemplateLayout tempName="Login Form">
         <div style={styles.container}>
-          <H2 margin="10px 0 15px">Selamat Datang</H2>
-          <H3>Log in</H3>
           <Input>Tanggal Lahir</Input>
           <Input>Nomor HP</Input>
           <Button filled size="sm">

@@ -5,11 +5,11 @@ const Input = ({ withIcon, isDisabled, isError, isSuccess, ...props }) => {
   const Container = styled.div(props => ({
     display: "flex",
     alignItems: "center",
-    padding: props.withIcon ? "5px" : "8px",
+    padding: props.withIcon ? "5px" : "10px",
     background: props.isDisabled ? "#f3f1f1" : "white",
     borderRadius: props.withIcon ? "8px" : "3px",
     border: props.withIcon ? "solid 1px #ffffff" : "solid 1px #bfbfbf",
-    margin: "30px 5px",
+    margin: "20px 5px",
     width: "100%",
     outline: "none",
     cursor: props.isDisabled ? "not-allowed" : "null",
@@ -28,15 +28,15 @@ const Input = ({ withIcon, isDisabled, isError, isSuccess, ...props }) => {
     position: "relative",
     padding: "0 3px",
     background: isDisabled ? "#f3f1f1" : "white",
-    top: "-24px",
+    top: "-26px",
     color: "#bfbfbf",
-    fontSize: "13px",
+    fontSize: "15px",
   }));
 
   const Input = styled.input(props => ({
     position: props.withIcon ? "unset" : "absolute",
     border: props.withIcon ? "none" : "1px",
-    marginLeft: props.withIcon ? "8px" : "unset",
+    margin: props.withIcon ? "0 0 0 8px" : "2px 0 5px",
     padding: "3px",
     outline: "none",
     backgroundColor: isDisabled ? "#f3f1f1" : "white",
