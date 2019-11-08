@@ -34,7 +34,7 @@ const Radio = props => {
       opacity: "0",
       cursor: "pointer",
       width: "8%",
-      height: "3%",
+      height: "5%",
     },
     check: {
       borderRadius: "100%",
