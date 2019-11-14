@@ -8,7 +8,6 @@ const Body = () => {
   const [accordion, setAccordion] = useState("");
   const [accordionId, setAccordionId] = useState("");
   const [navOpen, setNavOpen] = useState(false);
-  const [pathname, setPathName] = useState(window.location.pathname);
 
   const handleNavClick = () => {
     setNavOpen(!navOpen);
@@ -16,20 +15,14 @@ const Body = () => {
 
   const Navigation = props => {
     const { title, items, type, path } = props;
-    const isActive = window.location.pathname;
-
-    // console.log(isActive);
-
-    useEffect(() => {
-      console.log("a");
-    }, []);
+    useEffect(() => {}, []);
 
     return (
       <div
         className="navigation-wrapper"
         onClick={() => {
           setAccordionId(path);
-          console.log(pathname);
+          // console.log(pathname);
           console.log(accordionId);
         }}
       >
