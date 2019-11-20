@@ -1,8 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Radio = props => {
   const checked1 = props.selected === props.option1;
   const checked2 = props.selected === props.option2;
+  const checked3 = props.selected === props.option3;
 
   const styles = {
     radioContainer: {
@@ -56,6 +58,21 @@ const Radio = props => {
     props.setSelected(event.currentTarget.value);
   };
 
+  const radio3 = (
+    <div style={checked3 ? { ...styles.optionChecked } : { ...styles.option }}>
+      <div style={checked3 ? styles.check : styles.uncheck}></div>
+      <input
+        style={styles.input}
+        type="radio"
+        value={props.option3}
+        checked={checked3}
+        onChange={event => radioChange(event)}
+        name={props.name}
+      ></input>
+      <label className="m-left-5 m-right-5">{props.option3}</label>
+    </div>
+  );
+
   return (
     <div style={styles.radioContainer}>
       <div
@@ -72,9 +89,12 @@ const Radio = props => {
           value={props.option1}
           checked={checked1}
           onChange={event => radioChange(event)}
+          name={props.name}
         ></input>
         <label className="m-left-5 m-right-5">{props.option1}</label>
       </div>
+
+      {props.tripleRadio && radio3}
 
       <div
         style={
@@ -90,6 +110,7 @@ const Radio = props => {
           value={props.option2}
           checked={checked2}
           onChange={event => radioChange(event)}
+          name={props.name}
         ></input>
         <label className="m-left-5 m-right-5">{props.option2}</label>
       </div>
@@ -98,3 +119,11 @@ const Radio = props => {
 };
 
 export { Radio };
+
+Radio.propTypes = {
+  option3: PropTypes.string.isRequired,
+};
+
+Radio.defaultProps = {
+  option3: "option 3",
+};

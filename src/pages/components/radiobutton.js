@@ -13,6 +13,7 @@ const RadiobtnPage = () => {
         <Radio
           option1="option 1"
           option2="option 2"
+          name="display"
           selected={radioSelected}
           setSelected={setRadioSelected}
         ></Radio>

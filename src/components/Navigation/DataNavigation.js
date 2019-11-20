@@ -32,9 +32,10 @@ export const NavigationContent = [
           { title: "Button", page: "components/button", last: "/components" },
           { title: "Input", page: "components/input", last: "/components" },
           { title: "Number", page: "components/number", last: "/components" },
+          { title: "Text", page: "components/text", last: "/components" },
           {
-            title: "Text",
-            page: "components/text",
+            title: "Radio Button",
+            page: "components/radiobutton",
             last: "/components",
           },
         ],
