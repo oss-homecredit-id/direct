@@ -9,9 +9,9 @@ const ButtonStyle = styled.button`
       ? colors.mainRed
       : props.variant === "nude"
       ? colors.mainWhite
-      : props.disabled
-      ? colors.disabledGrey
       : colors.mainRed};
+
+  background: ${props => (props.disabled ? colors.disabledGrey : "")};
   padding: ${props =>
     props.size === "tiny"
       ? "5px 8px"
@@ -22,6 +22,16 @@ const ButtonStyle = styled.button`
       : props.size === "lg"
       ? "20px 40px"
       : "10px 20px"};
+  font-size: ${props =>
+    props.size === "tiny"
+      ? "10px"
+      : props.size === "sm"
+      ? "12px"
+      : props.size === "md"
+      ? "14px"
+      : props.size === "lg"
+      ? "16px"
+      : "12px"};
   margin: 5px;
   color: ${props =>
     props.variant === "filled"
