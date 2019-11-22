@@ -35,12 +35,29 @@ const TextPage = () => {
     },
   ];
 
+  const textCode = `
+    <Text textType="h1">Hello</Text>
+
+    <Text textType="h2">Hello</Text>
+
+    <Text textType="h3">Hello</Text>
+
+    <Text textType="h4">Hello</Text>
+
+    <Text textType="h5">Hello</Text>
+
+    <Text textType="h6">Hello</Text>
+
+    <Text >Hello</Text>
+  `;
+
   return (
     <Layout>
       <CompLayout
         compName="Text"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         compVariation={text}
+        compCode={textCode}
       ></CompLayout>
     </Layout>
   );
