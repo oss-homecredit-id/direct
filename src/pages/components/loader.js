@@ -1,35 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "../../components/layout";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import { Radio } from "../../lib";
+import { Placeholder } from "../../lib/PlaceholderLoader/PlaceholderLoader";
 
-const RadiobtnPage = () => {
-  const [radioSelected, setRadioSelected] = useState();
-
-  const radio = [
+const LoaderPage = () => {
+  const loader = [
+    {
+      name: "Placeholder",
+      var: <Placeholder lines="6"></Placeholder>,
+    },
     {
       name: "Default",
-      var: (
-        <Radio
-          option1="option 1"
-          option2="option 2"
-          name="display"
-          selected={radioSelected}
-          setSelected={setRadioSelected}
-        ></Radio>
-      ),
+      var: <p>default</p>,
     },
   ];
 
   return (
     <Layout>
       <CompLayout
-        compName="Radio Button"
+        compName="Loader"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        compVariation={radio}
+        compVariation={loader}
       ></CompLayout>
     </Layout>
   );
 };
 
-export default RadiobtnPage;
+export default LoaderPage;

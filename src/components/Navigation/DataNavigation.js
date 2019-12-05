@@ -43,6 +43,11 @@ export const NavigationContent = [
             page: "components/dropdown-select",
             last: "/components",
           },
+          {
+            title: "Loader",
+            page: "components/loader",
+            last: "/components",
+          },
         ],
       },
       {
