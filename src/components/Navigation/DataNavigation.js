@@ -38,6 +38,11 @@ export const NavigationContent = [
             page: "components/radiobutton",
             last: "/components",
           },
+          {
+            title: "Dropdown Select",
+            page: "components/dropdown-select",
+            last: "/components",
+          },
         ],
       },
       {
