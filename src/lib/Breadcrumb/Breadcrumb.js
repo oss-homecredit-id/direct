@@ -4,7 +4,7 @@ export const Breadcrumb = ({ items }) => {
   const Separator = item => {
     if (item.children === items.length) {
       return <React.Fragment />;
-    } else
+    } else {
       return (
         <div className="separator">
           >
@@ -15,6 +15,7 @@ export const Breadcrumb = ({ items }) => {
           `}</style>
         </div>
       );
+    }
   };
   return (
     <React.Fragment>
@@ -22,12 +23,12 @@ export const Breadcrumb = ({ items }) => {
         <div className="breadcrumb-container">
           {items.map((item, key) => {
             return (
-              <a key={key}>
-                <div className="breadcrumb-item">
-                  {item.page}
-                  <Separator>{items.indexOf(item) + 1}</Separator>
-                </div>
-              </a>
+              // <a href="#">
+              <div className="breadcrumb-item" key={key}>
+                {item.page}
+                <Separator>{items.indexOf(item) + 1}</Separator>
+              </div>
+              // </a>
             );
           })}
         </div>

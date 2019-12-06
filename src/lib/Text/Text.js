@@ -21,6 +21,8 @@ const H6 = styled.p`
 `;
 
 const Text = props => {
+  console.log(props.textType, Text);
+
   switch (props.textType) {
     case "h1":
       return <H1>{props.children} </H1>;
@@ -37,8 +39,6 @@ const Text = props => {
     default:
       return <p>{props.children} </p>;
   }
-
-  console.log(props.textType, Text);
 };
 
 export { Text };

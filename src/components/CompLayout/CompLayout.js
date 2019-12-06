@@ -30,7 +30,6 @@ const CompLayout = ({
                       ? "comp-variation-btn-active"
                       : "comp-variation-btn"
                   }
-                  key={key}
                   onClick={() => {
                     console.log(variationBtn);
                     setItem(variationBtn.var);

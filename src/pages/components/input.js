@@ -1,6 +1,6 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import icon from "../../assets/icon-close.png";
+// import icon from "../../assets/icon-close.png";
 import icon1 from "../../assets/icon-logo.png";
 import { Input } from "../../lib/Input/Input";
 import Layout from "../../components/layout";

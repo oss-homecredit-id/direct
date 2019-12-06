@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 
 const Input = ({ withIcon, isDisabled, isError, isSuccess, ...props }) => {
@@ -44,14 +44,14 @@ const Input = ({ withIcon, isDisabled, isError, isSuccess, ...props }) => {
     cursor: isDisabled ? "not-allowed" : "null",
   }));
 
-  const iconInput = styled.div({
-    width: "30px",
-    height: "auto",
-    marginLeft: "8px",
-    marginBottom: "0",
-    paddingRight: "8px",
-    borderRight: "1px solid grey",
-  });
+  // const iconInput = styled.div({
+  //   width: "30px",
+  //   height: "auto",
+  //   marginLeft: "8px",
+  //   marginBottom: "0",
+  //   paddingRight: "8px",
+  //   borderRight: "1px solid grey",
+  // });
 
   const styles = {
     icon: {
@@ -67,7 +67,7 @@ const Input = ({ withIcon, isDisabled, isError, isSuccess, ...props }) => {
   let icon = null;
 
   if (withIcon) {
-    icon = <img style={styles.icon} src={props.src}></img>;
+    icon = <img style={styles.icon} src={props.src} alt="" />;
   }
 
   return (
