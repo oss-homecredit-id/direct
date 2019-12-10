@@ -67,7 +67,6 @@ const Placeholder = ({ lines }) => {
       }}
     >
       <AnimatedBg>{makeLine()}</AnimatedBg>
-      {/* <div className="animated-bg">{makeLine()}</div> */}
     </div>
   );
 };
