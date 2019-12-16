@@ -34,12 +34,12 @@ const Checkbox = props => {
           height: 25px;
           width: 25px;
           background-color: white;
-          border: solid 1px ${colors.disabledGrey};
+          border: solid 1px ${colors.mainRed};
           border-radius: 3px;
         }
 
         .checkbox-container input:checked ~ .checkmark {
-          background-color: white;
+          background-color: ${colors.mainRed};
           border-color: ${colors.mainRed};
         }
         .checkmark:after {
@@ -51,12 +51,15 @@ const Checkbox = props => {
           display: block;
         }
         .checkbox-container .checkmark:after {
+          left: 8px;
           top: 4px;
-          left: 4px;
-          width: 15px;
-          height: 15px;
-          border-radius: 2px;
-          background-color: ${colors.mainRed};
+          width: 7px;
+          height: 12px;
+          border: solid white;
+          border-width: 0 3px 3px 0;
+          -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
         }
       `}</style>
     </label>
