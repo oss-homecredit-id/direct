@@ -1,17 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
 
-const Radio = props => {
-  const checked1 = props.selected === props.option1;
-  const checked2 = props.selected === props.option2;
-  const checked3 = props.selected === props.option3;
+const Radio = ({ option, name, radioType, selected, setSelected }) => {
+  const list = radioType === "list";
+  const [options, setOptions] = useState([]);
+
+  console.log(selected);
 
   const styles = {
     radioContainer: {
       display: "flex",
+      flexDirection: list ? "column" : "row",
       margin: "10px",
     },
     option: {
+      margin: list ? "10px" : "0 10px",
       border: "1px solid #B3B3B3",
       padding: "10px",
       display: "flex",
@@ -20,8 +22,10 @@ const Radio = props => {
       color: "#9f9f9f",
       fontWeight: "unset",
       cursor: "pointer",
+      borderRadius: "3px",
     },
     optionChecked: {
+      margin: list ? "10px" : "0 10px",
       border: "1px solid #E11931",
       padding: "10px",
       display: "flex",
@@ -30,6 +34,7 @@ const Radio = props => {
       color: "black",
       fontWeight: "bold",
       cursor: "pointer",
+      borderRadius: "3px",
     },
     input: {
       position: "absolute",
@@ -52,78 +57,47 @@ const Radio = props => {
       width: "10px",
       margin: "5px",
     },
+    label: {
+      margin: "-2px 5px 0px 5px",
+    },
   };
 
   const radioChange = event => {
-    props.setSelected(event.currentTarget.value);
+    setSelected(event.currentTarget.value);
   };
 
-  const radio3 = (
-    <div style={checked3 ? { ...styles.optionChecked } : { ...styles.option }}>
-      <div style={checked3 ? styles.check : styles.uncheck}></div>
-      <input
-        style={styles.input}
-        type="radio"
-        value={props.option3}
-        checked={checked3}
-        onChange={event => radioChange(event)}
-        name={props.name}
-      ></input>
-      <label className="m-left-5 m-right-5">{props.option3}</label>
-    </div>
-  );
+  const optionsValidate = options.length < 4 && options.length > 1;
+
+  useEffect(() => {
+    setOptions(option);
+    console.log(selected);
+  }, [option]);
 
   return (
     <div style={styles.radioContainer}>
-      <div
-        style={
-          checked1
-            ? { ...styles.optionChecked, borderRadius: "5px 0 0 5px" }
-            : { ...styles.option, borderRadius: "5px 0 0 5px" }
-        }
-      >
-        <div style={checked1 ? styles.check : styles.uncheck}></div>
-        <input
-          style={styles.input}
-          type="radio"
-          value={props.option1}
-          checked={checked1}
-          onChange={event => radioChange(event)}
-          name={props.name}
-        ></input>
-        <label className="m-left-5 m-right-5">{props.option1}</label>
-      </div>
-
-      {props.tripleRadio && radio3}
-
-      <div
-        style={
-          checked2
-            ? { ...styles.optionChecked, borderRadius: "0 5px 5px 0" }
-            : { ...styles.option, borderRadius: "0 5px 5px 0" }
-        }
-      >
-        <div style={checked2 ? styles.check : styles.uncheck}></div>
-        <input
-          style={styles.input}
-          type="radio"
-          value={props.option2}
-          checked={checked2}
-          onChange={event => radioChange(event)}
-          name={props.name}
-        ></input>
-        <label className="m-left-5 m-right-5">{props.option2}</label>
-      </div>
+      {options
+        ? optionsValidate
+          ? options.map((option, index) => (
+              <div
+                style={selected ? styles.optionChecked : styles.option}
+                key={index}
+              >
+                <div style={selected ? styles.check : styles.uncheck}></div>
+                <input
+                  style={styles.input}
+                  type="radio"
+                  value={option}
+                  checked={selected}
+                  onChange={event => radioChange(event)}
+                  name={name}
+                ></input>
+                <label style={styles.label}>{option} </label>
+              </div>
+            ))
+          : ""
+        : console.log("nada")}
     </div>
   );
 };
 
 export { Radio };
-
-Radio.propTypes = {
-  option3: PropTypes.string.isRequired,
-};
-
-Radio.defaultProps = {
-  option3: "option 3",
-};

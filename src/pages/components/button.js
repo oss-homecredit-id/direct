@@ -6,28 +6,24 @@ import Layout from "../../components/layout";
 const ButtonPage = () => {
   const button = [
     {
-      name: "Filled",
+      name: "Primary",
       var: (
-        <Button variant="filled" type="default" size="lg">
+        <Button variant="primary" size="lg">
           This is Button
         </Button>
       ),
     },
     {
-      name: "Rounded",
-      var: (
-        <Button variant="nude" type="rounded" size="tiny">
-          This is Button
-        </Button>
-      ),
+      name: "Secondary",
+      var: <Button variant="secondary">This is Button</Button>,
+    },
+    {
+      name: "Text",
+      var: <Button variant="text">This is Button</Button>,
     },
     {
       name: "Disabled",
-      var: (
-        <Button variant="fileld" disabled>
-          This is Button
-        </Button>
-      ),
+      var: <Button disabled>This is Button</Button>,
     },
   ];
 
