@@ -80,10 +80,11 @@
 
 .comp-code {
   width: 80%;
-  height: 150px;
+  height: 35vh;
   background-color: black;
   color: #ff79c6;
-  font: 12px;
+  font-size: 12px;
+  overflow: auto;
 }
 
 @media only screen and (max-width: 768px) {

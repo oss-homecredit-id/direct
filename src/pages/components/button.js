@@ -27,12 +27,25 @@ const ButtonPage = () => {
     },
   ];
 
+  const buttonCode = `
+    <Button variant="filled" type="default" size="lg">
+      This is Button 
+    </Button>
+
+    <Button variant="nude" type="rounded" size="tiny">
+      This is Button
+    </Button>
+
+    <Button variant="filled" disabled>
+      This is Button
+    </Button>`;
   return (
     <Layout>
       <CompLayout
         compName="Button"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         compVariation={button}
+        compCode={buttonCode}
       ></CompLayout>
     </Layout>
   );
