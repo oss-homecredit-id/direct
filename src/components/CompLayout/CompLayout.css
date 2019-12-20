@@ -84,7 +84,7 @@
   background-color: black;
   color: #ff79c6;
   font-size: 12px;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 @media only screen and (max-width: 768px) {
