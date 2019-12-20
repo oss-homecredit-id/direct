@@ -1,15 +1,20 @@
 import React, { useState } from "react";
+import ReactDOMServer from "react-dom/server";
 import "./CompLayout.css";
 import Table from "../../lib/Table/Table";
+import { Button } from "../../lib";
 
 const CompLayout = ({
   compName,
   compDesc,
   compVariation,
   compData,
-  compCode,
+  compProps,
 }) => {
   const [item, setItem] = useState(compVariation[0].var);
+  const [code, setCode] = useState(
+    ReactDOMServer.renderToString(compVariation[0].var)
+  );
 
   return (
     <div className="comp-container">
@@ -34,6 +39,7 @@ const CompLayout = ({
                   onClick={() => {
                     console.log(variationBtn);
                     setItem(variationBtn.var);
+                    setCode(ReactDOMServer.renderToString(variationBtn.var));
                     console.log(item);
                   }}
                 >
@@ -46,13 +52,10 @@ const CompLayout = ({
       </div>
 
       <div className="comp-code">
-        <pre>{compCode}</pre>
+        <pre>{code} </pre>
       </div>
       {compData}
-      <Table
-        tableHead={["Name", "Params", "Description"]}
-        tableData={["Name", "Params", "Description"]}
-      ></Table>
+      <Table tableData={compProps}></Table>
     </div>
   );
 };
