@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import Layout from "../../components/layout";
-import { Block } from "../../lib/Block/Block";
-import icon from "../../assets/icon-logo.png";
 import { Checkbox } from "../../lib/Checkbox/Checkbox";
+
+const defaultOptions = [
+  {
+    label: "This checkbox is disabled",
+    name: "first",
+    disabled: true,
+  },
+  {
+    label: "You can check this one",
+    name: "second",
+  },
+  {
+    label: "This one too",
+    name: "third",
+  },
+];
 
 const CheckboxPage = () => {
   const card = [
@@ -11,9 +25,21 @@ const CheckboxPage = () => {
       name: "Default",
       var: (
         <div className="checkbox-wrapper">
-          <Checkbox label="item 1"></Checkbox>
-          <Checkbox label="item 2"></Checkbox>
-          <Checkbox label="item 3"></Checkbox>
+          <Checkbox>This is the default checkbox</Checkbox>
+          <style jsx>{`
+            .checkbox-wrapper {
+              display: flex;
+              flex-direction: column;
+            }
+          `}</style>
+        </div>
+      ),
+    },
+    {
+      name: "With options",
+      var: (
+        <div className="checkbox-wrapper">
+          <Checkbox options={defaultOptions}></Checkbox>
           <style jsx>{`
             .checkbox-wrapper {
               display: flex;
