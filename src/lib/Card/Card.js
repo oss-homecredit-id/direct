@@ -19,7 +19,7 @@ export const Card = props => {
         <div>
           {date ? (
             <div className="card-datetime">
-              <strong>{category}</strong>{" "}
+              <strong>{category}</strong>
               <div className="card-separator">&nbsp; | &nbsp;</div> {date}
             </div>
           ) : (

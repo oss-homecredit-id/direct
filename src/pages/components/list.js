@@ -23,9 +23,16 @@ const ListPage = () => {
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Name: "withoutNumber",
+      Params: "",
+      Description:
+        "when the developer adds the props 'withoutNumber' to the component, the List component will be shown without number",
+    },
+    {
+      Name: "data",
+      Params: "",
+      Description:
+        "the props 'data' will receive several data as an array of string",
     },
   ];
 

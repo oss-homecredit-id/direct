@@ -53,9 +53,10 @@ const TextPage = () => {
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Name: "textType",
+      Params: "h1, h2, h3, h4, h5, h6",
+      Description:
+        "the props 'textType' will determined the type of text that will be shown",
     },
   ];
 

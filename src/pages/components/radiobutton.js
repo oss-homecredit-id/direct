@@ -36,9 +36,26 @@ const RadiobtnPage = () => {
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Name: "option",
+      Params: "",
+      Description:
+        "the props 'option' will receive an array of option, maximal 3 options and minimum 2 options",
+    },
+    {
+      Name: "radioType",
+      Params: "default, list",
+      Description:
+        "the props 'radioType' will decide the display of radio button, either a row direction or column ",
+    },
+    {
+      Name: "selected",
+      Params: "default, list",
+      Description: "the props 'selected' will receive a state as props ",
+    },
+    {
+      Name: "setSelected",
+      Params: "default, list",
+      Description: "the props 'radioType' will receive a state as props ",
     },
   ];
 
@@ -50,13 +67,6 @@ const RadiobtnPage = () => {
         compVariation={radio}
         compProps={propsData}
       ></CompLayout>
-      <Radio
-        option={["please", "works", "pleaaase"]}
-        name="display"
-        selected={select}
-        setSelected={setSelect}
-        radioType="list"
-      ></Radio>
     </Layout>
   );
 };

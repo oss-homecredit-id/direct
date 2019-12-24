@@ -1,17 +1,32 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import Layout from "../../components/layout";
-import { Modal } from "../../lib/Modal/Modal";
+import Table from "../../lib/Table/Table";
 
 const ModalPage = () => {
-  const list = [
+  const example = [
     {
-      name: "Default",
-      var: <div className="tes">coba klik yg lain</div>,
+      Header1: "Content 1",
+      Header2: "This is content 2",
+      Header3: "Now this is content 3",
+      Header4: "Last, content 4",
     },
     {
-      name: "Blank",
-      var: <Modal>blank</Modal>,
+      Header1: "AAAAA",
+      Header2: "This is is is",
+      Header3: "Now ",
+      Header4: "whatttt",
+    },
+  ];
+
+  const table = [
+    {
+      name: "Default",
+      var: <Table tableData={example}></Table>,
+    },
+    {
+      name: "Type 1",
+      var: <Table type1 tableData={example}></Table>,
     },
   ];
 
@@ -28,7 +43,7 @@ const ModalPage = () => {
       <CompLayout
         compName="List"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        compVariation={list}
+        compVariation={table}
         compProps={propsData}
       ></CompLayout>
     </Layout>

@@ -27,9 +27,34 @@ const BlockPage = () => {
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Name: "Default",
+      Params: "",
+      Description:
+        "When adding props 'Default', the Block component that the developer will get is the default block without an icon",
+    },
+    {
+      Name: "With Icon",
+      Params: "",
+      Description:
+        "When adding props 'With Icon', the Block component that the developer will get is the block with an icon",
+    },
+    {
+      Name: "Name",
+      Params: "",
+      Description:
+        "The props 'Name' will receive a string as a title of the block",
+    },
+    {
+      Name: "Icon",
+      Params: "",
+      Description:
+        "The props 'Icon' is used when the developer add 'With Icon' props. This props receive an image",
+    },
+    {
+      Name: "imgWidth",
+      Params: "",
+      Description:
+        "The props 'imgWidth' will receive an image width in the form of string when the developer add 'With Icon' props",
     },
   ];
 

@@ -15,9 +15,9 @@ const NumberPage = () => {
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Name: "number",
+      Params: "",
+      Description: "the props 'number' will receive a number",
     },
   ];
 
