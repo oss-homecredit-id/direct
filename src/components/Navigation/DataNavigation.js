@@ -48,6 +48,11 @@ export const NavigationContent = [
             page: "components/loader",
             last: "/components",
           },
+          {
+            title: "Table",
+            page: "components/table",
+            last: "/components",
+          },
         ],
       },
       {

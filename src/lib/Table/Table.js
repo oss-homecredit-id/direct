@@ -14,40 +14,26 @@ const TableRow = styled.tr`
       props.type1 ? "background-color: #f5f5f5" : "background-color: unset"}
 `;
 
-// const TableData = styled.td(props => ({
-//   borderTop: props.type1 && '1px solid #9b9b9b',
-//   borderBottom: props.type1 && '1px solid #9b9b9b',
-//   padding: props.type1 && '15px',
-//   textAlign: props.type1 && 'center',
-//   &:first-of-type {
-//     borderLeft: '1px solid #9b9b9b',
-//     border-top-left-radius: 8px;
-//     border-bottom-left-radius: 8px;
-//   }'
-//   &:last-of-type {
-//     border-right: 1px solid #9b9b9b;
-//     border-top-right-radius: 8px;
-//     border-bottom-right-radius: 8px;
-//   }
-
-// }))
-
-const TableData = styled.td`
-  border-top: 1px solid #9b9b9b;
-  border-bottom: 1px solid #9b9b9b;
-  padding: 15px;
-  text-align: center;
-  &:first-of-type {
-    border-left: 1px solid #9b9b9b;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-  }
-  &:last-of-type {
-    border-right: 1px solid #9b9b9b;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-  }
-`;
+const TableData = styled.td(props => ({
+  borderTop: props.type1 && "1px solid #9b9b9b",
+  borderBottom: props.type1 && "1px solid #9b9b9b",
+  padding: props.type1 ? "15px" : "10px",
+  textAlign: props.type1 && "center",
+  "&:first-of-type": props.type1
+    ? {
+        borderLeft: "1px solid #9b9b9b",
+        borderTopLeftRadius: "8px",
+        borderBottomLeftRadius: "8px",
+      }
+    : null,
+  "&:last-of-type": props.type1
+    ? {
+        borderRight: "1px solid #9b9b9b",
+        borderTopRightRadius: "8px",
+        borderBottomRightRadius: "8px",
+      }
+    : null,
+}));
 
 const Table = ({ tableData, type1 }) => {
   return (
@@ -63,7 +49,11 @@ const Table = ({ tableData, type1 }) => {
         {tableData.map((data, index) => (
           <TableRow key={"tr" + index} type1={type1}>
             {Object.values(data).map((datas, keyIndex) => (
-              <TableData key={"td" + keyIndex} style={{ maxWidth: "150px" }}>
+              <TableData
+                key={"td" + keyIndex}
+                style={{ maxWidth: "150px" }}
+                type1={type1}
+              >
                 {datas}
               </TableData>
             ))}
