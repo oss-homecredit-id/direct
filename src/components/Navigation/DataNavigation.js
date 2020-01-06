@@ -73,12 +73,14 @@ export const NavigationContent = [
   },
   {
     title: "Tokens",
+    path: "/tokens",
     page: "TokensPage",
     content: [
-      { title: "Color", page: "color" },
-      { title: "Fonts", page: "fonts" },
+      { title: "Color", page: "tokens/color", last: "/tokens" },
+      { title: "Fonts", page: "tokens/fonts", last: "/tokens" },
     ],
   },
+
   {
     title: "Templates",
     path: "/template",
