@@ -12,9 +12,14 @@ const ColorBlock = props => {
       width: "60px",
       height: "60px",
       borderRadius: "100%",
-      backgroundColor: props.color,
+      borderWidth: props.border ? "1px" : "unset",
+      borderStyle: props.border ? "solid" : "unset",
+      borderColor: props.border ? props.color : "unset",
+      backgroundColor: props.border ? "transparent" : props.color,
     },
   };
+
+  console.log(props.border);
   return (
     <div style={styles.container}>
       <div style={styles.block}></div>
