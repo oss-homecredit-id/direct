@@ -37,8 +37,6 @@ const Text = props => {
     default:
       return <p>{props.children} </p>;
   }
-
-  console.log(props.textType, Text);
 };
 
 export { Text };

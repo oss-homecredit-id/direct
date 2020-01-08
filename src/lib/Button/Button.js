@@ -35,6 +35,8 @@ const ButtonStyle = styled.button`
         ? colors.mainWhite
         : props.disabled
         ? colors.disabledGrey
+        : props.variant === "text"
+        ? "unset"
         : colors.clickedRed};
     cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
     outline: 0;
@@ -47,6 +49,7 @@ const Button = ({ variant, disabled, ...props }) => {
       variant={variant}
       disabled={disabled}
       style={props.styleConfig}
+      onClick={props.onClick}
       {...props}
     />
   );

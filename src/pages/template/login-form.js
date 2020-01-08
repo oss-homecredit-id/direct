@@ -1,33 +1,20 @@
 import React from "react";
-import { Input } from "../../lib/Input/Input";
-import { Button } from "../../lib/Button/Button";
 import Layout from "../../components/layout";
+import { LoginTemplate } from "../../lib/LoginTemplate/LoginTemplate";
 import TemplateLayout from "../../components/TemplateLayout/TemplateLayout";
+import Gumball from "../../assets/gumball.png";
 
 const loginForm = () => {
-  const styles = {
-    container: {
-      backgroundColor: "white",
-      padding: "20px",
-      width: "300px",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      borderRadius: "8px",
-      boxShadow: "0 8px 13px 0 rgba(0, 0, 0, 0.12)",
-    },
-  };
+  const Input = ["Email", "Password"];
 
   return (
     <Layout>
-      <TemplateLayout tempName="Login Form">
-        <div style={styles.container}>
-          <Input>Tanggal Lahir</Input>
-          <Input>Nomor HP</Input>
-          <Button filled size="sm">
-            Masuk
-          </Button>
-        </div>
+      <TemplateLayout tempName="Login Page">
+        <LoginTemplate
+          loginHeader="Login"
+          loginImage={Gumball}
+          loginInput={Input}
+        ></LoginTemplate>
       </TemplateLayout>
     </Layout>
   );
