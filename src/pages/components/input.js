@@ -36,6 +36,14 @@ const InputPage = () => {
         </Input>
       ),
     },
+    {
+      name: "type Select",
+      var: (
+        <Input type="select" isHelper="dis" label="input with helper">
+          This is Input
+        </Input>
+      ),
+    },
   ];
 
   const propsData = [

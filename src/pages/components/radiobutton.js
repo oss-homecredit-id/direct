@@ -6,7 +6,6 @@ import { Radio } from "../../lib";
 const RadiobtnPage = () => {
   const [radioSelected, setRadioSelected] = useState();
   const [selected, setSelected] = useState();
-  const [select, setSelect] = useState();
 
   const radio = [
     {
