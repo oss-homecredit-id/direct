@@ -7,9 +7,10 @@ const CompLayout = ({
   compDesc,
   compVariation,
   compData,
-  compCode,
+  compProps,
 }) => {
   const [item, setItem] = useState(compVariation[0].var);
+  const [code, setCode] = useState(String(compVariation[0]));
 
   return (
     <div className="comp-container">
@@ -33,6 +34,7 @@ const CompLayout = ({
                   onClick={() => {
                     console.log(variationBtn);
                     setItem(variationBtn.var);
+                    setCode(String(variationBtn.var));
                     console.log(item);
                   }}
                 >
@@ -45,13 +47,10 @@ const CompLayout = ({
       </div>
 
       <div className="comp-code">
-        <pre>{compCode}</pre>
+        <pre>{code} </pre>
       </div>
       {compData}
-      <Table
-        tableHead={["Name", "Params", "Description"]}
-        tableData={["Name", "Params", "Description"]}
-      ></Table>
+      <Table tableData={compProps}></Table>
     </div>
   );
 };

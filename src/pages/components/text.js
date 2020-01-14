@@ -51,13 +51,22 @@ const TextPage = () => {
     <Text >Hello</Text>
   `;
 
+  const propsData = [
+    {
+      Name: "textType",
+      Params: "h1, h2, h3, h4, h5, h6",
+      Description:
+        "the props 'textType' will determined the type of text that will be shown",
+    },
+  ];
+
   return (
     <Layout>
       <CompLayout
         compName="Text"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         compVariation={text}
-        compCode={textCode}
+        compProps={propsData}
       ></CompLayout>
     </Layout>
   );

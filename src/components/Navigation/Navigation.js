@@ -60,18 +60,21 @@ const Body = () => {
   };
   return (
     <>
-      <div className="navigation-body-wrapper">
-        {NavigationContent.map((data, index) => (
-          <Navigation
-            title={data.title}
-            path={data.path}
-            key={index}
-            items={data}
-            type={data.type}
-          />
-        ))}
-        {accordion}
+      <div className="navigation-outer-wrapper">
+        <div className="navigation-body-wrapper">
+          {NavigationContent.map((data, index) => (
+            <Navigation
+              title={data.title}
+              path={data.path}
+              key={index}
+              items={data}
+              type={data.type}
+            />
+          ))}
+          {accordion}
+        </div>
       </div>
+
       <div
         className={
           navOpen ? "nav-wrapper-mobile-open" : "nav-wrapper-mobile-close"

@@ -1,5 +1,7 @@
 .comp-container {
-  height: 100%;
+  margin-left: 250px;
+  height: 100vh;
+  overflow-y: auto;
   padding: 30px 60px;
   background-color: #f7f7f7;
 }
@@ -38,7 +40,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 30px 0 0;
-  width: 300px;
+  width: 450px;
   min-height: 250px;
   background-color: #dddddd;
 }
@@ -84,7 +86,7 @@
   background-color: black;
   color: #ff79c6;
   font-size: 12px;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 @media only screen and (max-width: 768px) {

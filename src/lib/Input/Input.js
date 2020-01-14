@@ -1,96 +1,112 @@
 import React from "react";
-import styled from "@emotion/styled";
+import PropTypes from "prop-types";
+import { css } from "@emotion/core";
+import { colors } from "../../assets/mixins/mixins";
+import down from "../../assets/chevron_down.png";
+import up from "../../assets/chevron_top.png";
+import password from "../../assets/password_icon.png";
 
-const Input = ({ withIcon, isDisabled, isError, isSuccess, ...props }) => {
-  const Container = styled.div(props => ({
-    display: "flex",
-    alignItems: "center",
-    padding: props.withIcon ? "5px" : "10px",
-    background: props.isDisabled ? "#f3f1f1" : "white",
-    borderRadius: props.withIcon ? "8px" : "3px",
-    border: props.withIcon ? "solid 1px #ffffff" : "solid 1px #bfbfbf",
-    margin: "20px 5px",
-    width: "100%",
-    outline: "none",
-    cursor: props.isDisabled ? "not-allowed" : "null",
-    "&:focus-within": props.isDisabled
-      ? null
-      : {
-          border: props.isError ? "solid 1px #fc974d" : "solid 1px #e11931",
-          div: {
-            color: props.isError ? "#fc974d" : "#e11931",
-          },
-        },
-  }));
+const Input = props => {
+  const {
+    label,
+    type,
+    name,
+    value,
+    onChange,
+    onClick,
+    isError,
+    isHelper,
+    placeholder,
+    selectOpen,
+  } = props;
 
-  const Label = styled.div(props => ({
-    display: props.withIcon ? "none" : "unset",
-    position: "relative",
-    padding: "0 3px",
-    background: isDisabled ? "#f3f1f1" : "white",
-    top: "-26px",
-    color: "#bfbfbf",
-    fontSize: "15px",
-  }));
-
-  const Input = styled.input(props => ({
-    position: props.withIcon ? "unset" : "absolute",
-    border: props.withIcon ? "none" : "1px",
-    margin: props.withIcon ? "0 0 0 8px" : "2px 0 5px",
-    padding: "3px",
-    outline: "none",
-    backgroundColor: isDisabled ? "#f3f1f1" : "white",
-    width: props.withIcon ? "100%" : "unset",
-    cursor: isDisabled ? "not-allowed" : "null",
-  }));
-
-  // const iconInput = styled.div({
-  //   width: "30px",
-  //   height: "auto",
-  //   marginLeft: "8px",
-  //   marginBottom: "0",
-  //   paddingRight: "8px",
-  //   borderRight: "1px solid grey",
-  // });
-
-  const styles = {
-    icon: {
-      width: "30px",
-      height: "auto",
-      marginLeft: "8px",
-      marginBottom: "0",
-      paddingRight: "8px",
-      borderRight: "1px solid grey",
-    },
-  };
-
-  let icon = null;
-
-  if (withIcon) {
-    icon = <img style={styles.icon} src={props.src} alt="" />;
-  }
 
   return (
-    <Container
-      withIcon={withIcon}
-      isDisabled={isDisabled}
-      isError={isError}
-      isSuccess={isSuccess}
-      tabIndex="0"
+    <div
+      css={css`
+        position: relative;
+        margin-bottom: 15px;
+      `}
+      style={type === "select" ? { margin: 0 } : {}}
     >
-      <Label withIcon={withIcon}>{props.children}</Label>
-      {icon}
-      <Input
-        withIcon={withIcon}
-        placeholder={withIcon ? props.children : null}
-        type={props.type}
-        value={props.value}
-        onChange={props.onChange}
-        onClick={props.onClick}
-        disabled={isDisabled}
-      ></Input>
-    </Container>
+      {/* change conditional style with emotion */}
+      <label
+        css={css`
+          font-size: 12px;
+        `}
+      >
+        {label}
+      </label>
+      <input
+        css={css`
+          display: block;
+          width: 100%;
+          height: 40px;
+          padding: 2px 8px;
+          font-size: 16px;
+          border: none;
+          border-bottom: 1px solid #7b7b7b;
+          border-color: ${isError ? colors.mainRed : "none"};
+          background-color: ${colors.lightGrey};
+          border-top-right-radius: 4px;
+          border-top-left-radius: 4px;
+          &:focus {
+            border-bottom: 2px solid ${colors.mainBlack};
+          }
+          &:active {
+            border-bottom: 2px solid ${colors.mainBlack};
+          }
+        `}
+        type={type === "select" ? "text" : type}
+        name={name}
+        value={value}
+        placeholder={placeholder}
+        autoComplete={type === "select" ? "off" : "on"}
+        onChange={onChange}
+        onClick={type === "select" ? onClick : undefined}
+      />
+      {type !== "text" && (
+        <span
+          css={css`
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
+          `}
+        >
+          {type === "password" && <img src={password} alt="hide" />}
+          {type === "select" && !selectOpen && <img src={down} alt="hide" />}
+          {type === "select" && selectOpen && <img src={up} alt="hide" />}
+        </span>
+      )}
+      {isHelper && !isError && (
+        <small
+          css={css`
+            color: ${colors.orangeHelper};
+          `}
+        >
+          {isHelper}
+        </small>
+      )}
+      {isError && (
+        <small
+          css={css`
+            color: ${isError ? colors.mainRed : colors.orangeHelper};
+          `}
+        >
+          {isError}
+        </small>
+      )}
+    </div>
   );
+};
+
+Input.propTypes = {
+  label: PropTypes.string,
+  type: PropTypes.string.isRequired,
+};
+
+Input.defaultProps = {
+  type: "text",
 };
 
 export { Input };

@@ -32,9 +32,25 @@ export const NavigationContent = [
           { title: "Button", page: "components/button", last: "/components" },
           { title: "Input", page: "components/input", last: "/components" },
           { title: "Number", page: "components/number", last: "/components" },
+          { title: "Text", page: "components/text", last: "/components" },
           {
-            title: "Text",
-            page: "components/text",
+            title: "Radio Button",
+            page: "components/radiobutton",
+            last: "/components",
+          },
+          {
+            title: "Dropdown Select",
+            page: "components/dropdown-select",
+            last: "/components",
+          },
+          {
+            title: "Loader",
+            page: "components/loader",
+            last: "/components",
+          },
+          {
+            title: "Table",
+            page: "components/table",
             last: "/components",
           },
         ],
@@ -57,12 +73,14 @@ export const NavigationContent = [
   },
   {
     title: "Tokens",
+    path: "/tokens",
     page: "TokensPage",
     content: [
-      { title: "Color", page: "color" },
-      { title: "Fonts", page: "fonts" },
+      { title: "Color", page: "tokens/color", last: "/tokens" },
+      { title: "Fonts", page: "tokens/fonts", last: "/tokens" },
     ],
   },
+
   {
     title: "Templates",
     path: "/template",

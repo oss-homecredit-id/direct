@@ -1,36 +1,39 @@
 import React from "react";
 import Layout from "../../components/layout";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import { Number } from "../../lib/Number/Number";
+import { Select } from "../../lib/Select/Select";
 
-const NumberPage = () => {
-  const numberList = ["1", "2", "3", "4", "5"];
-
-  const number = [
+const SelectPage = () => {
+  const selectItems = [
+    { label: "item 1", value: "item 1" },
+    { label: "item 2", value: "item 2" },
+  ];
+  const select = [
     {
       name: "Default",
-      var: numberList.map(number => <Number number={number}></Number>),
+      var: <Select option={selectItems}></Select>,
     },
   ];
 
   const propsData = [
     {
-      Name: "number",
+      Name: "option",
       Params: "",
-      Description: "the props 'number' will receive a number",
+      Description:
+        "the props 'option' will receive several options in a form of an array",
     },
   ];
 
   return (
     <Layout>
       <CompLayout
-        compName="Number"
+        compName="Select"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        compVariation={number}
+        compVariation={select}
         compProps={propsData}
       ></CompLayout>
     </Layout>
   );
 };
 
-export default NumberPage;
+export default SelectPage;
