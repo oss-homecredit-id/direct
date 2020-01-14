@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { colors } from "../../assets/mixins/mixins";
-import { Input } from "../INput/Input";
+import { Input } from "../Input/Input";
 import { css } from "@emotion/core";
 
 export const Select = props => {
