@@ -16,11 +16,11 @@ const InputPage = () => {
     //   desc: "jadi ini input dengan icon",
     // },
     {
-      name: "Without Icon",
-      var: <Input isHelper="yaw" label="label"></Input>,
+      name: "Default",
+      var: <Input label="label"></Input>,
     },
     {
-      name: "is Disabled",
+      name: "is error",
       var: (
         <Input isError type="text" label="error input">
           This is Input
@@ -38,7 +38,15 @@ const InputPage = () => {
     {
       name: "type Select",
       var: (
-        <Input type="select" isHelper="dis" label="input with helper">
+        <Input type="select" label="input with helper">
+          This is Input
+        </Input>
+      ),
+    },
+    {
+      name: "isDisabled",
+      var: (
+        <Input isDisabled label="disabled input">
           This is Input
         </Input>
       ),
