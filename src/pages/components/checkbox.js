@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import Layout from "../../components/layout";
 import { Checkbox } from "../../lib/Checkbox/Checkbox";

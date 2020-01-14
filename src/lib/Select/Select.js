@@ -5,17 +5,19 @@ import { Input } from "../INput/Input";
 import { css } from "@emotion/core";
 
 export const Select = props => {
-  const { option, value, label, selected } = props;
+  const { option, value, label } = props;
+  // const { option, value, label, selected } = props;
+
   const [selectedValue, setSelectedValue] = useState("");
   const [selectOpen, setSelectOpen] = useState(false);
   const [options, setOptions] = useState([]);
 
   useEffect(() => {
     setOptions(option);
-    if (option.length != 0) {
+    if (option.length !== 0) {
       setSelectedValue(option[0][value]);
     }
-  }, [option]);
+  }, [option, value]);
 
   const openSelect = () => {
     setSelectOpen(!selectOpen);
@@ -47,6 +49,7 @@ export const Select = props => {
         selectOpen={selectOpen}
         onClick={openSelect}
         onChange={e => filterSelect(e)}
+        role="button"
       />
       {selectOpen && (
         <ul
@@ -74,6 +77,7 @@ export const Select = props => {
               onClick={e => handleClick(e)}
               key={index}
               data-value={dataOption[value]}
+              role="button"
             >
               {dataOption[label]}
             </li>

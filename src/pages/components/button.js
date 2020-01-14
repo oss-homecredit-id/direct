@@ -48,18 +48,18 @@ const ButtonPage = () => {
     },
   ];
 
-  const buttonCode = `
-    <Button variant="filled" type="default" size="lg">
-      This is Button 
-    </Button>
+  // const buttonCode = `
+  //   <Button variant="filled" type="default" size="lg">
+  //     This is Button
+  //   </Button>
 
-    <Button variant="nude" type="rounded" size="tiny">
-      This is Button
-    </Button>
+  //   <Button variant="nude" type="rounded" size="tiny">
+  //     This is Button
+  //   </Button>
 
-    <Button variant="filled" disabled>
-      This is Button
-    </Button>`;
+  //   <Button variant="filled" disabled>
+  //     This is Button
+  //   </Button>`;
   return (
     <Layout>
       <CompLayout

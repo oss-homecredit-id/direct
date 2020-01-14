@@ -33,6 +33,7 @@ const MainHeader = props => {
       <img
         style={styles.logo}
         src={props.headerLogo ? props.headerLogo : Icon}
+        alt={props.headerText}
       ></img>
       <div style={styles.textContainer}>
         <Text textType="h4">{props.headerText} </Text>

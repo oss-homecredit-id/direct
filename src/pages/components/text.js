@@ -35,21 +35,21 @@ const TextPage = () => {
     },
   ];
 
-  const textCode = `
-    <Text textType="h1">Hello</Text>
+  // const textCode = `
+  //   <Text textType="h1">Hello</Text>
 
-    <Text textType="h2">Hello</Text>
+  //   <Text textType="h2">Hello</Text>
 
-    <Text textType="h3">Hello</Text>
+  //   <Text textType="h3">Hello</Text>
 
-    <Text textType="h4">Hello</Text>
+  //   <Text textType="h4">Hello</Text>
 
-    <Text textType="h5">Hello</Text>
+  //   <Text textType="h5">Hello</Text>
 
-    <Text textType="h6">Hello</Text>
+  //   <Text textType="h6">Hello</Text>
 
-    <Text >Hello</Text>
-  `;
+  //   <Text >Hello</Text>
+  // `;
 
   const propsData = [
     {

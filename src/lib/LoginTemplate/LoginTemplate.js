@@ -38,6 +38,7 @@ const LoginTemplate = props => {
       <img
         style={styles.image}
         src={props.loginImage ? props.loginImage : Image}
+        alt={`Login Logo`}
       ></img>
     </div>
   );

@@ -68,7 +68,6 @@ const Radio = ({ option, name, radioType, selected, setSelected }) => {
 
   useEffect(() => {
     setOptions(option);
-    console.log(selected);
   }, [option]);
 
   return (

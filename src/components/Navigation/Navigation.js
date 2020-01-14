@@ -19,7 +19,10 @@ const Body = () => {
 
     return (
       <div
+        role="button"
+        tabIndex={-1}
         className="navigation-wrapper"
+        onKeyDown={setAccordionId(path)}
         onClick={() => {
           setAccordionId(path);
           // console.log(pathname);
@@ -81,7 +84,10 @@ const Body = () => {
         }
       >
         <div
+          role="button"
+          tabIndex={-1}
           className={navOpen ? "burger-open" : "burger-close"}
+          onKeyDown={() => handleNavClick()}
           onClick={() => handleNavClick()}
         >
           <div
