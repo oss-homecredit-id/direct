@@ -35,27 +35,28 @@ const TextPage = () => {
     },
   ];
 
-  const textCode = `
-    <Text textType="h1">Hello</Text>
+  // const textCode = `
+  //   <Text textType="h1">Hello</Text>
 
-    <Text textType="h2">Hello</Text>
+  //   <Text textType="h2">Hello</Text>
 
-    <Text textType="h3">Hello</Text>
+  //   <Text textType="h3">Hello</Text>
 
-    <Text textType="h4">Hello</Text>
+  //   <Text textType="h4">Hello</Text>
 
-    <Text textType="h5">Hello</Text>
+  //   <Text textType="h5">Hello</Text>
 
-    <Text textType="h6">Hello</Text>
+  //   <Text textType="h6">Hello</Text>
 
-    <Text >Hello</Text>
-  `;
+  //   <Text >Hello</Text>
+  // `;
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Name: "textType",
+      Params: "h1, h2, h3, h4, h5, h6",
+      Description:
+        "the props 'textType' will determined the type of text that will be shown",
     },
   ];
 

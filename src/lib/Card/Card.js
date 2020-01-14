@@ -7,7 +7,7 @@ export const Card = props => {
     <div className="card-container">
       {img ? (
         <div className="card-image">
-          <img src={img} />
+          <img src={img} alt="" />
         </div>
       ) : (
         <React.Fragment></React.Fragment>
@@ -19,16 +19,16 @@ export const Card = props => {
         <div>
           {date ? (
             <div className="card-datetime">
-              <strong>{category}</strong>{" "}
+              <strong>{category}</strong>
               <div className="card-separator">&nbsp; | &nbsp;</div> {date}
             </div>
           ) : (
             <div />
           )}
 
-          <a>
-            <div className="card-button">{button}</div>
-          </a>
+          {/* <a> */}
+          <div className="card-button">{button}</div>
+          {/* </a> */}
         </div>
       </div>
       <style jsx>{`

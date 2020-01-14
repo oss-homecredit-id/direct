@@ -23,9 +23,9 @@ const BreadcrumbPage = () => {
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Name: "Items",
+      Params: "",
+      Description: "The props 'Items' will receive an array of data",
     },
   ];
 

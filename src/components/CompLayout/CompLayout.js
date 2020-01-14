@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import ReactDOMServer from "react-dom/server";
 import "./CompLayout.css";
 import Table from "../../lib/Table/Table";
-import { Button } from "../../lib";
 
 const CompLayout = ({
   compName,
@@ -12,9 +10,7 @@ const CompLayout = ({
   compProps,
 }) => {
   const [item, setItem] = useState(compVariation[0].var);
-  const [code, setCode] = useState(
-    ReactDOMServer.renderToString(compVariation[0].var)
-  );
+  const [code, setCode] = useState(String(compVariation[0]));
 
   return (
     <div className="comp-container">
@@ -35,11 +31,10 @@ const CompLayout = ({
                       ? "comp-variation-btn-active"
                       : "comp-variation-btn"
                   }
-                  key={key}
                   onClick={() => {
                     console.log(variationBtn);
                     setItem(variationBtn.var);
-                    setCode(ReactDOMServer.renderToString(variationBtn.var));
+                    setCode(String(variationBtn.var));
                     console.log(item);
                   }}
                 >

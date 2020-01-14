@@ -26,9 +26,34 @@ const CardPage = () => {
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Name: "With Image",
+      Params: "",
+      Description:
+        "this props will receive a string that will be put on the button of the card",
+    },
+    {
+      Name: "button",
+      Params: "",
+      Description:
+        "this props will receive a string that will be put on the button of the card",
+    },
+    {
+      Name: "title",
+      Params: "",
+      Description:
+        "this props will receive a string that will be put on the header of the card",
+    },
+    {
+      Name: "subtitle",
+      Params: "",
+      Description:
+        "this props will receive a string that will be put on the lower header of the card",
+    },
+    {
+      Name: "img",
+      Params: "",
+      Description:
+        "this props will receive an image that will be put in the middle of the card",
     },
   ];
 

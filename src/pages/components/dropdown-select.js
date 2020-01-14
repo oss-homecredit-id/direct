@@ -1,30 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "../../components/layout";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import { Select } from "../../lib/DropdownSelect/DropdownSelect";
+import { Select } from "../../lib/Select/Select";
 
 const DropdownSelectPage = () => {
-  const [boxSelected, setBoxSelected] = useState();
+  // const [boxSelected, setBoxSelected] = useState();
 
   const dropdownList = [
-    { id: "apa", name: "apayy" },
-    { id: "apaa", name: "apayyaaa" },
-    { id: "apaaaa", name: "apayyaaaahmmmm" },
+    { id: "apa", label: "apayy" },
+    { id: "apaa", label: "apayyaaa" },
+    { id: "apaaaa", label: "apayyaaaahmmmm" },
   ];
 
   const dropdown = [
     {
       name: "Default",
-      var: (
-        <Select
-          dropdownList={dropdownList}
-          setSelected={setBoxSelected}
-        ></Select>
-      ),
+      var: <Select option={dropdownList}></Select>,
     },
   ];
 
-  console.log(boxSelected);
+  const propsData = [
+    {
+      Name: "Variant",
+      Params: "Variant",
+      Description: "ini Variant",
+    },
+  ];
 
   return (
     <Layout>
@@ -32,6 +33,7 @@ const DropdownSelectPage = () => {
         compName="Dropdown Select"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         compVariation={dropdown}
+        compProps={propsData}
       ></CompLayout>
     </Layout>
   );

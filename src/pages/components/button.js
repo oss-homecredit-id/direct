@@ -30,23 +30,36 @@ const ButtonPage = () => {
   const propsData = [
     {
       Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Params: "Primary, Seconday, Text",
+      Description:
+        "There are 3 variant type of Button that distinguishes the style of the button",
+    },
+    {
+      Name: "Disabled",
+      Params: "",
+      Description:
+        "When adding props 'Disabled', the Button component will be unable to be clicked",
+    },
+    {
+      Name: "styleConfig",
+      Params: "",
+      Description:
+        "When adding props 'styleConfig', some of the button style's aspect can be configured such as margin, padding, and width",
     },
   ];
 
-  const buttonCode = `
-    <Button variant="filled" type="default" size="lg">
-      This is Button 
-    </Button>
+  // const buttonCode = `
+  //   <Button variant="filled" type="default" size="lg">
+  //     This is Button
+  //   </Button>
 
-    <Button variant="nude" type="rounded" size="tiny">
-      This is Button
-    </Button>
+  //   <Button variant="nude" type="rounded" size="tiny">
+  //     This is Button
+  //   </Button>
 
-    <Button variant="filled" disabled>
-      This is Button
-    </Button>`;
+  //   <Button variant="filled" disabled>
+  //     This is Button
+  //   </Button>`;
   return (
     <Layout>
       <CompLayout

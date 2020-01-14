@@ -4,8 +4,6 @@ const Radio = ({ option, name, radioType, selected, setSelected }) => {
   const list = radioType === "list";
   const [options, setOptions] = useState([]);
 
-  console.log(selected);
-
   const styles = {
     radioContainer: {
       display: "flex",
@@ -70,7 +68,6 @@ const Radio = ({ option, name, radioType, selected, setSelected }) => {
 
   useEffect(() => {
     setOptions(option);
-    console.log(selected);
   }, [option]);
 
   return (

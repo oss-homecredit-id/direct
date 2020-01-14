@@ -5,7 +5,7 @@ import { NavigationContent } from "./DataNavigation";
 
 const Body = () => {
   // console.log(window.location.pathname);
-  const [accordion, setAccordion] = useState("");
+  const [accordion] = useState("");
   const [accordionId, setAccordionId] = useState("");
   const [navOpen, setNavOpen] = useState(false);
 
@@ -19,7 +19,10 @@ const Body = () => {
 
     return (
       <div
+        role="button"
+        tabIndex={-1}
         className="navigation-wrapper"
+        onKeyDown={setAccordionId(path)}
         onClick={() => {
           setAccordionId(path);
           // console.log(pathname);
@@ -60,25 +63,31 @@ const Body = () => {
   };
   return (
     <>
-      <div className="navigation-body-wrapper">
-        {NavigationContent.map((data, index) => (
-          <Navigation
-            title={data.title}
-            path={data.path}
-            key={index}
-            items={data}
-            type={data.type}
-          />
-        ))}
-        {accordion}
+      <div className="navigation-outer-wrapper">
+        <div className="navigation-body-wrapper">
+          {NavigationContent.map((data, index) => (
+            <Navigation
+              title={data.title}
+              path={data.path}
+              key={index}
+              items={data}
+              type={data.type}
+            />
+          ))}
+          {accordion}
+        </div>
       </div>
+
       <div
         className={
           navOpen ? "nav-wrapper-mobile-open" : "nav-wrapper-mobile-close"
         }
       >
         <div
+          role="button"
+          tabIndex={-1}
           className={navOpen ? "burger-open" : "burger-close"}
+          onKeyDown={() => handleNavClick()}
           onClick={() => handleNavClick()}
         >
           <div

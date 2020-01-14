@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import Layout from "../../components/layout";
 import { Checkbox } from "../../lib/Checkbox/Checkbox";
@@ -16,6 +16,27 @@ const defaultOptions = [
   {
     label: "This one too",
     name: "third",
+  },
+];
+
+const propsData = [
+  {
+    Name: "options",
+    Params: "",
+    Description:
+      "The props 'options' will receive several options as an array of string",
+  },
+  {
+    Name: "children",
+    Params: "",
+    Description:
+      "When the developer only wants to add one checkbox, the developer just have to add one sentence to the children of the component",
+  },
+  {
+    Name: "disabled",
+    Params: "",
+    Description:
+      "the props 'disabled' that is added to the component will make the component unable to be checked",
   },
 ];
 
@@ -56,6 +77,7 @@ const CheckboxPage = () => {
         compName="Checkbox"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         compVariation={card}
+        compProps={propsData}
       ></CompLayout>
     </Layout>
   );

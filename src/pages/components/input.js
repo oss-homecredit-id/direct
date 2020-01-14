@@ -1,6 +1,5 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
-
 import { Input } from "../../lib/Input/Input";
 import Layout from "../../components/layout";
 
@@ -32,6 +31,14 @@ const InputPage = () => {
       name: "with helper",
       var: (
         <Input type="text" isHelper="dis" label="input with helper">
+          This is Input
+        </Input>
+      ),
+    },
+    {
+      name: "type Select",
+      var: (
+        <Input type="select" isHelper="dis" label="input with helper">
           This is Input
         </Input>
       ),

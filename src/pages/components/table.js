@@ -1,27 +1,32 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import Layout from "../../components/layout";
-import { Block } from "../../lib/Block/Block";
-import icon from "../../assets/icon-logo.png";
+import Table from "../../lib/Table/Table";
 
-const BlockPage = () => {
-  const card = [
+const ModalPage = () => {
+  const example = [
     {
-      name: "Default",
-      var: (
-        <Block name="Title" items="This is the subtitle of the block"></Block>
-      ),
+      Header1: "Content 1",
+      Header2: "This is content 2",
+      Header3: "Now this is content 3",
+      Header4: "Last, content 4",
     },
     {
-      name: "With Icon",
-      var: (
-        <Block
-          imgWidth="60px"
-          icon={icon}
-          name="Title"
-          items="This is the subtitle of the block"
-        ></Block>
-      ),
+      Header1: "AAAAA",
+      Header2: "This is is is",
+      Header3: "Now ",
+      Header4: "whatttt",
+    },
+  ];
+
+  const table = [
+    {
+      name: "Default",
+      var: <Table tableData={example}></Table>,
+    },
+    {
+      name: "Type 1",
+      var: <Table type1 tableData={example}></Table>,
     },
   ];
 
@@ -36,13 +41,13 @@ const BlockPage = () => {
   return (
     <Layout>
       <CompLayout
-        compName="Block"
+        compName="Table"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        compVariation={card}
+        compVariation={table}
         compProps={propsData}
       ></CompLayout>
     </Layout>
   );
 };
 
-export default BlockPage;
+export default ModalPage;

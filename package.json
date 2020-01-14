@@ -1,9 +1,14 @@
 {
   "name": "fe-homecredit-id_direct",
   "private": true,
-  "description": "Direct | Pattern Library for Home Credit Indonesia",
+  "description": "Direct | Design Automation for Home Credit Indonesia",
   "version": "0.1.0",
-  "author": "Untung So Andryanto <untung.andryanto@homecredit.co.id>",
+  "authors": [
+    "Untung So Andryanto <untung.andryanto@homecredit.co.id>",
+    "Nesia Yunindya <nesia.yunindya@homecredit.co.id>",
+    "Vadia Tashari Sabira <vadia.sabira@homecredit.co.id",
+    "Felix Andrean <felix.andrean01@homecredit.co.id>"
+  ],
   "dependencies": {
     "@emotion/core": "^10.0.15",
     "@emotion/styled": "^10.0.15",
@@ -30,7 +35,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "yarn develop",
     "serve": "gatsby serve",
