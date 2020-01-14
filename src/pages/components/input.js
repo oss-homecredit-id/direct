@@ -47,22 +47,9 @@ const InputPage = () => {
 
   const propsData = [
     {
-      Name: "label",
-      Params: "",
-      Description:
-        "the props 'label' will receive a label for the input in a form of string",
-    },
-    {
-      Name: "isHelper",
-      Params: "",
-      Description:
-        "the props 'isHelper' will receive a string that will be put below input as a helper sentence for the development",
-    },
-    {
-      Name: "isError",
-      Params: "",
-      Description:
-        "when the props 'isError' is added to the component, the input will show a red underline that shows that it is error",
+      Name: "Variant",
+      Params: "Variant",
+      Description: "ini Variant",
     },
   ];
 
