@@ -1,3 +1,3 @@
 # Home Credit Indonesia
 
-Created by Tasha and Nessia
+Created by Tasha and Nesia
