@@ -64,9 +64,9 @@ export const Select = props => {
             <li
               css={css`
                 padding: 0.8rem 1.8rem;
-                background: ${colors.lightGrey}
-                border-top: 1px solid ${colors.borderGrey};
-                border-bottom: 1px solid ${colors.borderGrey};
+                background: ${colors.background}
+                border-top: 1px solid ${colors.lighterBlack};
+                border-bottom: 1px solid ${colors.lighterBlack};
                 &:first_child {
                   border-top: none;
                 }

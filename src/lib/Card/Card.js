@@ -55,7 +55,7 @@ export const Card = props => {
           font-weight: bold;
         }
         .card-description div .card-button {
-          background-color: ${colors.mainRed};
+          background-color: ${colors.primaryRed};
           color: ${colors.mainWhite};
           width: 87px;
           height: 33px;

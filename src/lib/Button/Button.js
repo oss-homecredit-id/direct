@@ -6,23 +6,23 @@ import { colors } from "../../assets/mixins/mixins";
 const ButtonStyle = styled.button`
   background-color: ${props =>
     props.variant === "primary"
-      ? colors.mainRed
+      ? colors.primaryRed
       : props.variant === "secondary"
       ? colors.mainWhite
       : props.variant === "text"
       ? "transparent"
       : props.disabled
-      ? colors.disabledGrey
-      : colors.mainRed};
+      ? colors.secondaryBlack
+      : colors.primaryRed};
   padding: 10px 20px;
   margin: 5px;
   color: ${props =>
     props.variant === "primary"
       ? colors.mainWhite
       : props.variant === "secondary"
-      ? colors.mainRed
+      ? colors.primaryRed
       : props.variant === "text"
-      ? colors.mainRed
+      ? colors.primaryRed
       : colors.mainWhite};
   display: inline-flex;
   border-radius: 8px;
@@ -34,10 +34,10 @@ const ButtonStyle = styled.button`
       props.variant === "secondary"
         ? colors.mainWhite
         : props.disabled
-        ? colors.disabledGrey
+        ? colors.secondaryBlack
         : props.variant === "text"
         ? "unset"
-        : colors.clickedRed};
+        : colors.primaryRed};
     cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
     outline: 0;
   }

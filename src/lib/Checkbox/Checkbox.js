@@ -18,8 +18,8 @@ const Checkbox = ({ options, disabled, children }) => {
                 margin-bottom: 12px;
                 cursor: pointer;
                 color: ${something.disabled
-                  ? colors.disabledGrey
-                  : colors.mainBlack};
+                  ? colors.secondaryBlack
+                  : colors.darkerBlack};
                 -webkit-user-select: none;
                 -moz-user-select: none;
                 -ms-user-select: none;
@@ -51,8 +51,8 @@ const Checkbox = ({ options, disabled, children }) => {
                   height: 0;
                   width: 0;
                   &:checked ~ .checkmark {
-                    background-color: ${colors.mainRed};
-                    border-color: ${colors.mainRed};
+                    background-color: ${colors.primaryRed};
+                    border-color: ${colors.primaryRed};
                   }
                   &:checked ~ .checkmark:after {
                     display: block;
@@ -68,10 +68,12 @@ const Checkbox = ({ options, disabled, children }) => {
                   height: 25px;
                   width: 25px;
                   background-color: ${something.disabled
-                    ? colors.borderGrey
+                    ? colors.lighterBlack
                     : colors.mainWhite};
                   border: solid 1px
-                    ${something.disabled ? colors.disabledGrey : colors.mainRed};
+                    ${something.disabled
+                      ? colors.secondaryBlack
+                      : colors.primaryRed};
                   border-radius: 3px;
                   &:after {
                     content: "";
@@ -119,8 +121,8 @@ const Checkbox = ({ options, disabled, children }) => {
                 height: 0;
                 width: 0;
                 &:checked ~ .checkmark {
-                  background-color: ${colors.mainRed};
-                  border-color: ${colors.mainRed};
+                  background-color: ${colors.primaryRed};
+                  border-color: ${colors.primaryRed};
                 }
                 &:checked ~ .checkmark:after {
                   display: block;
@@ -138,7 +140,7 @@ const Checkbox = ({ options, disabled, children }) => {
                 height: 25px;
                 width: 25px;
                 background-color: white;
-                border: solid 1px ${colors.mainRed};
+                border: solid 1px ${colors.primaryRed};
                 border-radius: 3px;
                 &:after {
                   content: "";

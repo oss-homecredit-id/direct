@@ -20,7 +20,6 @@ const Input = props => {
     selectOpen,
   } = props;
 
-
   return (
     <div
       css={css`
@@ -46,15 +45,15 @@ const Input = props => {
           font-size: 16px;
           border: none;
           border-bottom: 1px solid #7b7b7b;
-          border-color: ${isError ? colors.mainRed : "none"};
-          background-color: ${colors.lightGrey};
+          border-color: ${isError ? colors.primaryRed : "none"};
+          background-color: ${colors.background};
           border-top-right-radius: 4px;
           border-top-left-radius: 4px;
           &:focus {
-            border-bottom: 2px solid ${colors.mainBlack};
+            border-bottom: 2px solid ${colors.darkerBlack};
           }
           &:active {
-            border-bottom: 2px solid ${colors.mainBlack};
+            border-bottom: 2px solid ${colors.darkerBlack};
           }
         `}
         type={type === "select" ? "text" : type}
@@ -81,7 +80,7 @@ const Input = props => {
       {isHelper && !isError && (
         <small
           css={css`
-            color: ${colors.orangeHelper};
+            color: ${colors.primaryOrange};
           `}
         >
           {isHelper}
@@ -90,7 +89,7 @@ const Input = props => {
       {isError && (
         <small
           css={css`
-            color: ${isError ? colors.mainRed : colors.orangeHelper};
+            color: ${isError ? colors.primaryRed : colors.primaryOrange};
           `}
         >
           {isError}
