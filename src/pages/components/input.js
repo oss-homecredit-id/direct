@@ -1,6 +1,5 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
-
 import { Input } from "../../lib/Input/Input";
 import Layout from "../../components/layout";
 

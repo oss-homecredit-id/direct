@@ -1,4 +1,4 @@
-import { string } from "prop-types";
+import { string, bool } from "prop-types";
 import React from "react";
 
 export const Block = props => {
@@ -136,7 +136,7 @@ Block.propTypes = {
   name: string,
   items: string,
   icon: string,
-  slug: string,
+  slug: bool,
   commodity: string,
   imgWidth: string,
 };

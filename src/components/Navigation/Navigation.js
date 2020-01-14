@@ -5,7 +5,7 @@ import { NavigationContent } from "./DataNavigation";
 
 const Body = () => {
   // console.log(window.location.pathname);
-  const [accordion, setAccordion] = useState("");
+  const [accordion] = useState("");
   const [accordionId, setAccordionId] = useState("");
   const [navOpen, setNavOpen] = useState(false);
 
