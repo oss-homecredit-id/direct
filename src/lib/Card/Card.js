@@ -7,7 +7,7 @@ export const Card = props => {
     <div className="card-container">
       {img ? (
         <div className="card-image">
-          <img src={img} />
+          <img src={img} alt="" />
         </div>
       ) : (
         <React.Fragment></React.Fragment>
@@ -26,9 +26,9 @@ export const Card = props => {
             <div />
           )}
 
-          <a>
-            <div className="card-button">{button}</div>
-          </a>
+          {/* <a> */}
+          <div className="card-button">{button}</div>
+          {/* </a> */}
         </div>
       </div>
       <style jsx>{`

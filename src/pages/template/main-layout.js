@@ -12,7 +12,7 @@ const mainLayout = () => {
     alert("hhhhhhhhhhhh kzl");
   };
 
-  const navList = ["menu 1", "menu 2", "menu 3", "menu 4"];
+  const navList = ["menu a", "menu b", "menu 3", "menu 4"];
 
   const content = (
     <div>

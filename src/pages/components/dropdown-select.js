@@ -1,26 +1,21 @@
 import React, { useState } from "react";
 import Layout from "../../components/layout";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import { Select } from "../../lib/DropdownSelect/DropdownSelect";
+import { Select } from "../../lib/Select/Select";
 
 const DropdownSelectPage = () => {
   const [boxSelected, setBoxSelected] = useState();
 
   const dropdownList = [
-    { id: "apa", name: "apayy" },
-    { id: "apaa", name: "apayyaaa" },
-    { id: "apaaaa", name: "apayyaaaahmmmm" },
+    { id: "apa", label: "apayy" },
+    { id: "apaa", label: "apayyaaa" },
+    { id: "apaaaa", label: "apayyaaaahmmmm" },
   ];
 
   const dropdown = [
     {
       name: "Default",
-      var: (
-        <Select
-          dropdownList={dropdownList}
-          setSelected={setBoxSelected}
-        ></Select>
-      ),
+      var: <Select option={dropdownList}></Select>,
     },
   ];
 

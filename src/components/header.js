@@ -6,7 +6,7 @@ import hcidIcon from "../assets/svg/HCID_smiley.svg";
 
 const Header = ({ siteTitle }) => (
   <div className="header-container">
-    <img src={hcidIcon}></img>
+    <img src={hcidIcon} alt="" />
     <h1 style={{ marginBottom: "0" }}>
       <Link to="/" className="header-text">
         {siteTitle}
