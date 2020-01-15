@@ -35,9 +35,9 @@ const TableData = styled.td(props => ({
     : null,
 }));
 
-const Table = ({ tableData, type1 }) => {
+const Table = ({ tableData, type1, ...props }) => {
   return (
-    <TableContainer>
+    <TableContainer style={props.styleConfig}>
       <thead>
         <TableRow>
           {Object.keys(tableData[0]).map((data, index) => (

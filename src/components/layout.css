@@ -92,9 +92,7 @@ sup {
 img {
   border-style: none;
 }
-svg:not(:root) {
-  overflow: hidden;
-}
+
 code,
 kbd,
 pre,
@@ -108,7 +106,6 @@ figure {
 hr {
   box-sizing: content-box;
   height: 0;
-  overflow: visible;
 }
 button,
 input,
@@ -122,9 +119,6 @@ optgroup {
   font-weight: 700;
 }
 button,
-input {
-  overflow: visible;
-}
 button,
 select {
   text-transform: none;
@@ -192,7 +186,6 @@ textarea {
 html {
   font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
-  overflow-y: scroll;
 }
 * {
   box-sizing: inherit;
