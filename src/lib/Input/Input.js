@@ -18,7 +18,6 @@ const Input = forwardRef((props, ref) => {
     isHelper,
     placeholder,
     selectOpen,
-    required,
     isDisabled,
   } = props;
 

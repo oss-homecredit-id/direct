@@ -27,7 +27,7 @@ export const Select = props => {
     const filterData = e.target.value;
     setSelectedValue(filterData);
     const filtered = option.filter(
-      value => value.nameCategory.toLowerCase().indexOf(filterData) !== -1
+      value => value.nameCategory.indexOf(filterData) !== -1
     );
     setOptions(filtered);
   };

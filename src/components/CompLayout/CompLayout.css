@@ -29,6 +29,7 @@
 }
 
 .preview {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -40,10 +41,11 @@
 .comp-example {
   padding: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 250px;
+  min-height: 350px;
   background-color: #dddddd;
 }
 
@@ -52,15 +54,23 @@
   background-color: white;
   width: 100%;
   border-bottom: 1px solid #9c9c9c;
+  z-index: 10;
+  justify-content: space-between;
 }
 
-.comp-code {
-  width: 80%;
-  height: 35vh;
+.comp-code-show {
+  position: absolute;
+  padding: 100px 6px;
+  right: 0;
+  max-width: 60%;
+  height: 100%;
   background-color: black;
   color: #ff79c6;
   font-size: 12px;
-  overflow-y: auto;
+}
+
+.comp-code-hide {
+  display: none;
 }
 
 @media only screen and (max-width: 768px) {

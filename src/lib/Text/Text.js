@@ -21,8 +21,6 @@ const H6 = styled.p`
 `;
 
 const Text = props => {
-  console.log(props.textType, Text);
-
   switch (props.textType) {
     case "h1":
       return <H1>{props.children} </H1>;
