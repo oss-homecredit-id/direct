@@ -26,7 +26,7 @@ export const List = ({ data, withoutNumber, title }) => {
           </>
         );
       })}
-      <style jsx>{`
+      <style jsx="true">{`
         .list-wrapper {
           counter-reset: terms-counter;
           margin: 0 16px;

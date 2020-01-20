@@ -97,9 +97,7 @@ sup {
 img {
   border-style: none;
 }
-svg:not(:root) {
-  overflow: hidden;
-}
+
 code,
 kbd,
 pre,
@@ -113,7 +111,6 @@ figure {
 hr {
   box-sizing: content-box;
   height: 0;
-  overflow: visible;
 }
 button,
 input,
@@ -127,9 +124,6 @@ optgroup {
   font-weight: 700;
 }
 button,
-input {
-  overflow: visible;
-}
 button,
 select {
   text-transform: none;
@@ -197,7 +191,6 @@ textarea {
 html {
   font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
-  overflow-y: scroll;
 }
 * {
   box-sizing: inherit;
@@ -535,13 +528,13 @@ li > ul {
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
 }
-blockquote *:last-child {
+blockquote *:nth-last-of-type() {
   margin-bottom: 0;
 }
-li *:last-child {
+li *:nth-last-of-type() {
   margin-bottom: 0;
 }
-p *:last-child {
+p *:nth-last-of-type() {
   margin-bottom: 0;
 }
 li > p {
@@ -588,12 +581,12 @@ th {
   padding-top: 0.725rem;
   padding-bottom: calc(0.725rem - 1px);
 }
-th:first-child,
-td:first-child {
+th:nth-of-type(0),
+td:nth-last-of-type() {
   padding-left: 0;
 }
-th:last-child,
-td:last-child {
+th:nth-last-of-type(),
+td:nth-last-of-type() {
   padding-right: 0;
 }
 tt,

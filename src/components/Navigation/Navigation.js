@@ -48,11 +48,11 @@ const Body = () => {
                   <div key={key} className="component-type">
                     {item.type}
                     {item.list.map((child, key) => (
-                      <li key={key} className="component-child">
+                      <ul key={key} className="component-child">
                         <Link to={"/" + child.page}>
                           <li>{child.title}</li>
                         </Link>
-                      </li>
+                      </ul>
                     ))}
                   </div>
                 ))}
@@ -112,7 +112,7 @@ const Body = () => {
           {accordion}
         </div>
       </div>
-      <style jsx>{`
+      <style jsx="true">{`
         .navbarbar {
           display: ${navOpen ? "block" : "none"};
         }

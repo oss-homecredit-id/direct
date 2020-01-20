@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => (
         {siteTitle}
       </Link>
     </h1>
-    <style jsx>{`
+    <style jsx="true">{`
       .header-container {
         display: flex;
         justify-content: center;

@@ -12,18 +12,22 @@ const ButtonPage = () => {
           This is Button
         </Button>
       ),
+      code: "<Button variant='primary' >This is Button</Button>",
     },
     {
       name: "Secondary",
       var: <Button variant="secondary">This is Button</Button>,
+      code: "<Button variant='secondary'>This is Button</Button>",
     },
     {
       name: "Text",
       var: <Button variant="text">This is Button</Button>,
+      code: "<Button variant='primary' >This is Button</Button>",
     },
     {
       name: "Disabled",
       var: <Button disabled>This is Button</Button>,
+      code: "<Button variant='primary' >This is Button</Button>",
     },
   ];
 
@@ -48,18 +52,6 @@ const ButtonPage = () => {
     },
   ];
 
-  // const buttonCode = `
-  //   <Button variant="filled" type="default" size="lg">
-  //     This is Button
-  //   </Button>
-
-  //   <Button variant="nude" type="rounded" size="tiny">
-  //     This is Button
-  //   </Button>
-
-  //   <Button variant="filled" disabled>
-  //     This is Button
-  //   </Button>`;
   return (
     <Layout>
       <CompLayout
