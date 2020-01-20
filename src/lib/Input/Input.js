@@ -20,6 +20,7 @@ const Input = forwardRef((props, ref) => {
     selectOpen,
     required,
     isDisabled,
+    readOnly,
   } = props;
 
   return (
@@ -47,13 +48,8 @@ const Input = forwardRef((props, ref) => {
           padding: 2px 8px;
           font-size: 16px;
           border: none;
-          color: ${
-            isDisabled
-              ? colors.secondaryBlack
-              : isError
-              ? colors.primaryRed
-              : colors.darkerBlack
-          };
+          outline: none;
+          color: ${isDisabled ? colors.secondaryBlack : colors.darkerBlack};
           border-bottom: ${
             isDisabled
               ? "1px solid" + colors.secondaryBlack
@@ -88,8 +84,9 @@ const Input = forwardRef((props, ref) => {
           &:hover {
             cursor: ${isDisabled ? "not-allowed" : ""};
           }
+          
         `}
-        type={type === "select" ? "text" : type}
+        type={type === "select" || type === "date" ? "text" : type}
         name={name}
         value={value}
         placeholder={placeholder}
@@ -101,7 +98,9 @@ const Input = forwardRef((props, ref) => {
             : undefined
         }
         disabled={isDisabled ? true : false}
+        required={required}
         ref={ref}
+        readOnly={readOnly ? true : false}
       />
       {type !== "text" && (
         <span

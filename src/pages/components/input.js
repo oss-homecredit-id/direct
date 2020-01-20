@@ -17,39 +17,25 @@ const InputPage = () => {
     // },
     {
       name: "Default",
-      var: <Input label="label"></Input>,
+      var: <Input label="Default Input"></Input>,
     },
     {
       name: "is error",
-      var: (
-        <Input isError type="text" label="error input">
-          This is Input
-        </Input>
-      ),
+      var: <Input isError type="text" label="Error Input"></Input>,
     },
     {
       name: "with helper",
       var: (
-        <Input type="text" isHelper="dis" label="input with helper">
-          This is Input
-        </Input>
-      ),
-    },
-    {
-      name: "type Select",
-      var: (
-        <Input type="select" label="input with helper">
-          This is Input
-        </Input>
+        <Input
+          type="text"
+          isHelper="Helper text"
+          label="Input with helper"
+        ></Input>
       ),
     },
     {
       name: "isDisabled",
-      var: (
-        <Input isDisabled label="disabled input">
-          This is Input
-        </Input>
-      ),
+      var: <Input isDisabled label="Disabled Input"></Input>,
     },
   ];
 
