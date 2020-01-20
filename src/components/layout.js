@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <Header siteTitle="Direct" />
       <div style={{ display: "flex" }}>
-        <Navigation></Navigation>
+        <Navigation />
         <main className="main-body">{children}</main>
       </div>
     </React.Fragment>
