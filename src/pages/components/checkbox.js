@@ -47,7 +47,7 @@ const CheckboxPage = () => {
       var: (
         <div className="checkbox-wrapper">
           <Checkbox>This is the default checkbox</Checkbox>
-          <style jsx>{`
+          <style jsx="true">{`
             .checkbox-wrapper {
               display: flex;
               flex-direction: column;
@@ -61,7 +61,7 @@ const CheckboxPage = () => {
       var: (
         <div className="checkbox-wrapper">
           <Checkbox options={defaultOptions}></Checkbox>
-          <style jsx>{`
+          <style jsx="true">{`
             .checkbox-wrapper {
               display: flex;
               flex-direction: column;

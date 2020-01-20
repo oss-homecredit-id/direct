@@ -52,25 +52,28 @@ export const Select = props => {
         role="button"
       />
       {selectOpen && (
-        <ul
+        <div
           css={css`
             margin: 5px 0 15px 0;
             padding: 0;
             max-height: 11.5rem;
             overflow: auto;
           `}
+          onKeyDown={() => {}}
+          role="button"
+          tabIndex={0}
         >
           {options.map((dataOption, index) => (
-            <li
+            <div
               css={css`
                 padding: 0.8rem 1.8rem;
                 background: ${colors.background}
                 border-top: 1px solid ${colors.lighterBlack};
                 border-bottom: 1px solid ${colors.lighterBlack};
-                &:first_child {
+                &:nth-first-of-type {
                   border-top: none;
                 }
-                &:last-child {
+                &:nth-last-of-type {
                   border-bottom: none;
                 }
               `}
@@ -78,11 +81,13 @@ export const Select = props => {
               key={index}
               data-value={dataOption[value]}
               role="button"
+              onKeyDown={() => {}}
+              tabIndex={0}
             >
               {dataOption[label]}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </React.Fragment>
   );

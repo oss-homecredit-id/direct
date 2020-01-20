@@ -8,7 +8,7 @@ export const Breadcrumb = ({ items }) => {
       return (
         <div className="separator">
           >
-          <style jsx>{`
+          <style jsx="true">{`
             .separator {
               margin: 0 5px;
             }
@@ -34,7 +34,7 @@ export const Breadcrumb = ({ items }) => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style jsx="true">{`
         .breadcrumb-wrapper {
           display: flex;
           margin: 16px;

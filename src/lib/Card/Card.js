@@ -31,7 +31,7 @@ export const Card = props => {
           {/* </a> */}
         </div>
       </div>
-      <style jsx>{`
+      <style jsx="true">{`
         .card-description {
           min-height: 120px;
           padding: 16px;

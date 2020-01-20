@@ -9,7 +9,7 @@ const TableContainer = styled.table`
 
 const TableRow = styled.tr`
   margin-top: 20px;
-  &:nth-child(even){
+  &:nth-of-type(even){
     ${props =>
       props.type1 ? "background-color: #f5f5f5" : "background-color: unset"}
 `;

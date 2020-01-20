@@ -9,7 +9,7 @@ const Modal = ({ close, children }) => {
         </button>
         <div className="content">{children}</div>
       </div>
-      <style jsx>{`
+      <style jsx="true">{`
         .modal-wrapper {
           position: fixed;
           top: 0;
