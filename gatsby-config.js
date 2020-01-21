@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Design System`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Direct - Homecredit Indonesia Design System`,
+    description: `Home Credit Direct Documentation.`,
     author: `@gatsbyjs`,
   },
   plugins: [

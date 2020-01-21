@@ -1,17 +1,10 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import HCLogo from "../assets/svg/HCID_smiley.svg";
 
-function SEO({ description, lang, meta, title }) {
+const SEO = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -73,7 +66,7 @@ function SEO({ description, lang, meta, title }) {
       <link rel="icon" href={HCLogo} />
     </Helmet>
   );
-}
+};
 
 SEO.defaultProps = {
   lang: `en`,
