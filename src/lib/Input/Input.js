@@ -5,6 +5,7 @@ import { colors } from "../../assets/mixins/mixins";
 import down from "../../assets/chevron_down.png";
 import up from "../../assets/chevron_top.png";
 import password from "../../assets/password_icon.png";
+import datepicker from "../../assets/date-picker_icon.png";
 
 const Input = forwardRef((props, ref) => {
   const {
@@ -20,6 +21,7 @@ const Input = forwardRef((props, ref) => {
     selectOpen,
     isDisabled,
     readOnly,
+    required,
   } = props;
 
   return (
@@ -110,7 +112,13 @@ const Input = forwardRef((props, ref) => {
           `}
         >
           {type === "password" && <img src={password} alt="hide" />}
-          {type === "date" && <img src={password} alt="hide" />}
+          {type === "date" && (
+            <img
+              style={{ width: "20px", height: "20px" }}
+              src={datepicker}
+              alt="hide"
+            />
+          )}
           {type === "select" && !selectOpen && <img src={down} alt="hide" />}
           {type === "select" && selectOpen && <img src={up} alt="hide" />}
         </span>

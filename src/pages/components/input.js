@@ -18,10 +18,17 @@ const InputPage = () => {
     {
       name: "Default",
       var: <Input label="Default Input"></Input>,
+      code: `<Input label="Default Input"></Input>`,
     },
     {
-      name: "is error",
+      name: "Password",
+      var: <Input type="password" label="Input for password"></Input>,
+      code: `<Input type="password" label="Input for password"></Input>`,
+    },
+    {
+      name: "isError",
       var: <Input isError type="text" label="Error Input"></Input>,
+      code: `<Input isError type="text" label="Error Input"></Input>`,
     },
     {
       name: "with helper",
@@ -32,18 +39,36 @@ const InputPage = () => {
           label="Input with helper"
         ></Input>
       ),
+      code: `<Input
+          type="text"
+          isHelper="Helper text"
+          label="Input with helper"
+        ></Input>`,
     },
     {
       name: "isDisabled",
       var: <Input isDisabled label="Disabled Input"></Input>,
+      code: `<Input isDisabled label="Disabled Input"></Input>`,
     },
   ];
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Name: "Label",
+      Params: "label",
+      Description: "The label displayed on top of the input",
+    },
+    {
+      Name: "Type",
+      Params: "type",
+      Description:
+        "The type of the input that will be displayed (text, password, date, select)",
+    },
+    {
+      Name: "Disabled",
+      Params: "disabled",
+      Description:
+        "When adding props 'disabled', the Input component will be unable to be clicked",
     },
   ];
 
