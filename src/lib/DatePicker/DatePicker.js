@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Input } from "../INput/Input.js";
+import { Input } from "../Input/Input.js";
 
 export const DatePickerComponent = ({ dateFormat, isDisabled }) => {
   const [startDate, setStartDate] = useState(new Date());

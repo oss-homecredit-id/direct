@@ -1,17 +1,9 @@
 import React from "react";
-import Layout from "../../components/layout";
-import TemplateLayout from "../../components/TemplateLayout/TemplateLayout";
-import { LayoutTemplate } from "../../lib/LayoutTemplate/LayoutTemplate";
+import Layout from "../components/layout";
+import TemplateLayout from "../components/TemplateLayout/TemplateLayout";
+import { LayoutTemplate } from "../lib/LayoutTemplate/LayoutTemplate";
 
 const mainLayout = () => {
-  const test = () => {
-    alert("HA");
-  };
-
-  const what = () => {
-    alert("hhhhhhhhhhhh kzl");
-  };
-
   const navList = ["menu a", "menu b", "menu 3", "menu 4"];
 
   const content = (
