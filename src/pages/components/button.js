@@ -22,12 +22,12 @@ const ButtonPage = () => {
     {
       name: "Text",
       var: <Button variant="text">This is Button</Button>,
-      code: "<Button variant='primary' >This is Button</Button>",
+      code: "<Button variant='text' >This is Button</Button>",
     },
     {
       name: "Disabled",
-      var: <Button disabled>This is Button</Button>,
-      code: "<Button variant='primary' >This is Button</Button>",
+      var: <Button isDisabled>This is Button</Button>,
+      code: "<Button isDisabled >This is Button</Button>",
     },
   ];
 

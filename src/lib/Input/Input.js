@@ -15,7 +15,7 @@ const Input = forwardRef((props, ref) => {
     onChange,
     onClick,
     isError,
-    isHelper,
+    helper,
     placeholder,
     selectOpen,
     isDisabled,
@@ -59,11 +59,7 @@ const Input = forwardRef((props, ref) => {
               : "1px solid  #7b7b7b"
           };
           border-color: ${
-            isError
-              ? colors.primaryRed
-              : isHelper
-              ? colors.primaryOrange
-              : "none"
+            isError ? colors.primaryRed : helper ? colors.primaryOrange : "none"
           };
           background-color: ${colors.background};
           border-top-right-radius: 4px;
@@ -72,7 +68,7 @@ const Input = forwardRef((props, ref) => {
             border-bottom: ${
               isDisabled
                 ? ""
-                : isHelper
+                : helper
                 ? "2px solid" + colors.primaryOrange
                 : isError
                 ? "2px solid" + colors.primaryRed
@@ -116,13 +112,13 @@ const Input = forwardRef((props, ref) => {
           {type === "select" && selectOpen && <img src={up} alt="hide" />}
         </span>
       )}
-      {isHelper && !isError && (
+      {helper && !isError && (
         <small
           css={css`
             color: ${colors.primaryOrange};
           `}
         >
-          {isHelper}
+          {helper}
         </small>
       )}
       {isError && (
