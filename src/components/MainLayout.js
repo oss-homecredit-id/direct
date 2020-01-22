@@ -47,6 +47,13 @@ const MainLayout = props => {
 const MainView = ({ children, isHidden, setIsHidden }) => {
   return (
     <React.Fragment>
+      <div
+        className="overlay"
+        onClick={() => setIsHidden(!isHidden)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={() => {}}
+      />
       <div className="main-view">
         <div className="main-content">{children}</div>
         <div className="main-footer">
@@ -59,6 +66,16 @@ const MainView = ({ children, isHidden, setIsHidden }) => {
         </div>
       </div>
       <style jsx="true">{`
+        .overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.5) !important;
+          z-index: 3;
+          display: ${isHidden ? "none" : "block"};
+        }
         .main-view {
           background-color: ${colors.background};
           margin-left: ${sideNavSize};
@@ -91,6 +108,9 @@ const MainView = ({ children, isHidden, setIsHidden }) => {
           }
           .main-footer {
             margin: 0;
+            width: calc(100vw - 2px);
+          }
+          .main-content {
             width: calc(100vw - 2px);
           }
         }
@@ -136,6 +156,7 @@ const SideMenu = ({ isHidden, setIsHidden }) => {
           border-top-right-radius: 21px;
           border-bottom-right-radius: 21px;
           display: none;
+          z-index: 5;
         }
         .side-menu-main {
           position: fixed;
@@ -144,7 +165,7 @@ const SideMenu = ({ isHidden, setIsHidden }) => {
           width: ${sideNavSize};
           height: 100vh;
           background-color: ${colors.mainWhite};
-          z-index: 2;
+          z-index: 10;
           display: block;
         }
         @media only screen and (max-width: 960px) {
@@ -153,6 +174,14 @@ const SideMenu = ({ isHidden, setIsHidden }) => {
           }
           .js-burg {
             display: ${isHidden ? "block" : "none"};
+          }
+        }
+        @media only screen and (max-width: 420px) {
+          .side-menu-main {
+            width: 70vw;
+          }
+          .scroller {
+            margin: 0.5rem 0.5rem 0.5rem 1rem;
           }
         }
       `}</style>
@@ -174,18 +203,19 @@ const NavigationItem = () => {
       <div className="scroller">
         {NavigationItemData.map(itemData => {
           return (
-            <div className="nav-group">
+            <div className="nav-group" key={itemData.title}>
               <div className="nav-group-title">{itemData.title}</div>
               {itemData.content.map(item => {
                 return (
-                  <Link
-                    to={item.path}
-                    className="nav-item"
-                    key={item.page}
-                    activeClassName="nav-item-active"
-                  >
-                    {item.title}
-                  </Link>
+                  <React.Fragment key={item.title}>
+                    <Link
+                      to={item.path}
+                      className="nav-item"
+                      activeClassName="nav-item-active"
+                    >
+                      {item.title}
+                    </Link>
+                  </React.Fragment>
                 );
               })}
             </div>
@@ -299,11 +329,11 @@ const NavigationItemData = [
       },
       {
         title: "Coys",
-        path: "/components/text",
+        path: "/components/coys",
       },
       {
         title: "Nein",
-        path: "/components/text",
+        path: "/components/nein",
       },
     ],
   },

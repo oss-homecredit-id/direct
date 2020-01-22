@@ -10,7 +10,7 @@ const PageTemplate = ({ children }) => {
         }
         @media only screen and (max-width: 960px) {
           .page-template {
-            margin: 5rem 0.5rem;
+            margin: 5rem 1rem;
           }
         }
       `}</style>
