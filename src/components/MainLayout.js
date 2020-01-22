@@ -278,6 +278,11 @@ const NavigationItem = () => {
             margin: 0.5rem;
           }
         }
+        @media only screen and (max-width: 420px) {
+          .nav-logo {
+            width: calc(70vw - 30px);
+          }
+        }
       `}</style>
     </React.Fragment>
   );

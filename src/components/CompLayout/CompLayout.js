@@ -14,7 +14,6 @@ const CompLayout = ({
   const [item, setItem] = useState(compVariation[0].var);
   const [code, setCode] = useState(compVariation[0].code);
   const [showCode, setShowCode] = useState(false);
-  console.log(showCode);
 
   const styles = {
     typesBtn: {

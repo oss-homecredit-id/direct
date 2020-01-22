@@ -4,7 +4,6 @@ import { Link } from "@reach/router";
 import { NavigationContent } from "./DataNavigation";
 
 const Body = () => {
-  // console.log(window.location.pathname);
   const [accordion] = useState("");
   const [accordionId, setAccordionId] = useState("");
   const [navOpen, setNavOpen] = useState(false);
@@ -25,8 +24,6 @@ const Body = () => {
         onKeyDown={setAccordionId(path)}
         onClick={() => {
           setAccordionId(path);
-          // console.log(pathname);
-          console.log(accordionId);
         }}
       >
         <div className="navigation-menu">{title}</div>

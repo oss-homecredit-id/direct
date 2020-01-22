@@ -92,7 +92,7 @@ const Radio = ({ option, name, radioType, selected, setSelected }) => {
               </div>
             ))
           : ""
-        : console.log("nada")}
+        : ""}
     </div>
   );
 };
