@@ -17,7 +17,7 @@ export const Select = props => {
     if (option.length !== 0) {
       setSelectedValue(option[0][value]);
     }
-  }, [options, value]);
+  });
 
   const openSelect = () => {
     setSelectOpen(!selectOpen);
