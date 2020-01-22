@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-const Radio = ({ option, name, radioType, selected, setSelected }) => {
+const Radio = ({ options, name, radioType, selected, setSelected }) => {
   const list = radioType === "list";
-  const [options, setOptions] = useState([]);
+  const [option, setOption] = useState([]);
 
   const styles = {
     radioContainer: {
@@ -64,17 +64,17 @@ const Radio = ({ option, name, radioType, selected, setSelected }) => {
     setSelected(event.currentTarget.value);
   };
 
-  const optionsValidate = options.length < 4 && options.length > 1;
+  const optionsValidate = option.length < 4 && option.length > 1;
 
   useEffect(() => {
-    setOptions(option);
-  }, [option]);
+    setOption(options);
+  }, [options]);
 
   return (
     <div style={styles.radioContainer}>
-      {options
+      {option
         ? optionsValidate
-          ? options.map((option, index) => (
+          ? option.map((option, index) => (
               <div
                 style={selected ? styles.optionChecked : styles.option}
                 key={index}

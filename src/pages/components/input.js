@@ -5,39 +5,24 @@ import Layout from "../../components/layout";
 
 const InputPage = () => {
   const input = [
-    // {
-    //   name: "With Icon",
-    //   var: (
-    //     <Input withIcon src={icon1}>
-    //       This is Input
-    //     </Input>
-    //   ),
-    //   param: "apa",
-    //   desc: "jadi ini input dengan icon",
-    // },
     {
       name: "Default",
-      var: <Input label="Default Input"></Input>,
-      code: `<Input label="Default Input"></Input>`,
+      var: <Input label="label">Placeholder Text</Input>,
     },
     {
-      name: "Password",
-      var: <Input type="password" label="Input for password"></Input>,
-      code: `<Input type="password" label="Input for password"></Input>`,
-    },
-    {
-      name: "isError",
-      var: <Input isError type="text" label="Error Input"></Input>,
-      code: `<Input isError type="text" label="Error Input"></Input>`,
+      name: "is error",
+      var: (
+        <Input isError type="date" label="error input">
+          This is Input date
+        </Input>
+      ),
     },
     {
       name: "with helper",
       var: (
-        <Input
-          type="text"
-          isHelper="Helper text"
-          label="Input with helper"
-        ></Input>
+        <Input type="text" helper="ini helper" label="input with helper">
+          This is Input
+        </Input>
       ),
       code: `<Input
           type="text"
@@ -80,6 +65,22 @@ const InputPage = () => {
         compVariation={input}
         compProps={propsData}
       ></CompLayout>
+      <div
+        style={{
+          width: "200px",
+          marginLeft: "500px",
+          padding: "100px",
+          backgroundColor: "white",
+        }}
+      >
+        <Input label="label">Placeholder Text</Input>
+        <Input type="text" helper="ini helper" label="input with helper">
+          Placeholder Text
+        </Input>
+        <Input type="password" label="label">
+          PLaceholder Text
+        </Input>
+      </div>
     </Layout>
   );
 };

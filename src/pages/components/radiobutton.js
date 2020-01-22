@@ -12,7 +12,7 @@ const RadiobtnPage = () => {
       name: "Default",
       var: (
         <Radio
-          option={["a", "b", "c"]}
+          options={["a", "b", "c"]}
           name="row"
           selected={radioSelected}
           setSelected={setRadioSelected}
@@ -23,7 +23,7 @@ const RadiobtnPage = () => {
       name: "List",
       var: (
         <Radio
-          option={["test", "tessssr", "baaa"]}
+          options={["test", "tessssr", "baaa"]}
           name="display"
           selected={selected}
           setSelected={setSelected}
