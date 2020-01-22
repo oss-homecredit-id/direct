@@ -15,6 +15,7 @@ const ButtonStyle = styled.button`
       ? colors.secondaryBlack
       : colors.primaryRed};
   padding: 10px 20px;
+  outline: none;
   margin: 5px;
   color: ${props =>
     props.variant === "primary"
