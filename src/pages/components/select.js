@@ -14,7 +14,7 @@ const SelectPage = () => {
   const select = [
     {
       name: "Default",
-      var: <Select option={selectItems}></Select>,
+      var: <Select options={selectItems}></Select>,
     },
   ];
 
@@ -36,6 +36,9 @@ const SelectPage = () => {
         compProps={propsData}
       ></CompLayout>
     </Layout>
+    // <div style={{ width: "200px" }}>
+    //   <Select options={selectItems}></Select>
+    // </div>
   );
 };
 

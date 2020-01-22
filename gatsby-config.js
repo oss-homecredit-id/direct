@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Direct - Homecredit Indonesia Design System`,
     description: `Home Credit Direct Documentation.`,
-    author: `@gatsbyjs`,
+    author: `Home Credit Indonesia`,
   },
   plugins: [
     `gatsby-plugin-emotion`,

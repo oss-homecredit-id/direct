@@ -19,6 +19,7 @@ const ColorBlock = props => {
     },
   };
 
+  console.log(props.border);
   return (
     <div style={styles.container}>
       <div style={styles.block}></div>

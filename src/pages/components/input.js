@@ -5,59 +5,55 @@ import Layout from "../../components/layout";
 
 const InputPage = () => {
   const input = [
-    // {
-    //   name: "With Icon",
-    //   var: (
-    //     <Input withIcon src={icon1}>
-    //       This is Input
-    //     </Input>
-    //   ),
-    //   param: "apa",
-    //   desc: "jadi ini input dengan icon",
-    // },
     {
       name: "Default",
-      var: <Input label="label"></Input>,
+      var: <Input label="label">Placeholder Text</Input>,
     },
     {
       name: "is error",
       var: (
-        <Input isError type="text" label="error input">
-          This is Input
+        <Input isError type="date" label="error input">
+          This is Input date
         </Input>
       ),
     },
     {
       name: "with helper",
       var: (
-        <Input type="text" isHelper="dis" label="input with helper">
+        <Input type="text" helper="ini helper" label="input with helper">
           This is Input
         </Input>
       ),
-    },
-    {
-      name: "type Select",
-      var: (
-        <Input type="select" label="input with helper">
-          This is Input
-        </Input>
-      ),
+      code: `<Input
+          type="text"
+          isHelper="Helper text"
+          label="Input with helper"
+        ></Input>`,
     },
     {
       name: "isDisabled",
-      var: (
-        <Input isDisabled label="disabled input">
-          This is Input
-        </Input>
-      ),
+      var: <Input isDisabled label="Disabled Input"></Input>,
+      code: `<Input isDisabled label="Disabled Input"></Input>`,
     },
   ];
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Variant",
-      Description: "ini Variant",
+      Name: "Label",
+      Params: "label",
+      Description: "The label displayed on top of the input",
+    },
+    {
+      Name: "Type",
+      Params: "type",
+      Description:
+        "The type of the input that will be displayed (text, password, date, select)",
+    },
+    {
+      Name: "Disabled",
+      Params: "disabled",
+      Description:
+        "When adding props 'disabled', the Input component will be unable to be clicked",
     },
   ];
 
@@ -69,6 +65,22 @@ const InputPage = () => {
         compVariation={input}
         compProps={propsData}
       ></CompLayout>
+      <div
+        style={{
+          width: "200px",
+          marginLeft: "500px",
+          padding: "100px",
+          backgroundColor: "white",
+        }}
+      >
+        <Input label="label">Placeholder Text</Input>
+        <Input type="text" helper="ini helper" label="input with helper">
+          Placeholder Text
+        </Input>
+        <Input type="password" label="label">
+          PLaceholder Text
+        </Input>
+      </div>
     </Layout>
   );
 };

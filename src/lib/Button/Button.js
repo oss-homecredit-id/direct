@@ -11,10 +11,11 @@ const ButtonStyle = styled.button`
       ? colors.mainWhite
       : props.variant === "text"
       ? "transparent"
-      : props.disabled
+      : props.isDisabled
       ? colors.secondaryBlack
       : colors.primaryRed};
   padding: 10px 20px;
+  outline: none;
   margin: 5px;
   color: ${props =>
     props.variant === "primary"
@@ -33,21 +34,21 @@ const ButtonStyle = styled.button`
     background: ${props =>
       props.variant === "secondary"
         ? colors.mainWhite
-        : props.disabled
+        : props.isDisabled
         ? colors.secondaryBlack
         : props.variant === "text"
         ? "unset"
         : colors.primaryRed};
-    cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};
+    cursor: ${props => (props.isDisabled ? "not-allowed" : "pointer")};
     outline: 0;
   }
 `;
 
-const Button = ({ variant, disabled, ...props }) => {
+const Button = ({ variant, isDisabled, ...props }) => {
   return (
     <ButtonStyle
       variant={variant}
-      disabled={disabled}
+      isDisabled={isDisabled}
       style={props.styleConfig}
       onClick={props.onClick}
       {...props}

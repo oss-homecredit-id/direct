@@ -5,6 +5,7 @@ import { colors } from "../../assets/mixins/mixins";
 import down from "../../assets/chevron_down.png";
 import up from "../../assets/chevron_top.png";
 import password from "../../assets/password_icon.png";
+import datepicker from "../../assets/date-picker_icon.png";
 
 const Input = forwardRef((props, ref) => {
   const {
@@ -15,10 +16,12 @@ const Input = forwardRef((props, ref) => {
     onChange,
     onClick,
     isError,
-    isHelper,
+    helper,
     placeholder,
     selectOpen,
     isDisabled,
+    readOnly,
+    required,
   } = props;
 
   return (
@@ -46,24 +49,15 @@ const Input = forwardRef((props, ref) => {
           padding: 2px 8px;
           font-size: 16px;
           border: none;
-          color: ${
-            isDisabled
-              ? colors.secondaryBlack
-              : isError
-              ? colors.primaryRed
-              : colors.darkerBlack
-          };
+          outline: none;
+          color: ${isDisabled ? colors.secondaryBlack : colors.darkerBlack};
           border-bottom: ${
             isDisabled
               ? "1px solid" + colors.secondaryBlack
               : "1px solid  #7b7b7b"
           };
           border-color: ${
-            isError
-              ? colors.primaryRed
-              : isHelper
-              ? colors.primaryOrange
-              : "none"
+            isError ? colors.primaryRed : helper ? colors.primaryOrange : "none"
           };
           background-color: ${colors.background};
           border-top-right-radius: 4px;
@@ -72,7 +66,7 @@ const Input = forwardRef((props, ref) => {
             border-bottom: ${
               isDisabled
                 ? ""
-                : isHelper
+                : helper
                 ? "2px solid" + colors.primaryOrange
                 : isError
                 ? "2px solid" + colors.primaryRed
@@ -87,8 +81,9 @@ const Input = forwardRef((props, ref) => {
           &:hover {
             cursor: ${isDisabled ? "not-allowed" : ""};
           }
+          
         `}
-        type={type === "select" ? "text" : type}
+        type={type === "select" || type === "date" ? "text" : type}
         name={name}
         value={value}
         placeholder={placeholder}
@@ -100,7 +95,9 @@ const Input = forwardRef((props, ref) => {
             : undefined
         }
         disabled={isDisabled ? true : false}
+        required={required}
         ref={ref}
+        readOnly={readOnly ? true : false}
       />
       {type !== "text" && (
         <span
@@ -111,18 +108,24 @@ const Input = forwardRef((props, ref) => {
           `}
         >
           {type === "password" && <img src={password} alt="hide" />}
-          {type === "date" && <img src={password} alt="hide" />}
+          {type === "date" && (
+            <img
+              style={{ width: "20px", height: "20px" }}
+              src={datepicker}
+              alt="hide"
+            />
+          )}
           {type === "select" && !selectOpen && <img src={down} alt="hide" />}
           {type === "select" && selectOpen && <img src={up} alt="hide" />}
         </span>
       )}
-      {isHelper && !isError && (
+      {helper && !isError && (
         <small
           css={css`
             color: ${colors.primaryOrange};
           `}
         >
-          {isHelper}
+          {helper}
         </small>
       )}
       {isError && (
