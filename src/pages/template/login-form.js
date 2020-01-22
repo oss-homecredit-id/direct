@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../../components/layout";
 import { LoginTemplate } from "../../lib/LoginTemplate/LoginTemplate";
 import TemplateLayout from "../../components/TemplateLayout/TemplateLayout";
-import Gumball from "../../assets/gumball.png";
+import Gumball from "../../assets/image-icon.png";
 
 const loginForm = () => {
   const Input = ["Email", "Password"];
