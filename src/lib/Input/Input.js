@@ -107,7 +107,13 @@ const Input = forwardRef((props, ref) => {
             bottom: 5px;
           `}
         >
-          {type === "password" && <img src={password} alt="hide" />}
+          {type === "password" && (
+            <img
+              src={password}
+              style={{ width: "20px", height: "auto" }}
+              alt="hide"
+            />
+          )}
           {type === "date" && (
             <img
               style={{ width: "20px", height: "20px" }}

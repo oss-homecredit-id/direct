@@ -17,6 +17,11 @@ const CompLayout = ({
   // console.log(showCode);
 
   const styles = {
+    title: {
+      fontSize: "34px",
+      fontWeight: "500",
+      marginBottom: "15px",
+    },
     typesBtn: {
       color: "#9B9B9B",
       padding: "5px 10px",
@@ -36,8 +41,8 @@ const CompLayout = ({
 
   return (
     <div className="comp-container">
-      <div className="comp-title">{compName} </div>
-      <div className="comp-desc">{compDesc} </div>
+      <Text styleConfig={styles.title}>{compName}</Text>
+      <Text textType="h3">{compDesc}</Text>
       <div className="comp-display">
         <p className="comp-text">Preview</p>
         <div className="preview">
