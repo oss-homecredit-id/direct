@@ -26,8 +26,8 @@ const DatePickerPage = () => {
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Primary, Seconday, Text",
+      Name: "dateFormat",
+      Params: "",
       Description:
         "There are 3 variant type of Button that distinguishes the style of the button",
     },
