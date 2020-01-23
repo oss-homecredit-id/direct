@@ -1,33 +1,26 @@
 import React from "react";
-import { Button } from "../../lib/Button/Button";
+import { DatePickerComponent } from "../../lib/DatePicker/DatePicker";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import Layout from "../../components/layout";
+import {MainLayout} from "../../components/MainLayout";
 
-const ButtonPage = () => {
-  const button = [
+const DatePickerPage = () => {
+  const datePicker = [
     {
-      name: "Primary",
+      name: "Default",
+      var: <DatePickerComponent></DatePickerComponent>,
+    },
+    {
+      name: "Custom date format",
+      var: <DatePickerComponent dateFormat="dd-MM-yyyy"></DatePickerComponent>,
+    },
+    {
+      name: "Disabled date format",
       var: (
-        <Button variant="primary" size="lg">
-          This is Button
-        </Button>
+        <DatePickerComponent
+          dateFormat="dd-MM-yyyy"
+          isDisabled
+        ></DatePickerComponent>
       ),
-      code: "<Button variant='primary' >This is Button</Button>",
-    },
-    {
-      name: "Secondary",
-      var: <Button variant="secondary">This is Button</Button>,
-      code: "<Button variant='secondary'>This is Button</Button>",
-    },
-    {
-      name: "Text",
-      var: <Button variant="text">This is Button</Button>,
-      code: "<Button variant='text' >This is Button</Button>",
-    },
-    {
-      name: "Disabled",
-      var: <Button isDisabled>This is Button</Button>,
-      code: "<Button isDisabled >This is Button</Button>",
     },
   ];
 
@@ -55,13 +48,13 @@ const ButtonPage = () => {
   return (
     <Layout>
       <CompLayout
-        compName="Button"
+        compName="Date Picker"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        compVariation={button}
+        compVariation={datePicker}
         compProps={propsData}
       ></CompLayout>
     </Layout>
   );
 };
 
-export default ButtonPage;
+export default DatePickerPage;

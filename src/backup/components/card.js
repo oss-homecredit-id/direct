@@ -1,7 +1,7 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import { Card } from "../../lib";
-import Layout from "../../components/layout";
+import {MainLayout} from "../../components/MainLayout";
 import image from "../../assets/image-icon.png";
 
 const CardPage = () => {

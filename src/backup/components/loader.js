@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../components/layout";
+import {MainLayout} from "../../components/MainLayout";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import { Placeholder } from "../../lib/PlaceholderLoader/PlaceholderLoader";
 

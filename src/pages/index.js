@@ -1,7 +1,7 @@
 import React from "react";
-
 import { MainLayout } from "../components/MainLayout";
 import PageTemplate from "../components/PageTemplate";
+import { CodeBlock } from "../components/BlockComponents";
 
 const IndexPage = () => {
   return (
@@ -17,6 +17,15 @@ const IndexPage = () => {
           meaningless filler text can be very useful when the focus is meant to
           be on design, not content.{" "}
         </p>
+        <CodeBlock
+          literals={`
+          const Putang = () => {
+            return(
+              <div>Ina MO</div>
+            )
+          };
+        `}
+        />
         <div style={{ height: "100vh" }}></div>
       </PageTemplate>
     </MainLayout>

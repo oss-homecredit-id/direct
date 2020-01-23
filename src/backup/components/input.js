@@ -1,7 +1,7 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import { Input } from "../../lib/Input/Input";
-import Layout from "../../components/layout";
+import {MainLayout} from "../../components/MainLayout";
 
 const InputPage = () => {
   const input = [

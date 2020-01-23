@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../components/layout";
+import { MainLayout } from "../../components/MainLayout";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import { Text } from "../../lib";
 
@@ -61,14 +61,14 @@ const TextPage = () => {
   ];
 
   return (
-    <Layout>
+    <MainLayout>
       <CompLayout
         compName="Text"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         compVariation={text}
         compProps={propsData}
       ></CompLayout>
-    </Layout>
+    </MainLayout>
   );
 };
 

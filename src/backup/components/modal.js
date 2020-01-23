@@ -1,21 +1,17 @@
 import React from "react";
-import Layout from "../../components/layout";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import { Select } from "../../lib/Select/Select";
+import {MainLayout} from "../../components/MainLayout";
+import { Modal } from "../../lib/Modal/Modal";
 
-const DropdownSelectPage = () => {
-  // const [boxSelected, setBoxSelected] = useState();
-
-  const dropdownList = [
-    { id: "apa", label: "apayy" },
-    { id: "apaa", label: "apayyaaa" },
-    { id: "apaaaa", label: "apayyaaaahmmmm" },
-  ];
-
-  const dropdown = [
+const ModalPage = () => {
+  const list = [
     {
       name: "Default",
-      var: <Select option={dropdownList}></Select>,
+      var: <div className="tes">coba klik yg lain</div>,
+    },
+    {
+      name: "Blank",
+      var: <Modal>blank</Modal>,
     },
   ];
 
@@ -30,13 +26,13 @@ const DropdownSelectPage = () => {
   return (
     <Layout>
       <CompLayout
-        compName="Dropdown Select"
+        compName="List"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        compVariation={dropdown}
+        compVariation={list}
         compProps={propsData}
       ></CompLayout>
     </Layout>
   );
 };
 
-export default DropdownSelectPage;
+export default ModalPage;

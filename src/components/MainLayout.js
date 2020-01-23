@@ -92,7 +92,8 @@ const MainView = ({ children, isHidden, setIsHidden }) => {
           min-height: calc(100vh - 60px);
         }
         .main-footer {
-          background-color: ${colors.lighterBlack};
+          color: ${colors.mainWhite};
+          background-color: ${colors.primaryBlack};
           border-top: 1px solid ${colors.darkerBlack};
           width: calc(100vw - (${sideNavSize} + 2px));
           display: flex;

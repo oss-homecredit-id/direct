@@ -1,36 +1,44 @@
 import React from "react";
-import Layout from "../../components/layout";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import { Number } from "../../lib/Number/Number";
+import {MainLayout} from "../../components/MainLayout";
+import { Breadcrumb } from "../../lib/Breadcrumb/Breadcrumb";
 
-const NumberPage = () => {
-  const numberList = ["1", "2", "3", "4", "5"];
+const DataBreadcrumb = [
+  { page: "Home" },
+  {
+    page: "Page 1",
+  },
+  {
+    page: "Page 2",
+  },
+];
 
-  const number = [
+const BreadcrumbPage = () => {
+  const card = [
     {
       name: "Default",
-      var: numberList.map(number => <Number number={number}></Number>),
+      var: <Breadcrumb items={DataBreadcrumb}></Breadcrumb>,
     },
   ];
 
   const propsData = [
     {
-      Name: "number",
+      Name: "Items",
       Params: "",
-      Description: "the props 'number' will receive a number",
+      Description: "The props 'Items' will receive an array of data",
     },
   ];
 
   return (
     <Layout>
       <CompLayout
-        compName="Number"
+        compName="Breadcrumb"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        compVariation={number}
+        compVariation={card}
         compProps={propsData}
       ></CompLayout>
     </Layout>
   );
 };
 
-export default NumberPage;
+export default BreadcrumbPage;

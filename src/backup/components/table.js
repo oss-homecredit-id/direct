@@ -1,6 +1,6 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import Layout from "../../components/layout";
+import { MainLayout } from "../../components/MainLayout";
 import Table from "../../lib/Table/Table";
 
 const ModalPage = () => {
@@ -39,14 +39,14 @@ const ModalPage = () => {
   ];
 
   return (
-    <Layout>
+    <MainLayout>
       <CompLayout
         compName="Table"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         compVariation={table}
         compProps={propsData}
       ></CompLayout>
-    </Layout>
+    </MainLayout>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../components/layout";
+import { MainLayout } from "../../components/MainLayout";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import { Select } from "../../lib/Select/Select";
 
@@ -28,14 +28,14 @@ const SelectPage = () => {
   ];
 
   return (
-    <Layout>
+    <MainLayout>
       <CompLayout
         compName="Select"
         compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
         compVariation={select}
         compProps={propsData}
       ></CompLayout>
-    </Layout>
+    </MainLayout>
     // <div style={{ width: "200px" }}>
     //   <Select options={selectItems}></Select>
     // </div>
