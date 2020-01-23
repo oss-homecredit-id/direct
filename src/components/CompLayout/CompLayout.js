@@ -73,7 +73,7 @@ const CompLayout = ({
           </div>
           <div className="comp-example">{item}</div>
           <div className={showCode ? "comp-code-show" : "comp-code-hide"}>
-            <Text textType="h5">{code}</Text>
+            <pre>{code} </pre>
           </div>
         </div>
       </div>

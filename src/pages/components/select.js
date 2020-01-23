@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../components/layout";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import { Select } from "../../lib/Select/Select";
 
 const SelectPage = () => {
+  const [selected, setSelected] = useState();
   const selectItems = [
     { label: "item 1", value: "item 1" },
     { label: "item 2", value: "item 2" },
@@ -14,7 +15,20 @@ const SelectPage = () => {
   const select = [
     {
       name: "Default",
-      var: <Select options={selectItems}></Select>,
+      var: (
+        <Select
+          options={selectItems}
+          selected={selected}
+          setSelected={setSelected}
+        ></Select>
+      ),
+      code: `
+      <Select
+          options={selectItems}
+          selected={selected}
+          setSelected={setSelected}
+        ></Select>
+      `,
     },
   ];
 
@@ -31,14 +45,11 @@ const SelectPage = () => {
     <Layout>
       <CompLayout
         compName="Select"
-        compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        compDesc="Select lets users choose one option from a list of 4 or more options without overloading the interface. Use select when users must select one option from a longer, but very predictable list of options."
         compVariation={select}
         compProps={propsData}
       ></CompLayout>
     </Layout>
-    // <div style={{ width: "200px" }}>
-    //   <Select options={selectItems}></Select>
-    // </div>
   );
 };
 

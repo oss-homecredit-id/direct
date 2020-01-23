@@ -12,22 +12,22 @@ const ButtonPage = () => {
           This is Button
         </Button>
       ),
-      code: "<Button variant='primary' >This is Button</Button>",
+      code: `<Button variant='primary'> This is Button </Button>`,
     },
     {
       name: "Secondary",
       var: <Button variant="secondary">This is Button</Button>,
-      code: "<Button variant='secondary'>This is Button</Button>",
+      code: `<Button variant='secondary'>This is Button</Button>`,
     },
     {
       name: "Text",
       var: <Button variant="text">This is Button</Button>,
-      code: "<Button variant='text' >This is Button</Button>",
+      code: `<Button variant='text'>This is Button</Button>`,
     },
     {
       name: "Disabled",
       var: <Button isDisabled>This is Button</Button>,
-      code: "<Button isDisabled >This is Button</Button>",
+      code: `<Button isDisabled>This is Button</Button>`,
     },
   ];
 
@@ -56,7 +56,7 @@ const ButtonPage = () => {
     <Layout>
       <CompLayout
         compName="Button"
-        compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        compDesc="Buttons are used for interface actions generally to submit data or take action. The default look of the button is all red with font's color white. To add action to the button component use the onClick props."
         compVariation={button}
         compProps={propsData}
       ></CompLayout>

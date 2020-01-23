@@ -8,10 +8,12 @@ const DatePickerPage = () => {
     {
       name: "Default",
       var: <DatePickerComponent></DatePickerComponent>,
+      code: `<DatePickerComponent></DatePickerComponent>`,
     },
     {
       name: "Custom date format",
       var: <DatePickerComponent dateFormat="dd-MM-yyyy"></DatePickerComponent>,
+      code: `<DatePickerComponent dateFormat="dd-MM-yyyy"></DatePickerComponent>`,
     },
     {
       name: "Disabled date format",
@@ -21,27 +23,25 @@ const DatePickerPage = () => {
           isDisabled
         ></DatePickerComponent>
       ),
+      code: `<DatePickerComponent
+      dateFormat="dd-MM-yyyy"
+      isDisabled
+    ></DatePickerComponent>`,
     },
   ];
 
   const propsData = [
     {
-      Name: "Variant",
-      Params: "Primary, Seconday, Text",
+      Name: "dateFormat",
+      Params: "dd-MM-yyyy",
       Description:
-        "There are 3 variant type of Button that distinguishes the style of the button",
+        "This props is used to change date-picker component's date format and can only accept dd-MM-yyyy",
     },
     {
       Name: "Disabled",
       Params: "",
       Description:
-        "When adding props 'Disabled', the Button component will be unable to be clicked",
-    },
-    {
-      Name: "styleConfig",
-      Params: "",
-      Description:
-        "When adding props 'styleConfig', some of the button style's aspect can be configured such as margin, padding, and width",
+        "When adding props 'Disabled', the date-picker component will be unable to be clicked",
     },
   ];
 
@@ -49,7 +49,7 @@ const DatePickerPage = () => {
     <Layout>
       <CompLayout
         compName="Date Picker"
-        compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        compDesc="Date-picker component is generally used in forms to get a date data from user."
         compVariation={datePicker}
         compProps={propsData}
       ></CompLayout>
