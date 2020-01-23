@@ -1,8 +1,6 @@
 .comp-container {
-  margin-left: 250px;
-  height: 100vh;
   overflow-y: auto;
-  padding: 30px 60px;
+  padding: 15px 40px;
   background-color: #f7f7f7;
 }
 
