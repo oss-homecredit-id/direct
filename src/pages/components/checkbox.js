@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import Layout from "../../components/layout";
 import { Checkbox } from "../../lib/Checkbox/Checkbox";
@@ -6,16 +6,16 @@ import { Checkbox } from "../../lib/Checkbox/Checkbox";
 const defaultOptions = [
   {
     label: "This checkbox is disabled",
-    name: "first",
+    value: "first",
     disabled: true,
   },
   {
     label: "You can check this one",
-    name: "second",
+    value: "second",
   },
   {
     label: "This one too",
-    name: "third",
+    value: "third",
   },
 ];
 
@@ -27,10 +27,10 @@ const propsData = [
       "The props 'options' will receive several options as an array of string",
   },
   {
-    Name: "children",
+    Name: "name",
     Params: "",
     Description:
-      "When the developer only wants to add one checkbox, the developer just have to add one sentence to the children of the component",
+      "When two or more checkbox have the same name, they will automatically be in the same group",
   },
   {
     Name: "disabled",
@@ -38,15 +38,35 @@ const propsData = [
     Description:
       "the props 'disabled' that is added to the component will make the component unable to be checked",
   },
+  {
+    Name: "checked",
+    Params: "",
+    Description: "the props 'selected' will receive a state as props ",
+  },
+  {
+    Name: "setChecked",
+    Params: "",
+    Description: "the props 'setSelected' will receive a setState as props ",
+  },
 ];
 
+const singleCheckbox = [{ label: "awawa", value: "terserah" }];
+
 const CheckboxPage = () => {
+  const [selected, setSelected] = useState();
+  const [selectedDefault, setSelectedDefault] = useState();
+
   const card = [
     {
       name: "Default",
       var: (
         <div className="checkbox-wrapper">
-          <Checkbox>This is the default checkbox</Checkbox>
+          <Checkbox
+            name="satu"
+            options={singleCheckbox}
+            checked={selectedDefault}
+            setChecked={setSelectedDefault}
+          ></Checkbox>
           <style jsx="true">{`
             .checkbox-wrapper {
               display: flex;
@@ -55,13 +75,23 @@ const CheckboxPage = () => {
           `}</style>
         </div>
       ),
-      code: `<Checkbox>This is the default checkbox</Checkbox>`,
+      code: `<Checkbox
+            name="checkboxgroup"
+            options={singleCheckbox}
+            checked={selectedDefault}
+            setChecked={setSelectedDefault}
+          ></Checkbox>`,
     },
     {
       name: "With options",
       var: (
         <div className="checkbox-wrapper">
-          <Checkbox options={defaultOptions}></Checkbox>
+          <Checkbox
+            name="yahu"
+            checked={selected}
+            setChecked={setSelected}
+            options={defaultOptions}
+          ></Checkbox>
           <style jsx="true">{`
             .checkbox-wrapper {
               display: flex;
@@ -70,7 +100,13 @@ const CheckboxPage = () => {
           `}</style>
         </div>
       ),
-      code: `<Checkbox options={defaultOptions}></Checkbox>`,
+
+      code: `<Checkbox
+            name="checkboxgroup"
+            checked={selected}
+            setChecked={setSelected}
+            options={defaultOptions}
+          ></Checkbox>`,
     },
   ];
   return (

@@ -65,13 +65,13 @@ const RadiobtnPage = () => {
     },
     {
       Name: "selected",
-      Params: "default, list",
+      Params: "",
       Description: "the props 'selected' will receive a state as props ",
     },
     {
       Name: "setSelected",
-      Params: "default, list",
-      Description: "the props 'radioType' will receive a state as props ",
+      Params: "",
+      Description: "the props 'setSelected' will receive a setState as props ",
     },
   ];
 
