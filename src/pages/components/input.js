@@ -8,14 +8,19 @@ const InputPage = () => {
     {
       name: "Default",
       var: <Input label="label">Placeholder Text</Input>,
+      code: `<Input label="label"> Placeholder Text </Input>`,
     },
     {
       name: "is error",
       var: (
-        <Input isError type="date" label="error input">
+        <Input isError label="error input">
           This is Input date
         </Input>
       ),
+      code: `
+      <Input isError type="date" label="error input">
+        This is Input date
+      </Input>`,
     },
     {
       name: "with helper",
@@ -24,11 +29,13 @@ const InputPage = () => {
           This is Input
         </Input>
       ),
-      code: `<Input
+      code: `
+      <Input
           type="text"
           isHelper="Helper text"
           label="Input with helper"
-        ></Input>`,
+        ></Input>
+      `,
     },
     {
       name: "isDisabled",
@@ -45,9 +52,8 @@ const InputPage = () => {
     },
     {
       Name: "Type",
-      Params: "type",
-      Description:
-        "The type of the input that will be displayed (text, password, date, select)",
+      Params: "text, password",
+      Description: "The type of the input that will be displayed",
     },
     {
       Name: "Disabled",
@@ -61,26 +67,10 @@ const InputPage = () => {
     <Layout>
       <CompLayout
         compName="Input"
-        compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        compDesc="Inputs are used to allow users to provide text input. You can use a Label to identify and describe the purpose of an input element."
         compVariation={input}
         compProps={propsData}
       ></CompLayout>
-      <div
-        style={{
-          width: "200px",
-          marginLeft: "500px",
-          padding: "100px",
-          backgroundColor: "white",
-        }}
-      >
-        <Input label="label">Placeholder Text</Input>
-        <Input type="text" helper="ini helper" label="input with helper">
-          Placeholder Text
-        </Input>
-        <Input type="password" label="label">
-          PLaceholder Text
-        </Input>
-      </div>
     </Layout>
   );
 };

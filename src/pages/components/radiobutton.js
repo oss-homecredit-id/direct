@@ -18,6 +18,14 @@ const RadiobtnPage = () => {
           setSelected={setRadioSelected}
         ></Radio>
       ),
+      code: `
+      <Radio
+          options={["a", "b", "c"]}
+          name="row"
+          selected={radioSelected}
+          setSelected={setRadioSelected}
+        ></Radio>
+      `,
     },
     {
       name: "List",
@@ -30,6 +38,15 @@ const RadiobtnPage = () => {
           radioType="list"
         ></Radio>
       ),
+      code: `
+      <Radio
+      options={["test", "tessssr", "baaa"]}
+      name="display"
+      selected={selected}
+      setSelected={setSelected}
+      radioType="list"
+    ></Radio>
+      `,
     },
   ];
 
@@ -62,7 +79,7 @@ const RadiobtnPage = () => {
     <Layout>
       <CompLayout
         compName="Radio Button"
-        compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        compDesc="Used when users must select exactly one option from an exposed list of options. You can either use a default type or the list type"
         compVariation={radio}
         compProps={propsData}
       ></CompLayout>

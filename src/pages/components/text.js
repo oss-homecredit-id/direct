@@ -8,30 +8,37 @@ const TextPage = () => {
     {
       name: "h1",
       var: <Text textType="h1">Hello</Text>,
+      code: '<Text textType="h1">Hello</Text>',
     },
     {
       name: "h2",
       var: <Text textType="h2">Hello</Text>,
+      code: '<Text textType="h2">Hello</Text>',
     },
     {
       name: "h3",
       var: <Text textType="h3">Hello</Text>,
+      code: '<Text textType="h3">Hello</Text>',
     },
     {
       name: "h4",
       var: <Text textType="h4">Hello</Text>,
+      code: '<Text textType="h4">Hello</Text>',
     },
     {
       name: "h5",
       var: <Text textType="h5">Hello</Text>,
+      code: '<Text textType="h5">Hello</Text>',
     },
     {
       name: "h6",
       var: <Text textType="h6">Hello</Text>,
+      code: '<Text textType="h6">Hello</Text>',
     },
     {
       name: "Default",
       var: <Text>Hello</Text>,
+      code: "<Text>Hello</Text>",
     },
   ];
 
@@ -48,7 +55,7 @@ const TextPage = () => {
     <Layout>
       <CompLayout
         compName="Text"
-        compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        compDesc="The text component is for displaying text. It standardizes the presentation of text. By default, the Text component renders text in a p tag"
         compVariation={text}
         compProps={propsData}
       ></CompLayout>

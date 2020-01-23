@@ -100,6 +100,7 @@ const CheckboxPage = () => {
           `}</style>
         </div>
       ),
+
       code: `<Checkbox
             name="checkboxgroup"
             checked={selected}
@@ -112,7 +113,7 @@ const CheckboxPage = () => {
     <Layout>
       <CompLayout
         compName="Checkbox"
-        compDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        compDesc="Checkboxes are used to let a user choose one or more options from a limited number of options. You can also use this component for one option only."
         compVariation={card}
         compProps={propsData}
       ></CompLayout>
