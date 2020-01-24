@@ -4,6 +4,29 @@ import PageTemplate from "../components/PageTemplate";
 import { CodeBlock } from "../components/BlockComponents";
 
 const IndexPage = () => {
+  const text = `  import Mantap from "cihuy";
+
+  const SomeRandomComponents = () => {
+    console.log("function");
+    return (
+      <div style={{fontSize: "3rem"}}>
+        <h1>Hello World!</h1>
+      </div>
+    );
+  };`;
+
+  const wo = `  class MyHomePage extends StatefulWidget {
+    MyHomePage({Key key, this.title}) : super(key: key);
+
+    final String title;
+
+    @override
+      _MyHomePageState createState() => _MyHomePageState();
+    }
+  }`;
+
+  const command = `  npm install putang-ina-mo`;
+
   return (
     <MainLayout title="Home">
       <PageTemplate>
@@ -17,16 +40,9 @@ const IndexPage = () => {
           meaningless filler text can be very useful when the focus is meant to
           be on design, not content.{" "}
         </p>
-        <CodeBlock
-          literals={`
-          const Putang = () => {
-            return(
-              <div>Ina MO</div>
-            )
-          };
-        `}
-        />
-        <div style={{ height: "100vh" }}></div>
+        <CodeBlock code={text} theme="dracula" />
+        <CodeBlock code={wo} theme="nightOwl" />
+        <CodeBlock code={command} theme="shadesOfPurple" />
       </PageTemplate>
     </MainLayout>
   );
