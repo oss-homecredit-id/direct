@@ -14,16 +14,16 @@ const ColorBlock = props => {
       borderRadius: "100%",
       borderWidth: props.border ? "1px" : "unset",
       borderStyle: props.border ? "solid" : "unset",
-      borderColor: props.border ? props.color : "unset",
-      backgroundColor: props.border ? "transparent" : props.color,
+      borderColor: props.border ? props.color.code : "unset",
+      backgroundColor: props.border ? "transparent" : props.color.code,
+      margin: "10px 0",
     },
   };
 
-  console.log(props.border);
   return (
     <div style={styles.container}>
       <div style={styles.block}></div>
-      <p style={{ fontSize: "14px" }}>{props.color}</p>
+      <p style={{ fontSize: "14px", margin: "5px 0" }}>{props.color.name}</p>
     </div>
   );
 };
