@@ -32,7 +32,7 @@ const IndexPage = () => {
       <PageTemplate>
         <h1>Introduction</h1>
         <h5>Direct Design System</h5>
-        <br />
+        <div style={{ height: "1px", margin: "1rem 0" }}></div>
         <p>
           The purpose of lorem ipsum is to create a natural looking block of
           text (sentence, paragraph, page, etc.) that doesn't distract from the

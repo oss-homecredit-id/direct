@@ -93,8 +93,9 @@ const MainView = ({ children, isHidden, setIsHidden }) => {
         }
         .main-footer {
           color: ${colors.mainWhite};
-          background-color: ${colors.primaryBlack};
+          background-color: ${colors.darkerBlack};
           border-top: 1px solid ${colors.darkerBlack};
+          border-bottom: 1px solid ${colors.darkerBlack};
           width: calc(100vw - (${sideNavSize} + 2px));
           display: flex;
           flex-direction: row;
@@ -296,8 +297,8 @@ const NavigationItemData = [
     content: [
       { title: "Introduction", path: "/" },
       {
-        title: "How To Install",
-        path: "/how-to-install",
+        title: "How To Use",
+        path: "/how-to-use",
       },
     ],
   },
