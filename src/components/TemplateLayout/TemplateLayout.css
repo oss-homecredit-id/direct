@@ -1,12 +1,14 @@
 .temp-container {
-  margin-left: 250px;
   height: 100%;
-  padding: 30px 60px;
+  padding: 15px 40px;
   background-color: #f7f7f7;
 }
 
-.temp-title {
-  font-size: 34px;
-  font-weight: 500;
-  margin-bottom: 35px;
+.temp-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.temp-code {
+  margin: 20px 0;
 }
