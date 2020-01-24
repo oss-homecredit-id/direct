@@ -5,12 +5,56 @@ import ColorBlock from "../../components/ColorBlock/ColorBlock";
 
 const colorPage = () => {
   const color = {
-    black: ["#262626", "#7B7B7B", "#C8C8C8", "#F4F4F4", "#FFFFFF", "#F9F9F9"],
-    red: ["#860E1D", "#E11931", "#EC7482", "#FCE8EA"],
-    green: ["#246634", "#3EAC58", "#8ACC9A", "#ECF6EE"],
-    blue: ["#235689", "#3C91E6", "#89BCEF", "#EBF4FC"],
-    orange: ["#985619", "#FF912A", "#FFBC7E", "#FFF4EA"],
-    yellow: ["#986E04", "#FFBA08", "#FFD569", "#FFF8E6"],
+    black: [
+      { code: "#262626", name: "darkerBlack" },
+      { code: "#7b7b7b", name: "primaryBlack" },
+      { code: "#c8c8c8", name: "secondaryBlack" },
+      { code: "#f4f4f4", name: "lighterBlack" },
+      { code: "#ffffff", name: "mainWhite" },
+      { code: "#f9f9f9", name: "background" },
+    ],
+    red: [
+      { code: "#860E1D", name: "darkerRed" },
+      { code: "#E11931", name: "primaryRed" },
+      { code: "#EC7482", name: "secondaryRed" },
+      { code: "#FCE8EA", name: "lighterRed" },
+    ],
+    green: [
+      { code: "#246634", name: "darkerGreen" },
+      { code: "#3EAC58", name: "primaryGreen" },
+      { code: "#8ACC9A", name: "secondaryGreen" },
+      { code: "#ECF6EE", name: "lighterGreen" },
+    ],
+    blue: [
+      { code: "#235689", name: "darkerBlue" },
+      { code: "#3C91E6", name: "primaryBlue" },
+      { code: "#89BCEF", name: "secondaryBlue" },
+      { code: "#EBF4FC", name: "lighterBlue" },
+    ],
+    orange: [
+      { code: "#985619", name: "darkerOrange" },
+      { code: "#FF912A", name: "primaryOrange" },
+      { code: "#FFBC7E", name: "secondaryOrange" },
+      { code: "#FFF4EA", name: "lighterOrange" },
+    ],
+    yellow: [
+      { code: "#986E04", name: "darkerYellow" },
+      { code: "#FFBA08", name: "primaryYellow" },
+      { code: "#FFD569", name: "secondaryYellow" },
+      { code: "#FFF8E6", name: "lighterYellow" },
+    ],
+  };
+
+  const colorData = {
+    name: "Color",
+    desc:
+      "Here is the list of color that corresponds with Home Credit Indonesia regulation. You can import the mixins and add the color by name to your project.",
+    code: `   import { colors } from "../../assets/mixins/mixins";
+    const styles = {
+      container: {
+        backgroundColor: colors.primaryRed
+      }
+      `,
   };
 
   const style = {
@@ -27,7 +71,12 @@ const colorPage = () => {
 
   return (
     <Layout>
-      <TemplateLayout tempName="Colors">
+      <TemplateLayout
+        color
+        tempName={colorData.name}
+        tempDesc={colorData.desc}
+        tempCode={colorData.code}
+      >
         <div style={style.container}>
           {color.black.map((black, key) => (
             <div key={key}>

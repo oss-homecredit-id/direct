@@ -2,7 +2,7 @@ import React from "react";
 import "./TemplateLayout.css";
 import { Text } from "../../lib/Text/Text";
 
-const TemplateLayout = ({ tempName, tempDesc, children, tempCode }) => {
+const TemplateLayout = ({ tempName, tempDesc, children, tempCode, color }) => {
   const styles = {
     title: {
       fontSize: "34px",
@@ -12,9 +12,14 @@ const TemplateLayout = ({ tempName, tempDesc, children, tempCode }) => {
     desc: {
       marginBottom: "15px",
     },
-    preview: {
+    previewText: {
       fontWeight: "500",
       margin: "15px 0 10px 0",
+    },
+    preview: {
+      display: "flex",
+      flexDirection: color ? "column" : "row",
+      justifyContent: "center",
     },
   };
 
@@ -25,10 +30,10 @@ const TemplateLayout = ({ tempName, tempDesc, children, tempCode }) => {
         {tempDesc}
       </Text>
       <div style={{ margin: "30px 0" }}>
-        <Text textType="h3" styleConfig={styles.preview}>
+        <Text textType="h3" styleConfig={styles.previewText}>
           Preview
         </Text>
-        <div className="temp-preview">{children}</div>
+        <div style={styles.preview}>{children}</div>
       </div>
       <div className="temp-code">
         <pre>{tempCode}</pre>
