@@ -4,6 +4,9 @@ import PageTemplate from "../components/PageTemplate";
 import { CodeBlock } from "../components/BlockComponents";
 
 const IndexPage = () => {
+  const title = "Introduction";
+  const subTitle = "Direct Design System of Home Credit Indonesia";
+
   const text = `  import Mantap from "cihuy";
 
   const SomeRandomComponents = () => {
@@ -29,17 +32,7 @@ const IndexPage = () => {
 
   return (
     <MainLayout title="Home">
-      <PageTemplate>
-        <h1>Introduction</h1>
-        <h5>Direct Design System</h5>
-        <div style={{ height: "1px", margin: "1rem 0" }}></div>
-        <p>
-          The purpose of lorem ipsum is to create a natural looking block of
-          text (sentence, paragraph, page, etc.) that doesn't distract from the
-          layout. A practice not without controversy, laying out pages with
-          meaningless filler text can be very useful when the focus is meant to
-          be on design, not content.{" "}
-        </p>
+      <PageTemplate title={title} subTitle={subTitle}>
         <CodeBlock code={text} theme="dracula" />
         <CodeBlock code={wo} theme="nightOwl" />
         <CodeBlock code={command} theme="shadesOfPurple" />

@@ -1,10 +1,15 @@
 import React from "react";
 
-const PageTemplate = ({ children, sideChildren }) => {
+const PageTemplate = ({ children, title, subTitle }) => {
   return (
     <React.Fragment>
       <div className="page-wrapper">
-        <div className="page-main">{children}</div>
+        <div className="page-main">
+          <h1>{title}</h1>
+          <h5>{subTitle}</h5>
+          <div style={{ height: "1px", margin: "1rem 0" }}></div>
+          {children}
+        </div>
       </div>
       <style jsx="true">{`
         .page-wrapper {

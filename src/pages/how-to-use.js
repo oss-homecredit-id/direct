@@ -7,10 +7,7 @@ const HowToUsePage = () => {
   const subTitle = "Install and Contributing to our Design System";
   return (
     <MainLayout title={title}>
-      <PageTemplate>
-        <h1>{title}</h1>
-        <h5>{subTitle}</h5>
-        <div style={{ height: "1px", margin: "1rem 0" }}></div>
+      <PageTemplate title={title} subTitle={subTitle}>
         <p>
           The purpose of lorem ipsum is to create a natural looking block of
           text (sentence, paragraph, page, etc.) that doesn't distract from the
