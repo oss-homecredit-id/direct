@@ -46,13 +46,15 @@ const ButtonStyle = styled.button`
 
 const Button = ({ variant, isDisabled, ...props }) => {
   return (
-    <ButtonStyle
-      variant={variant}
-      isDisabled={isDisabled}
-      style={props.styleConfig}
-      onClick={props.onClick}
-      {...props}
-    />
+    <React.Fragment>
+      <ButtonStyle
+        variant={variant}
+        isDisabled={isDisabled}
+        style={props.styleConfig}
+        onClick={props.onClick}
+        {...props}
+      />
+    </React.Fragment>
   );
 };
 
