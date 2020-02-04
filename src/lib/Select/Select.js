@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { colors } from "../../assets/mixins/mixins";
-import { Input } from "../Input/Input";
+import { Input } from "../../lib/Input/Input";
 import { css } from "@emotion/core";
 
 export const Select = props => {
-  const { options, value, label, selected, setSelected } = props;
-  // const { option, value, label, selected } = props;
+  const { options, value, label, selected } = props;
 
-  // const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue, setSelectedValue] = useState("Default Value");
   const [selectOpen, setSelectOpen] = useState(false);
-  const [option, setOption] = useState(options[0].value);
-
-  useEffect(() => {
-    setOption(options);
-    if (option.length !== 0) {
-      setSelected(option[0][value]);
-    }
-  }, [options, value]);
+  const [option, setOption] = useState(options || []);
 
   const openSelect = () => {
     setSelectOpen(!selectOpen);
@@ -25,8 +17,8 @@ export const Select = props => {
 
   const filterSelect = e => {
     const filterData = e.target.value;
-    setSelected(filterData);
-    const filtered = options.filter(
+    setSelectedValue(filterData);
+    const filtered = option.filter(
       value => value.nameCategory.indexOf(filterData) !== -1
     );
     setOption(filtered);
@@ -34,8 +26,9 @@ export const Select = props => {
 
   const handleClick = event => {
     const value = event.target.getAttribute("data-value");
-    setSelected(value);
-    setOption(options);
+    setSelectedValue(event.target.innerText);
+    selected(value);
+    setOption(option);
     setSelectOpen(false);
   };
 
@@ -45,7 +38,7 @@ export const Select = props => {
         type="select"
         name="category"
         label="Category"
-        value={selected}
+        value={selectedValue}
         selectOpen={selectOpen}
         onClick={openSelect}
         onChange={e => filterSelect(e)}
@@ -63,20 +56,20 @@ export const Select = props => {
           role="button"
           tabIndex={0}
         >
-          {options.map((dataOption, index) => (
+          {option.map((dataOption, index) => (
             <div
               css={css`
-                padding: 0.8rem 1.8rem;
-                background: ${colors.background}
-                border-top: 1px solid ${colors.lighterBlack};
-                border-bottom: 1px solid ${colors.lighterBlack};
-                &:nth-first-of-type {
-                  border-top: none;
-                }
-                &:nth-last-of-type {
-                  border-bottom: none;
-                }
-              `}
+ padding: 0.8rem 1.8rem;
+ background: ${colors.background}
+ border-top: 1px solid ${colors.lighterBlack};
+ border-bottom: 1px solid ${colors.lighterBlack};
+ &:nth-first-of-type {
+ border-top: none;
+ }
+ &:nth-last-of-type {
+ border-bottom: none;
+ }
+ `}
               onClick={e => handleClick(e)}
               key={index}
               data-value={dataOption[value]}

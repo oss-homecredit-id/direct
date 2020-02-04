@@ -34,10 +34,10 @@ const SelectPage = () => {
 
   const propsData = [
     {
-      Name: "option",
+      Name: "options",
       Params: "",
       Description:
-        "the props 'option' will receive several options in a form of an array",
+        "the props 'options' will receive several options in a form of an array. Every object in array consists of label and value",
     },
   ];
 

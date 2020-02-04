@@ -27,7 +27,8 @@ const ButtonStyle = styled.button`
       : colors.mainWhite};
   display: inline-flex;
   border-radius: 8px;
-  border: none;
+  border: ${props =>
+    props.variant === "secondary" ? "1px solid colors.primaryRed" : "none"};
   &:hover,
   &:active,
   &:focus {
