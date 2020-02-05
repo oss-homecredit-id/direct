@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { DatePickerComponent } from "../../lib/DatePicker/DatePicker";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import Layout from "../../components/layout";
 
 const DatePickerPage = () => {
+  const [selected, setSelected] = useState(new Date());
+  const onChange = date => {
+    setSelected(date);
+    console.log(date);
+  };
   const datePicker = [
     {
       name: "Default",
@@ -12,7 +17,13 @@ const DatePickerPage = () => {
     },
     {
       name: "Custom date format",
-      var: <DatePickerComponent dateFormat="dd-MM-yyyy"></DatePickerComponent>,
+      var: (
+        <DatePickerComponent
+          dateFormat="dd-MM-yyyy"
+          onChange={onChange}
+          selected={selected}
+        ></DatePickerComponent>
+      ),
       code: `<DatePickerComponent dateFormat="dd-MM-yyyy"></DatePickerComponent>`,
     },
     {

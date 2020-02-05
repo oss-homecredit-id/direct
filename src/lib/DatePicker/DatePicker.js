@@ -1,35 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Input } from "../INput/Input.js";
 
-export const DatePickerComponent = ({ dateFormat, isDisabled }) => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [open, setOpen] = useState(true);
-
-  const DatePickerInput = ({ value, onClick }) => {
-    return (
-      <Input
-        type="date"
-        value={value}
-        onClick={onClick}
-        required="required"
-        readOnly
-        isDisabled={isDisabled ? true : false}
-      ></Input>
-    );
-  };
-
-  const onChangeFunc = date => {
-    setStartDate(date);
-  };
+export const DatePickerComponent = ({
+  dateFormat,
+  isDisabled,
+  selected,
+  onChange,
+}) => {
+  const ref = React.createRef();
   return (
     <>
       <ReactDatePicker
-        selected={startDate}
+        selected={selected}
         dateFormat={dateFormat ? dateFormat : "dd/MM/yyyy"}
-        onChange={date => onChangeFunc(date)}
-        customInput={<DatePickerInput></DatePickerInput>}
+        onChange={date => onChange(date)}
+        customInput={
+          <Input
+            label="Date From"
+            isDisabled={isDisabled ? true : false}
+            type="date"
+            ref={ref}
+          />
+        }
       />
     </>
   );
