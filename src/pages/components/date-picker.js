@@ -7,7 +7,6 @@ const DatePickerPage = () => {
   const [selected, setSelected] = useState(new Date());
   const onChange = date => {
     setSelected(date);
-    console.log(date);
   };
   const datePicker = [
     {
