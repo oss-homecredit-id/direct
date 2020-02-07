@@ -4,7 +4,7 @@ import SEO from "../components/seo";
 import { Text } from "../lib/Text/Text";
 import Illustration from "../assets/illustration.png";
 import { colors } from "../assets/mixins/mixins";
-
+import { MainLayout } from "../components/Navigation/MainLayout";
 const IndexPage = () => {
   const styles = {
     container: {
@@ -23,7 +23,7 @@ const IndexPage = () => {
   };
 
   return (
-    <Layout>
+    <MainLayout>
       <SEO title="Direct" />
       <div style={styles.container}>
         <div>
@@ -35,7 +35,7 @@ const IndexPage = () => {
         </div>
         <img src={Illustration} style={styles.image}></img>
       </div>
-    </Layout>
+    </MainLayout>
   );
 };
 

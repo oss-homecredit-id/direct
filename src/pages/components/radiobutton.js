@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Layout from "../../components/layout";
+import { MainLayout } from "../../components/Navigation/MainLayout";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import { Radio } from "../../lib";
 
@@ -76,14 +76,14 @@ const RadiobtnPage = () => {
   ];
 
   return (
-    <Layout>
+    <MainLayout>
       <CompLayout
         compName="Radio Button"
         compDesc="Used when users must select exactly one option from an exposed list of options. You can either use a default type or the list type"
         compVariation={radio}
         compProps={propsData}
       ></CompLayout>
-    </Layout>
+    </MainLayout>
   );
 };
 

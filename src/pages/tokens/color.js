@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../components/layout";
+import { MainLayout } from "../../components/Navigation/MainLayout";
 import TemplateLayout from "../../components/TemplateLayout/TemplateLayout";
 import ColorBlock from "../../components/ColorBlock/ColorBlock";
 
@@ -70,7 +70,7 @@ const colorPage = () => {
   };
 
   return (
-    <Layout>
+    <MainLayout>
       <TemplateLayout
         color
         tempName={colorData.name}
@@ -126,7 +126,7 @@ const colorPage = () => {
           ))}
         </div>
       </TemplateLayout>
-    </Layout>
+    </MainLayout>
   );
 };
 
