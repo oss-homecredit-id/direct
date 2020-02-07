@@ -15,7 +15,7 @@ export const DatePickerComponent = ({
   return (
     <>
       <ReactDatePicker
-        selected={selected}
+        selected={selected || new Date()}
         dateFormat={dateFormat ? dateFormat : "dd/MM/yyyy"}
         onChange={date => onChange(date)}
         customInput={

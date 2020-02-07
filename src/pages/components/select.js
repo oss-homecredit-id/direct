@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Layout from "../../components/layout";
+import { MainLayout } from "../../components/Navigation/MainLayout";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import { Select } from "../../lib/Select/Select";
 
@@ -42,14 +42,14 @@ const SelectPage = () => {
   ];
 
   return (
-    <Layout>
+    <MainLayout>
       <CompLayout
         compName="Select"
         compDesc="Select lets users choose one option from a list of 4 or more options without overloading the interface. Use select when users must select one option from a longer, but very predictable list of options."
         compVariation={select}
         compProps={propsData}
       ></CompLayout>
-    </Layout>
+    </MainLayout>
   );
 };
 

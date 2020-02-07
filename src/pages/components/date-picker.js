@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import { DatePickerComponent } from "../../lib/DatePicker/DatePicker";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import Layout from "../../components/layout";
+import { MainLayout } from "../../components/Navigation/MainLayout";
 
 const DatePickerPage = () => {
-  const [selected, setSelected] = useState(new Date());
+  const [selected, setSelected] = useState();
   const onChange = date => {
     setSelected(date);
   };
   const datePicker = [
     {
       name: "Default",
-      var: <DatePickerComponent></DatePickerComponent>,
-      code: `<DatePickerComponent></DatePickerComponent>`,
+      var: (
+        <DatePickerComponent
+          onChange={onChange}
+          selected={selected}
+          label="Default date picker"
+        ></DatePickerComponent>
+      ),
+      code: `<DatePickerComponent onChange={onChange} selected={selected} label="Default date picker"></DatePickerComponent>`,
     },
     {
       name: "Custom date format",
@@ -21,9 +27,10 @@ const DatePickerPage = () => {
           dateFormat="dd-MM-yyyy"
           onChange={onChange}
           selected={selected}
+          label="Custom date format"
         ></DatePickerComponent>
       ),
-      code: `<DatePickerComponent dateFormat="dd-MM-yyyy"></DatePickerComponent>`,
+      code: `<DatePickerComponent dateFormat="dd-MM-yyyy" onChange={onChange} selected={selected} label="Custom date format"></DatePickerComponent>`,
     },
     {
       name: "Disabled date format",
@@ -31,12 +38,10 @@ const DatePickerPage = () => {
         <DatePickerComponent
           dateFormat="dd-MM-yyyy"
           isDisabled
+          label="Disabled date picker"
         ></DatePickerComponent>
       ),
-      code: `<DatePickerComponent
-      dateFormat="dd-MM-yyyy"
-      isDisabled
-    ></DatePickerComponent>`,
+      code: `<DatePickerComponent dateFormat="dd-MM-yyyy" isDisabled label="Disabled date picker"></DatePickerComponent>`,
     },
   ];
 
@@ -56,14 +61,14 @@ const DatePickerPage = () => {
   ];
 
   return (
-    <Layout>
+    <MainLayout>
       <CompLayout
         compName="Date Picker"
         compDesc="Date-picker component is generally used in forms to get a date data from user."
         compVariation={datePicker}
         compProps={propsData}
       ></CompLayout>
-    </Layout>
+    </MainLayout>
   );
 };
 

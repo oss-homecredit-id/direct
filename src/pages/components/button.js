@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../../lib/Button/Button";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import Layout from "../../components/layout";
+import { MainLayout } from "../../components/Navigation/MainLayout";
 
 const ButtonPage = () => {
   const button = [
@@ -53,14 +54,14 @@ const ButtonPage = () => {
   ];
 
   return (
-    <Layout>
+    <MainLayout>
       <CompLayout
         compName="Button"
         compDesc="Buttons are used for interface actions generally to submit data or take action. The default look of the button is all red with font's color white. To add action to the button component use the onClick props."
         compVariation={button}
         compProps={propsData}
       ></CompLayout>
-    </Layout>
+    </MainLayout>
   );
 };
 
