@@ -1,7 +1,7 @@
 import React from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import { Input } from "../../lib/Input/Input";
-import { MainLayout } from "../../components/Navigation/MainLayout";
+import Layout from "../../components/layout";
 
 const InputPage = () => {
   const input = [
@@ -64,14 +64,14 @@ const InputPage = () => {
   ];
 
   return (
-    <MainLayout>
+    <Layout>
       <CompLayout
         compName="Input"
         compDesc="Inputs are used to allow users to provide text input. You can use a Label to identify and describe the purpose of an input element."
         compVariation={input}
         compProps={propsData}
       ></CompLayout>
-    </MainLayout>
+    </Layout>
   );
 };
 

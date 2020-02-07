@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../components/layout";
 import { Text } from "../lib/Text/Text";
 import CodeContainer from "../components/CodeContainer/CodeContainer";
-import { MainLayout } from "../components/Navigation/MainLayout";
 
 const HowtoPage = () => {
   const styles = {
@@ -33,7 +32,7 @@ const HowtoPage = () => {
   ];
 
   return (
-    <MainLayout>
+    <Layout>
       <div>
         <Text styleConfig={styles.title}>How to Use</Text>
         <Text textType="h3">
@@ -47,7 +46,7 @@ const HowtoPage = () => {
           </CodeContainer>
         ))}
       </div>
-    </MainLayout>
+    </Layout>
   );
 };
 

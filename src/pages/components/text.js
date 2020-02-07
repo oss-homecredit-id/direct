@@ -1,5 +1,5 @@
 import React from "react";
-import { MainLayout } from "../../components/Navigation/MainLayout";
+import Layout from "../../components/layout";
 import CompLayout from "../../components/CompLayout/CompLayout";
 import { Text } from "../../lib";
 
@@ -52,14 +52,14 @@ const TextPage = () => {
   ];
 
   return (
-    <MainLayout>
+    <Layout>
       <CompLayout
         compName="Text"
         compDesc="The text component is for displaying text. It standardizes the presentation of text. By default, the Text component renders text in a p tag"
         compVariation={text}
         compProps={propsData}
       ></CompLayout>
-    </MainLayout>
+    </Layout>
   );
 };
 
