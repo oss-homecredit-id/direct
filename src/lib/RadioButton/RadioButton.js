@@ -13,7 +13,7 @@ const Radio = ({ options, name, radioType, selected, setSelected }) => {
     option: {
       margin: list ? "10px" : "0 10px",
       border: "1px solid #B3B3B3",
-      padding: "10px",
+      padding: "2px",
       display: "flex",
       alignItems: "center",
       backgroundColor: "unset",
@@ -25,7 +25,7 @@ const Radio = ({ options, name, radioType, selected, setSelected }) => {
     optionChecked: {
       margin: list ? "10px" : "0 10px",
       border: "1px solid #E11931",
-      padding: "10px",
+      padding: "2px",
       display: "flex",
       alignItems: "center",
       backgroundColor: "rgba(225,25,49,0.1)",

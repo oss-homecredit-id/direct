@@ -51,6 +51,7 @@ export const Select = props => {
             padding: 0;
             max-height: 11.5rem;
             overflow: auto;
+            z-index:10;
           `}
           onKeyDown={() => {}}
           role="button"
