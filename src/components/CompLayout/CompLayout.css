@@ -1,6 +1,5 @@
 .comp-container {
   width: 100%;
-  min-width: calc(100vw - 250px);
   overflow-y: auto;
   background-color: #f7f7f7;
 }

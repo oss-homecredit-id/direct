@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../lib/Button/Button";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import Layout from "../../components/layout";
 import { MainLayout } from "../../components/Navigation/MainLayout";
 
 const ButtonPage = () => {
