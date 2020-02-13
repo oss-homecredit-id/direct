@@ -21,6 +21,7 @@ const Input = forwardRef((props, ref) => {
     selectOpen,
     isDisabled,
     readOnly,
+    maxlength,
     required,
   } = props;
 
@@ -56,18 +57,16 @@ const Input = forwardRef((props, ref) => {
               ? "1px solid" + colors.secondaryBlack
               : "1px solid  #7b7b7b"
           };
-          border-color: ${
-            isError ? colors.primaryRed : helper ? colors.primaryOrange : "none"
-          };
+          border-color: ${isError ? colors.primaryRed : "none"};
           background-color: ${colors.background};
           border-top-right-radius: 4px;
           border-top-left-radius: 4px;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
           &:focus {
             border-bottom: ${
               isDisabled
                 ? ""
-                : helper
-                ? "2px solid" + colors.primaryOrange
                 : isError
                 ? "2px solid" + colors.primaryRed
                 : "2px solid" + colors.darkerBlack
@@ -98,6 +97,7 @@ const Input = forwardRef((props, ref) => {
         required={required}
         ref={ref}
         readOnly={readOnly ? true : false}
+        maxLength={maxlength}
       />
       {type !== "text" && (
         <span
@@ -107,13 +107,7 @@ const Input = forwardRef((props, ref) => {
             bottom: 5px;
           `}
         >
-          {type === "password" && (
-            <img
-              src={password}
-              style={{ width: "20px", height: "auto" }}
-              alt="hide"
-            />
-          )}
+          {type === "password" && <img src={password} alt="hide" />}
           {type === "date" && (
             <img
               style={{ width: "20px", height: "20px" }}
