@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "../../lib/Button/Button";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import Layout from "../../components/layout";
 import { MainLayout } from "../../components/Navigation/MainLayout";
+import { Select } from "../../lib/Select/Select";
 
 const ButtonPage = () => {
+  const [selected, setSelected] = useState();
+  const selectItems = [
+    { label: "boncabe", value: "item 1" },
+    { label: "ricola", value: "item 2" },
+    { label: "riangriang", value: "item 3" },
+    { label: "riasan", value: "item 4" },
+    { label: "bontang", value: "item 5" },
+  ];
   const button = [
     {
       name: "Primary",
@@ -61,6 +69,12 @@ const ButtonPage = () => {
         compVariation={button}
         compProps={propsData}
       ></CompLayout>
+
+      <Select
+        options={selectItems}
+        selected={selected}
+        setSelected={setSelected}
+      ></Select>
     </MainLayout>
   );
 };
