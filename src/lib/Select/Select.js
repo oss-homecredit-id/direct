@@ -9,7 +9,7 @@ export const Select = props => {
 
   // const [selectedValue, setSelectedValue] = useState("");
   const [selectOpen, setSelectOpen] = useState(false);
-  const [option, setOption] = useState(option ? "" : options[0].label);
+  const [option, setOption] = useState(options[0].label);
   console.log("test", option);
 
   useEffect(() => {
