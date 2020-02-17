@@ -98,7 +98,5 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
-  value: "value",
-  label: "label",
   options: [],
 };
