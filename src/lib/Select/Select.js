@@ -53,6 +53,9 @@ export const Select = props => {
       {selectOpen && (
         <div
           css={css`
+            position: absolute;
+            z-index: 100;
+            width: inherit;
             margin: 5px 0 15px 0;
             padding: 0;
             max-height: 11.5rem;
