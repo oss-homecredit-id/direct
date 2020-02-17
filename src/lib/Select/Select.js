@@ -92,11 +92,3 @@ export const Select = props => {
     </React.Fragment>
   );
 };
-
-Select.propTypes = {
-  options: PropTypes.array,
-};
-
-Select.defaultProps = {
-  options: [],
-};
