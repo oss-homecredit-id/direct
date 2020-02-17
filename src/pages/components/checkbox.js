@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CompLayout from "../../components/CompLayout/CompLayout";
-import Layout from "../../components/layout";
+import { MainLayout } from "../../components/Navigation/MainLayout";
 import { Checkbox } from "../../lib/Checkbox/Checkbox";
 
 const defaultOptions = [
@@ -110,14 +110,14 @@ const CheckboxPage = () => {
     },
   ];
   return (
-    <Layout>
+    <MainLayout>
       <CompLayout
         compName="Checkbox"
         compDesc="Checkboxes are used to let a user choose one or more options from a limited number of options. You can also use this component for one option only."
         compVariation={card}
         compProps={propsData}
       ></CompLayout>
-    </Layout>
+    </MainLayout>
   );
 };
 

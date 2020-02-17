@@ -11,6 +11,7 @@ const Radio = ({ options, name, radioType, selected, setSelected }) => {
       margin: "10px",
     },
     option: {
+      width: "100%",
       margin: list ? "10px" : "0 10px",
       border: "1px solid #B3B3B3",
       padding: "2px",
@@ -23,6 +24,7 @@ const Radio = ({ options, name, radioType, selected, setSelected }) => {
       borderRadius: "3px",
     },
     optionChecked: {
+      width: "100%",
       margin: list ? "10px" : "0 10px",
       border: "1px solid #E11931",
       padding: "2px",
@@ -38,7 +40,7 @@ const Radio = ({ options, name, radioType, selected, setSelected }) => {
       position: "absolute",
       opacity: "0",
       cursor: "pointer",
-      width: "8%",
+      width: "auto",
       height: "5%",
     },
     check: {
@@ -75,11 +77,15 @@ const Radio = ({ options, name, radioType, selected, setSelected }) => {
       {option
         ? optionsValidate
           ? option.map((option, index) => (
-              <div
-                style={selected ? styles.optionChecked : styles.option}
+              <label
+                style={
+                  selected === option ? styles.optionChecked : styles.option
+                }
                 key={index}
               >
-                <div style={selected ? styles.check : styles.uncheck}></div>
+                <div
+                  style={selected === option ? styles.check : styles.uncheck}
+                ></div>
                 <input
                   style={styles.input}
                   type="radio"
@@ -88,8 +94,8 @@ const Radio = ({ options, name, radioType, selected, setSelected }) => {
                   onChange={event => radioChange(event)}
                   name={name}
                 ></input>
-                <label style={styles.label}>{option} </label>
-              </div>
+                <span style={styles.label}>{option} </span>
+              </label>
             ))
           : ""
         : console.log("nada")}
