@@ -64,7 +64,7 @@ const DatePickerPage = () => {
     <MainLayout>
       <CompLayout
         compName="Date Picker"
-        compDesc="Date-picker component is generally used in forms to get a date data from user."
+        compDesc="Date-picker component is generally used in forms to get a date data from user. You can add 'disabled' props to disable the component and also change the date format to dd-MM-yy."
         compVariation={datePicker}
         compProps={propsData}
       ></CompLayout>

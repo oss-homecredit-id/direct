@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Input } from "../INput/Input.js";
+import { Input } from "../Input/Input.js";
 import PropTypes from "prop-types";
 
 export const DatePickerComponent = ({
