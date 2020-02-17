@@ -27,7 +27,9 @@ const ButtonStyle = styled.button`
       : colors.mainWhite};
   display: inline-flex;
   border-radius: 8px;
-  border: ${props => (props.variant === "text" ? "none" : "1px solid")};
+
+  border: ${props =>
+    props.variant === "secondary" ? "1px solid colors.primaryRed" : "none"};
   border-color: ${props =>
     props.isDisabled
       ? colors.secondaryBlack
