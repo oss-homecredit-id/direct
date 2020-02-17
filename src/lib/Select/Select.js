@@ -94,9 +94,7 @@ export const Select = props => {
 };
 
 Select.propTypes = {
-  value: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  options: PropTypes.array.isRequired,
+  options: array,
 };
 
 Select.defaultProps = {
