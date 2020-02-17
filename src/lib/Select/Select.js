@@ -92,3 +92,7 @@ export const Select = props => {
     </React.Fragment>
   );
 };
+
+Select.defaultProps = {
+  options: [{ label: "", value: "" }],
+};
