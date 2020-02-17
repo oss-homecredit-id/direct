@@ -94,7 +94,7 @@ export const Select = props => {
 };
 
 Select.propTypes = {
-  options: array,
+  options: PropTypes.array,
 };
 
 Select.defaultProps = {
