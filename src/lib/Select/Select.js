@@ -6,35 +6,34 @@ import { css } from "@emotion/core";
 
 export const Select = props => {
   const { options, value, label, selected, setSelected } = props;
-  // const { option, value, label, selected } = props;
 
   // const [selectedValue, setSelectedValue] = useState("");
   const [selectOpen, setSelectOpen] = useState(false);
-  const [option, setOption] = useState(options[0].value);
+  const [option, setOption] = useState(options[0].label);
+  console.log("test", option);
 
   useEffect(() => {
     setOption(options);
-    if (option.length !== 0) {
-      setSelected(option[0][value]);
-    }
-  }, [options, value]);
+  }, []);
 
   const openSelect = () => {
     setSelectOpen(!selectOpen);
   };
 
   const filterSelect = e => {
-    const filterData = e.target.value;
+    const filterData = e.target.value.toLowerCase();
     setSelected(filterData);
-    const filtered = options.filter(
-      value => value.nameCategory.indexOf(filterData) !== -1
+    // console.log(filterData);
+    let filtered = options.filter(
+      option => option.label.indexOf(filterData) !== -1
     );
     setOption(filtered);
+    console.log("onChange", option);
   };
 
   const handleClick = event => {
-    const value = event.target.getAttribute("data-value");
-    setSelected(value);
+    const label = event.target.getAttribute("data-label");
+    setSelected(label);
     setOption(options);
     setSelectOpen(false);
   };
@@ -45,7 +44,7 @@ export const Select = props => {
         type="select"
         name="category"
         label="Category"
-        value={selected}
+        value={selected ? selected : ""}
         selectOpen={selectOpen}
         onClick={openSelect}
         onChange={e => filterSelect(e)}
@@ -63,7 +62,7 @@ export const Select = props => {
           role="button"
           tabIndex={0}
         >
-          {options.map((dataOption, index) => (
+          {option.map((dataOption, index) => (
             <div
               css={css`
                 padding: 0.8rem 1.8rem;
@@ -80,6 +79,7 @@ export const Select = props => {
               onClick={e => handleClick(e)}
               key={index}
               data-value={dataOption[value]}
+              data-label={dataOption[label]}
               role="button"
               onKeyDown={() => {}}
               tabIndex={0}
@@ -93,14 +93,6 @@ export const Select = props => {
   );
 };
 
-Select.propTypes = {
-  value: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  options: PropTypes.array.isRequired,
-};
-
 Select.defaultProps = {
-  value: "value",
-  label: "label",
-  options: [],
+  options: [{ label: "", value: "" }],
 };
