@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../components/layout";
+import { MainLayout } from "../../components/Navigation/MainLayout";
 import Icon from "../../assets/icon-logo.png";
 import TemplateLayout from "../../components/TemplateLayout/TemplateLayout";
 import { Text } from "../../lib/Text/Text";
@@ -90,7 +90,7 @@ const mainLayout = () => {
   };
 
   return (
-    <Layout>
+    <MainLayout>
       <TemplateLayout
         tempName={mainPage.name}
         tempDesc={mainPage.desc}
@@ -124,7 +124,7 @@ const mainLayout = () => {
           </div>
         </div>
       </TemplateLayout>
-    </Layout>
+    </MainLayout>
   );
 };
 

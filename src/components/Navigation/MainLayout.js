@@ -338,6 +338,14 @@ const NavigationItemData = [
     path: "/tokens/color",
     content: [{ title: "Color", path: "/tokens/color" }],
   },
+  {
+    title: "Templates",
+    path: "/template",
+    content: [
+      { title: "Login Page", path: "/template/login-page" },
+      { title: "Main Layout", path: "/template/main-layout" },
+    ],
+  },
 ];
 
 const GlobalStyle = () => {
