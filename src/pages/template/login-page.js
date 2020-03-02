@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../../components/layout";
+import { MainLayout } from "../../components/Navigation/MainLayout";
 import TemplateLayout from "../../components/TemplateLayout/TemplateLayout";
 import { Input } from "../../lib/Input/Input";
 import { Text } from "../../lib/Text/Text";
@@ -38,7 +38,7 @@ const loginPage = () => {
   };
 
   return (
-    <Layout>
+    <MainLayout>
       <TemplateLayout
         tempName={loginPage.name}
         tempDesc={loginPage.desc}
@@ -53,7 +53,7 @@ const loginPage = () => {
           <img src={LoginImg} style={styles.image}></img>
         </div>
       </TemplateLayout>
-    </Layout>
+    </MainLayout>
   );
 };
 
